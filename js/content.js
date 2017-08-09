@@ -1,17 +1,15 @@
-//файл скрипта, который запускается на каждой странице отдельно
+window.onload = function () {
+    var http = new XMLHttpRequest();
+    var url = "Translator";
+    var text = document.body.textContent;
+    var params = "text=" + text;
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-function onBlur() { // окно теряет фокус
-    chrome.runtime.sendMessage({site: sait, time: localStorage[sait]}); // отправка сообщения на background.js
-    localStorage[sait] = '0';
-}
-window.onblur = onBlur; // если окно теряет фокус
-function sec() //выполняется каждую секунду
-{
-    if (document.webkitVisibilityState == 'visible')//если страница активна
-    {
-        localStorage[sait] = parseInt(localStorage[sait], 10) + 1; // обновляем данные о сайте в локальном хранилище
-    }
-}
-var sait = location.hostname; // на каком сайте находится скрипт
-localStorage[sait] = '0';
-setInterval(sec, 1000);// запускать функцию каждую секунду
+    http.onreadystatechange = function () {
+        if (http.readyState === 4 && http.status === 200) {
+            alert(http.responseText);
+        }
+    };
+    http.send(params);
+};
