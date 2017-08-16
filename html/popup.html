@@ -4,20 +4,47 @@
     <meta charset="UTF-8">
     <title>Your air translator</title>
     <link href="../css/popup.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/popup.js"></script>
 </head>
 <body>
-<div id="menu">
-    <button type="button"><pre> Advanced     </pre></button><br>
-    <button type="button"><pre> Upper-int    </pre></button><br>
-    <button type="button"><pre> Intermediate </pre></button><br>
-    <button type="button"><pre> Elementary   </pre></button><br>
-    <button type="button"><pre> Beginner     </pre></button><br>
+<div>
+    <span>Translate</span><br>
+    <select id="from" title="Lang from">
+        <option value="eng"> English</option>
+        <option value="rus"> Russian</option>
+        <option value="deu"> Deutsch</option>
+        <option value="fra"> France</option>
+    </select>
+    <span> to </span>
+    <select id="to" title="Lang to">
+        <option value="eng"> English</option>
+        <option value="rus"> Russian</option>
+        <option value="deu"> Deutsch</option>
+        <option value="fra"> France</option>
+    </select>
+    <br>
+</div>
+<hr>
+<div id="buttons">
+    <button type="button" id="btn_1"> Advanced</button>
+    <br>
+    <button type="button" id="btn_2"> Upper-int</button>
+    <br>
+    <button type="button" id="btn_3"> Intermediate</button>
+    <br>
+    <button type="button" id="btn_4"> Elementary</button>
+    <br>
+    <button type="button" id="btn_5"> Beginner</button>
+    <br>
 
-    <span><pre>      Avac Ex      </pre></span>
+    <span><pre><b>      Avac Ex      </b></pre></span>
+</div>
+<hr>
+<div id="info">
+    Click on word
 </div>
 <div id="dictionary">
 
 </div>
-<script src="../js/popup.js"></script>
 </body>
 </html>

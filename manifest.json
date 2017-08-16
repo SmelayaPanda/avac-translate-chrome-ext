@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Avac",
-  "version": "1.0.006",
+  "version": "1.0.007",
   "icons": {
     "64": "img/64.png"
   },

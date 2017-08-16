@@ -2,3 +2,31 @@ body{
     width:180px;
     height:300px;
 }
+
+button{
+    width: 100px !important;;
+}
+
+#btn_1{
+    background-color: indianred;
+}
+
+
+#btn_2{
+    background-color: yellowgreen;
+}
+
+
+#btn_3{
+    background-color: dodgerblue;
+}
+
+
+#btn_4{
+    background-color: cornflowerblue;
+}
+
+
+#btn_5{
+    background-color: darkseagreen;
+}
