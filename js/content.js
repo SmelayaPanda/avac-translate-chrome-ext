@@ -5,18 +5,38 @@ const url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 // Listen popup.js
 window.onload = function () {
     chrome.runtime.onMessage.addListener(msgObj => {
-        if (msgObj === "btn_1") {
-            avacPost();
+
+        var parts = msgObj.split(" ");
+        if (parts[0] === "btn_1") {
+            avacPost("24000", parts[1], parts[2]);
+        }
+        if (parts[0] === "btn_2") {
+            avacPost("6700", parts[1], parts[2]);
+        }
+        if (parts[0] === "btn_3") {
+            avacPost("1800", parts[1], parts[2]);
+        }
+        if (parts[0] === "btn_4") {
+            avacPost("700", parts[1], parts[2]);
+        }
+        if (parts[0] === "btn_5") {
+            avacPost("67", parts[1], parts[2]);
         }
     });
 };
 
 // -------------------------------------------------------------------------
-function avacPost() {
+function avacPost(level, langFrom, langTo) {
 
     const url = "http://localhost:8080/avac";
     const req = new XMLHttpRequest();
-    const params = "goto=" + document.URL;
+    const params =
+        "goto=" + document.URL + "&" +
+        "level=" + level + "&" +
+        "langFrom=" + langFrom + "&" +
+        "langTo=" + langTo;
+
+    console.log(params);
     req.open("POST", url, true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -34,6 +54,7 @@ function translateText() {
     console.log("Start");
 
     let paragraphs = document.getElementsByTagName("p");
+
     for (let i = 0; i < paragraphs.length; i++) {
         let text = paragraphs[i].textContent;
 
