@@ -7,20 +7,9 @@ window.onload = function () {
     chrome.runtime.onMessage.addListener(msgObj => {
 
         let parts = msgObj.split(" ");
-        if (parts[0] === "btn_1") {
-            avacPost("24000", parts[1], parts[2]);
-        }
-        if (parts[0] === "btn_2") {
-            avacPost("6700", parts[1], parts[2]);
-        }
-        if (parts[0] === "btn_3") {
-            avacPost("1800", parts[1], parts[2]);
-        }
-        if (parts[0] === "btn_4") {
-            avacPost("700", parts[1], parts[2]);
-        }
-        if (parts[0] === "btn_5") {
-            avacPost("67", parts[1], parts[2]);
+        if (parts[0] === "translate_btn") {
+            //avacPost(level, langFrom, langTo)
+            avacPost(parts[1], parts[2], parts[3]);
         }
     });
 };
@@ -53,18 +42,19 @@ function avacPost(level, langFrom, langTo) {
 function translateText() {
     console.log("Start");
 
-    let paragraphs = document.getElementsByTagName("p");
+    if (document.getElementsByClassName("avac")) {
+        removeElementsByClass("avac")
+    }
 
+    let paragraphs = document.getElementsByTagName("p");
     for (let i = 0; i < paragraphs.length; i++) {
         let text = paragraphs[i].textContent;
-
         for (let key in myDictionary) {
             if (myDictionary.hasOwnProperty(key)) {
                 text = text.replace(" " + key + " ",
-                    ` ${key} [ <span style="color: green">
-                                  <i>${myDictionary[key]}</i>
-                              </span>
-                             ] `);
+                    ` ${key} <span class="avac" style="color: green">
+                                 [ <i>${myDictionary[key]}</i> ]
+                             </span>`);
             }
         }
 
@@ -103,3 +93,15 @@ function yandexTranslate() {
     }
 }
 // -------------------------------------------------------------------------
+function removeElementsByClass(className) {
+    var elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+String.prototype.replaceAll = function (strReplace, strWith) {
+    // See http://stackoverflow.com/a/3561711/556609
+    var esc = strReplace.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    var reg = new RegExp(esc, 'ig');
+    return this.replace(reg, strWith);
+};

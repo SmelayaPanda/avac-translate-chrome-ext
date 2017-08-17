@@ -7,48 +7,37 @@
     <script src="../js/popup.js"></script>
 </head>
 <body>
+
+
+
 <div>
-    <span>Translate</span><br>
     <select id="langFrom" title="Lang from">
         <option value="eng"> English</option>
         <option value="rus"> Russian</option>
         <option value="deu"> Deutsch</option>
         <option value="fra"> France</option>
-        <option value="ita"> Italian </option>
-        <option value="spa"> Spanish </option>
+        <option value="ita"> Italian</option>
+        <option value="spa"> Spanish</option>
     </select>
-    <span> to </span>
+    <span> >> </span>
     <select id="langTo" title="Lang to">
         <option value="eng"> English</option>
         <option value="rus"> Russian</option>
         <option value="deu"> Deutsch</option>
         <option value="fra"> France</option>
-        <option value="ita"> Italian </option>
-        <option value="spa"> Spanish </option>
+        <option value="ita"> Italian</option>
+        <option value="spa"> Spanish</option>
     </select>
     <br>
 </div>
 <hr>
-<div id="buttons">
-    <button type="button" id="btn_1"> Advanced</button>
-    <br>
-    <button type="button" id="btn_2"> Upper-int</button>
-    <br>
-    <button type="button" id="btn_3"> Intermediate</button>
-    <br>
-    <button type="button" id="btn_4"> Elementary</button>
-    <br>
-    <button type="button" id="btn_5"> Beginner</button>
-    <br>
 
-    <span><pre><b>      Avac Ex      </b></pre></span>
+<input type="range" id="AvacLevel" value="0">
+
+<div id="buttons">
+    <button type="button" id="translate_btn" data-label="do it!">do it!</button>
+    <br>
 </div>
 <hr>
-<div id="info">
-    Click on word
-</div>
-<div id="dictionary">
-
-</div>
 </body>
 </html>

@@ -1,41 +1,45 @@
-function buttonHandler(buttonName) {
-    let select_1 = document.getElementById('langFrom');
-    let selected_1 = select_1.options[select_1.selectedIndex].value;
+window.onload = function () {
 
-    let select_2 = document.getElementById('langTo');
-    let selected_2 = select_2.options[select_2.selectedIndex].value;
+    let btn_1 = document.getElementById("translate_btn");
+    btn_1.addEventListener('click', function () {
 
-    // Send message to content.js
-    chrome.tabs.query({}, tabs => {
-        tabs.forEach(tab => {
-            chrome.tabs.sendMessage(tab.id, buttonName + " " + selected_1 + " " + selected_2);
+        let select_1 = document.getElementById('langFrom');
+        let selected_1 = select_1.options[select_1.selectedIndex].value;
+
+        let select_2 = document.getElementById('langTo');
+        let selected_2 = select_2.options[select_2.selectedIndex].value;
+
+        let lvl = document.getElementById("AvacLevel").value;
+        // Send message to content.js
+        chrome.tabs.query({}, tabs => {
+            tabs.forEach(tab => {
+                chrome.tabs.sendMessage(tab.id,
+                    "translate_btn" + " " +
+                    lvl + " " +
+                    selected_1 + " " +
+                    selected_2 + " ");
+            });
         });
     });
-}
-window.onload = function () {
-// -------------------------------------------------------------------------
-    let btn_1 = document.getElementById("btn_1");
-    btn_1.addEventListener('click', function () {
-        buttonHandler("btn_1");
-    });
-// -------------------------------------------------------------------------
-    let btn_2 = document.getElementById("btn_2");
-    btn_2.addEventListener('click', function () {
-        buttonHandler("btn_2");
-    });
-// -------------------------------------------------------------------------
-    let btn_3 = document.getElementById("btn_3");
-    btn_3.addEventListener('click', function () {
-        buttonHandler("btn_3");
-    });
-// -------------------------------------------------------------------------
-    let btn_4 = document.getElementById("btn_4");
-    btn_4.addEventListener('click', function () {
-        buttonHandler("btn_4");
-    });
-// -------------------------------------------------------------------------
-    let btn_5 = document.getElementById("btn_5");
-    btn_5.addEventListener('click', function () {
-        buttonHandler("btn_5");
-    });
+
+
+
+    var loading = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.target.classList.add('loading');
+        e.target.setAttribute('disabled','disabled');
+        setTimeout(function(){
+            e.target.classList.remove('loading');
+            e.target.removeAttribute('disabled');
+        },1500);
+    };
+
+    var btns = document.querySelectorAll('button');
+    for (var i=btns.length-1;i>=0;i--) {
+        btns[i].addEventListener('click',loading);
+    }
+// Lang buttons
+
+
 };
