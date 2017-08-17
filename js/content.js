@@ -6,7 +6,7 @@ const url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 window.onload = function () {
     chrome.runtime.onMessage.addListener(msgObj => {
 
-        var parts = msgObj.split(" ");
+        let parts = msgObj.split(" ");
         if (parts[0] === "btn_1") {
             avacPost("24000", parts[1], parts[2]);
         }
