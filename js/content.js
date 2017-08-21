@@ -17,7 +17,7 @@ window.onload = function () {
 // -------------------------------------------------------------------------
 function avacPost(level, langFrom, langTo) {
 
-    const url = "http://localhost:8080/avac";
+    const url = "http://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
         "goto=" + document.URL + "&" +
