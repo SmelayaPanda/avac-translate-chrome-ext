@@ -17,7 +17,7 @@ window.onload = function () {
 // -------------------------------------------------------------------------
 function avacPost(level, langFrom, langTo) {
 
-    const url = "http://panda.jelastic.regruhosting.ru/avac/";
+    const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
         "goto=" + document.URL + "&" +
@@ -31,12 +31,13 @@ function avacPost(level, langFrom, langTo) {
 
     req.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
+            //noinspection JSUndeclaredVariable
             myDictionary = JSON.parse(this.responseText);
             translateText.call(this);
         }
     };
     req.send(params);
-};
+}
 
 // -------------------------------------------------------------------------
 function translateText() {
@@ -71,6 +72,7 @@ function yandexTranslate() {
         //langAPI = document.querySelector('#lang').value;
         langAPI = "ru";
 
+    //noinspection JSUndeclaredVariable
     data = "key=" + keyAPI + "&text=" + textAPI + "&lang=" + langAPI;
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -94,14 +96,14 @@ function yandexTranslate() {
 }
 // -------------------------------------------------------------------------
 function removeElementsByClass(className) {
-    var elements = document.getElementsByClassName(className);
+    let elements = document.getElementsByClassName( className );
     while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
 String.prototype.replaceAll = function (strReplace, strWith) {
     // See http://stackoverflow.com/a/3561711/556609
-    var esc = strReplace.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    var reg = new RegExp(esc, 'ig');
+    let esc = strReplace.replace( /[-\/\\^$*+?.()|[\]{}]/g, '\\$&' );
+    let reg = new RegExp( esc, 'ig' );
     return this.replace(reg, strWith);
 };

@@ -18,8 +18,12 @@
         <option value="fra"> France</option>
         <option value="ita"> Italian</option>
         <option value="spa"> Spanish</option>
+        <option value="tur"> Turcish</option>
+        <option value="pol"> Polish</option>
+        <option value="swd"> Swedish</option>
+        <option value="gre"> Greek</option>
     </select>
-    <span> &#10145; </span>
+    <img src="../img/play.png" style="width:14px;height:14px; margin-bottom: -2px">
     <select id="langTo" title="Lang to">
         <option value="eng"> English</option>
         <option value="rus"> Russian</option>
@@ -27,12 +31,20 @@
         <option value="fra"> France</option>
         <option value="ita"> Italian</option>
         <option value="spa"> Spanish</option>
+        <option value="tur"> Turcish</option>
+        <option value="pol"> Polish</option>
+        <option value="swd"> Swedish</option>
+        <option value="gre"> Greek</option>
     </select>
     <br>
 </div>
 <hr>
 
-<input type="range" id="AvacLevel" value="0" title="Language level">
+
+<form id="rangeForm">
+    <output id="rangeValue">BEGINNER</output>
+    <input type="range" id="avacLevel" value="0" title="Language level">
+</form>
 
 <div id="buttons">
     <button type="button" id="translate_btn" data-label="do it!">do it!</button>
