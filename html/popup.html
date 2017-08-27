@@ -10,7 +10,7 @@
 <body>
 
 
-<div>
+<div id="avacPopup">
     <select id="langFrom" title="Lang from">
         <option value="eng"> English</option>
         <option value="rus"> Russian</option>
@@ -37,19 +37,19 @@
         <option value="gre"> Greek</option>
     </select>
     <br>
+    <hr>
+
+    <form id="rangeForm">
+        <output id="rangeValue">BEGINNER</output>
+        <input type="range" id="avacLevel" value="0" title="Language level">
+    </form>
+
+    <div id="buttons">
+        <button type="button" id="translate_btn" data-label="do it!">do it!</button>
+        <br>
+    </div>
+    <hr>
 </div>
-<hr>
 
-
-<form id="rangeForm">
-    <output id="rangeValue">BEGINNER</output>
-    <input type="range" id="avacLevel" value="0" title="Language level">
-</form>
-
-<div id="buttons">
-    <button type="button" id="translate_btn" data-label="do it!">do it!</button>
-    <br>
-</div>
-<hr>
 </body>
 </html>
