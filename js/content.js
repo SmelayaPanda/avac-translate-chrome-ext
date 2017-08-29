@@ -31,8 +31,8 @@ function avacPost(level, langFrom, langTo) {
 
     req.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            //noinspection JSUndeclaredVariable
             myDictionary = JSON.parse(this.responseText);
+            console.log(myDictionary);
             translateText.call(this);
         }
     };

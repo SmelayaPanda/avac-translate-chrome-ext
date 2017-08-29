@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Avac",
-  "version": "1.0.007",
+  "version": "1.0.008",
   "icons": {
     "64": "img/64.png"
   },
@@ -21,12 +21,12 @@
   "permissions": [
     "tabs",
     "activeTab",
-    "http://SmelayaPandaServer.com/*"
+    "https://panda.jelastic.regruhosting.ru/*"
   ],
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "browser_action": {
     "default_title": "Air Article Translator",
-    "default_icon": "img/24.png",
+    "default_icon": "img/64.png",
     "default_popup": "html/popup.html",
     "options_page": "html/options.html"
   }
