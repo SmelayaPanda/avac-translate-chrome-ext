@@ -19,7 +19,7 @@
     }
   ],
   "permissions": [
-    "tabs",
+    /*"tabs",*/
     "activeTab",
     "https://panda.jelastic.regruhosting.ru/*"
   ],
