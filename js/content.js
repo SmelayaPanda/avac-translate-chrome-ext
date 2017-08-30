@@ -63,36 +63,35 @@ function translateText()
                 .replace( /[^\w\s]|_/g, "" )
                 .replace( /\s+/g, " " )
                 .split( " " );
-        // Find upperCased words
 
-        let upperCasedWords = [];
         for( let w in words )
         {
-            if( words[w].toUpperCase().charAt(0) !== words[w].charAt(0) )
-            {
-                upperCasedWords.push( words[w] );
-            }
+            text = text.replaceAll( words[w],
+                `<span class="avac ${words[w].toLowerCase()}">${words[w]}</span>` )
         }
         // Replace from server dictionary
-        for( let key in myDictionary )
+
+
+    //    paragraphs[i].innerHTML = text;
+    }
+
+    let classWords = [];
+    for( let key in myDictionary )
+    {
+        classWords = document.getElementsByClassName(key);
+
+        for( cw in classWords )
         {
-            if( myDictionary.hasOwnProperty( key ) )
-            {
-                text = text
-                        .toLowerCase()
-                        .replace( new RegExp( " " + key + " ", 'gi' ),
-                                  ` ${key} <span id= "${i}" class="avac" style="color: green"> [ <i>${myDictionary[key]}</i> ] </span>` );
-            }
+            classWords[cw].innerText = classWords[cw].innerText + " [ "+ myDictionary[key] + " ] ";
         }
-        // Replace initially upperCased words
-        if( upperCasedWords !== null )
-        {
-            for( let upp in upperCasedWords )
-            {
-                text.replaceAll( upp.toLowerCase(), upp.capitalize() )
-            }
-        }
-        paragraphs[i].innerHTML = text;
+
+        // if( myDictionary.hasOwnProperty( key ) )
+        // {
+        //     text = text
+        //             .toLowerCase()
+        //             .replace( new RegExp( " " + key + " ", 'gi' ),
+        //                       ` ${key} <span id= "${i}" class="avac" style="color: green"> [ <i>${myDictionary[key]}</i> ] </span>` );
+        // }
     }
     console.log( "Complete" );
 }
