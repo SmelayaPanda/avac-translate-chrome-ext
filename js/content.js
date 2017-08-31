@@ -50,9 +50,9 @@ function translateText()
 {
     console.log( "Start" );
 
-    if( document.getElementsByClassName( "avac" ) )
+    if( document.getElementsByClassName( "avacWord" ) )
     {
-        removeElementsByClass( "avac" )
+        removeElementsByClass( "avacWord" )
     }
 
     let paragraphs = document.getElementsByTagName( "p" );
@@ -66,32 +66,22 @@ function translateText()
 
         for( let w in words )
         {
-            text = text.replaceAll( words[w],
-                `<span class="avac ${words[w].toLowerCase()}">${words[w]}</span>` )
+             text = text.replace( " " + words[w] + " ",
+                `<span class="avac ${words[w].toLowerCase()}"> ${words[w]} </span>` );
         }
-        // Replace from server dictionary
-
-
-    //    paragraphs[i].innerHTML = text;
+        paragraphs[i].innerHTML = text;
     }
 
-    let classWords = [];
+    let classWords;
     for( let key in myDictionary )
     {
         classWords = document.getElementsByClassName(key);
 
         for( cw in classWords )
         {
-            classWords[cw].innerText = classWords[cw].innerText + " [ "+ myDictionary[key] + " ] ";
+            classWords[cw].innerHTML = `${classWords[cw].innerText} <span class='avacWord'> [ ${myDictionary[key]} ] </span> `;
         }
 
-        // if( myDictionary.hasOwnProperty( key ) )
-        // {
-        //     text = text
-        //             .toLowerCase()
-        //             .replace( new RegExp( " " + key + " ", 'gi' ),
-        //                       ` ${key} <span id= "${i}" class="avac" style="color: green"> [ <i>${myDictionary[key]}</i> ] </span>` );
-        // }
     }
     console.log( "Complete" );
 }
