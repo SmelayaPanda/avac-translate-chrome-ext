@@ -43,7 +43,7 @@ select#langFrom, select#langTo {
 /* -------------------------------------------------------------
    Translate button
 */
-button {
+button#translate_btn {
     position: relative;
     border: 0;
     margin: 0;
@@ -58,16 +58,16 @@ button {
     -webkit-touch-callout: none;
 }
 
-button,
-button:after,
-button:before {
+button#translate_btn,
+button#translate_btn:after,
+button#translate_btn:before {
     padding: .6875rem 2rem;
     -webkit-transition: -webkit-transform 0.75s, background-color .125s;
     transform-style: preserve-3d;
 }
 
-button:after,
-button:before {
+button#translate_btn:after ,
+button#translate_btn:before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -78,25 +78,25 @@ button:before {
 
 }
 
-button:before {
+button#translate_btn:before {
     z-index: 2;
     color: #fff;
     background-color: #3e87ec;
     content: attr(data-label);
 }
 
-button:after {
+button#translate_btn:after {
     z-index: 1;
     background: #999 url(../img/download.gif) no-repeat center center;
     -webkit-transform: rotateX(180deg);
     content: '';
 }
 
-button:active:before {
+button#translate_btn:active:before {
     background-color: #3571c8;
 }
 
-button.loading {
+button#translate_btn.loading {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
 }
@@ -104,17 +104,17 @@ button.loading {
 /* -------------------------------------------------------------
    Input range
 */
-input[type=range] {
+input#avacLevel[type=range] {
     -webkit-appearance: none;
     margin: 18px 0;
     width: 100%;
 }
 
-input[type=range]:focus {
+input#avacLevel[type=range]:focus {
     outline: none;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input#avacLevel[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
     cursor: pointer;
@@ -125,7 +125,7 @@ input[type=range]::-webkit-slider-runnable-track {
     border: 0px solid #010101;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input#avacLevel[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #000000;
     height: 36px;
@@ -137,7 +137,7 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: -14px;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input#avacLevel[type=range]:focus::-webkit-slider-runnable-track {
     background: #3e87ec;
 }
 

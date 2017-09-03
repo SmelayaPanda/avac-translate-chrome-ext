@@ -48,7 +48,7 @@ function avacPost( level, langFrom, langTo )
 // -------------------------------------------------------------------------
 function translateText()
 {
-    console.log( "Start" );
+    console.log( "Start translating " );
 
     if( document.getElementsByClassName( "avacWord" ) )
     {
@@ -60,8 +60,7 @@ function translateText()
     {
         let text = paragraphs[i].textContent;
         let words = text
-                .replace( /[^\w\s]|_/g, "" )
-                .replace( /\s+/g, " " )
+                .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
                 .split( " " );
 
         for( let w in words )
