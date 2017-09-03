@@ -1,64 +1,92 @@
 window.onload = function ()
 {
+    /** ------------
+     * HTML elements
+     */
+    let langFromBox = document.getElementById( 'langFrom' );
+    let langToBox = document.getElementById( 'langTo' );
+    let rangeInput = document.getElementById( 'avacLevel' );
+    let displayedLevel = document.getElementById( "rangeValue" );
+    let translate_btn = document.getElementById( "translate_btn" );
 
-    let outputLvl = document.getElementById( "rangeValue" );
-    let avacLevel = document.getElementById( "avacLevel" );
-
-    avacLevel.addEventListener( 'input', function ()
+    /** ---------------------------
+     * Setting Chrome storage value
+     */
+    langFromBox.onchange = function ()
     {
-        if( this.value < 20 && outputLvl.innerHTML !== "BEGINNER" )
+        chrome.storage.sync.set( {'langFrom': langFromBox.value} );
+    };
+    langToBox.onchange = function ()
+    {
+        chrome.storage.sync.set( {'langTo': langToBox.value} );
+    };
+    rangeInput.onchange = function ()
+    {
+        chrome.storage.sync.set( {'rangeInput': rangeInput.value} );
+    };
+    /** ---------------------------
+     * Getting Chrome storage value
+     */
+    chrome.storage.sync.get( 'langFrom', function ( obj )
+    {
+        langFromBox.value = obj.langFrom;
+    } );
+    chrome.storage.sync.get( 'langTo', function ( obj )
+    {
+        langToBox.value = obj.langTo;
+    } );
+    chrome.storage.sync.get( 'rangeInput', function ( obj )
+    {
+        rangeInput.value = obj.rangeInput;
+    } );
+    /** ---------------------------------------------------- */
+    rangeInput.addEventListener( 'input', function ()
+    {
+        if( this.value < 20 && displayedLevel.innerHTML !== "BEGINNER" )
         {
-            fadeinText( outputLvl, "BEGINNER" );
+            fadeinText( displayedLevel, "BEGINNER" );
         }
-        else if( this.value >= 20 && this.value < 40 && outputLvl.innerHTML !== "PRE INTERMEDIATE" )
+        else if( this.value >= 20 && this.value < 40 && displayedLevel.innerHTML !== "PRE INTERMEDIATE" )
         {
-            fadeinText( outputLvl, "PRE INTERMEDIATE" );
+            fadeinText( displayedLevel, "PRE INTERMEDIATE" );
         }
-        else if( this.value >= 40 && this.value < 60 && outputLvl.innerHTML !== "INTERMEDIATE" )
+        else if( this.value >= 40 && this.value < 60 && displayedLevel.innerHTML !== "INTERMEDIATE" )
         {
-            fadeinText( outputLvl, "INTERMEDIATE" );
+            fadeinText( displayedLevel, "INTERMEDIATE" );
         }
-        else if( this.value >= 60 && this.value < 80 && outputLvl.innerHTML !== "UPPER INTERMEDIATE")
+        else if( this.value >= 60 && this.value < 80 && displayedLevel.innerHTML !== "UPPER INTERMEDIATE" )
         {
-            fadeinText( outputLvl, "UPPER INTERMEDIATE" );
+            fadeinText( displayedLevel, "UPPER INTERMEDIATE" );
         }
-        else if( this.value >= 80 && outputLvl.innerHTML !== "ADVANCED" )
+        else if( this.value >= 80 && displayedLevel.innerHTML !== "ADVANCED" )
         {
-            fadeinText( outputLvl, "ADVANCED" );
+            fadeinText( displayedLevel, "ADVANCED" );
         }
         else
         {
 
         }
     } );
-
-    let btn_1 = document.getElementById( "translate_btn" );
-    btn_1.addEventListener( 'click', function ()
+    /** ---------------------------------------------------- */
+    translate_btn.addEventListener( 'click', function ()
     {
-
-        let select_1 = document.getElementById( 'langFrom' );
-        let selected_1 = select_1.options[select_1.selectedIndex].value;
-
-        let select_2 = document.getElementById( 'langTo' );
-        let selected_2 = select_2.options[select_2.selectedIndex].value;
-
-        let lvl = document.getElementById( "avacLevel" ).value;
-        // Send message to content.js
-        chrome.tabs.query( {}, tabs =>
-        {
-            tabs.forEach( tab =>
-                          {
-                              chrome.tabs.sendMessage( tab.id,
-                                                       "translate_btn" + " " +
-                                                       lvl + " " +
-                                                       selected_1 + " " +
-                                                       selected_2 + " " );
-                          } );
-        } );
+        // Sending message to content.js
+        chrome.tabs.query( {
+                               active: true,
+                               lastFocusedWindow: true
+                           }, function ( tabs )
+                           {
+                               // and use that tab to fill in out title and url
+                               let obj = {};
+                               obj.level = rangeInput.value;
+                               obj.langFrom = langFromBox.value;
+                               obj.langTo = langToBox.value;
+                               chrome.tabs.sendMessage( tabs[0].id, JSON.stringify( obj ) );
+                           } );
     } );
-
-
-    // Do it button
+    /** ---------------------------
+     * "do it" button customisation
+     */
     let loading = function ( e )
     {
         e.preventDefault();
@@ -77,11 +105,8 @@ window.onload = function ()
     {
         btns[i].addEventListener( 'click', loading );
     }
-// Lang buttons
-
-
 };
-
+/** ------------------------------------------------------- */
 function fadeinText( element, newValue )
 {
     element.classList.add( 'hide' );
@@ -94,3 +119,4 @@ function fadeinText( element, newValue )
                     element.classList.remove( 'hide' );
                 }, 500 );
 }
+/** ------------------------------------------------------- */

@@ -1,26 +1,18 @@
-// -------------------------------------------------------------------------
-const url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
-        keyAPI = "trnsl.1.1.20130922T110455Z.4a9208e68c61a760.f819c1db302ba637c2bea1befa4db9f784e9fbb8";
-// -------------------------------------------------------------------------
-// Listen popup.js
+/** --------------
+ * Listen popup.js
+ */
 window.onload = function ()
 {
-    chrome.runtime.onMessage.addListener( msgObj =>
-                                          {
-
-                                              let parts = msgObj.split( " " );
-                                              if( parts[0] === "translate_btn" )
-                                              {
-                                                  //avacPost(level, langFrom, langTo)
-                                                  avacPost( parts[1], parts[2], parts[3] );
-                                              }
-                                          } );
+    chrome.runtime.onMessage.addListener(
+            msgObj =>
+            {
+                let params = JSON.parse( msgObj );
+                avacPost( params.level, params.langFrom, params.langTo );
+            } );
 };
-
-// -------------------------------------------------------------------------
+/** ------------------------------------------------------------------ */
 function avacPost( level, langFrom, langTo )
 {
-
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
@@ -44,29 +36,26 @@ function avacPost( level, langFrom, langTo )
     };
     req.send( params );
 }
-
-// -------------------------------------------------------------------------
+/** ------------------------------------------------------------------ */
 function translateText()
 {
-    console.log( "Start translating " );
-
+    console.log( "Start translating ... " );
     if( document.getElementsByClassName( "avacWord" ) )
     {
         removeElementsByClass( "avacWord" )
     }
-
     let paragraphs = document.getElementsByTagName( "p" );
     for( let i = 0; i < paragraphs.length; i++ )
     {
         let text = paragraphs[i].textContent;
         let words = text
-                .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+                .replace( /[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "" )
                 .split( " " );
 
         for( let w in words )
         {
-             text = text.replace( " " + words[w] + " ",
-                `<span class="avac ${words[w].toLowerCase()}"> ${words[w]} </span>` );
+            text = text.replace( " " + words[w] + " ",
+                                 `<span class="avac ${words[w].toLowerCase()}"> ${words[w]} </span>` );
         }
         paragraphs[i].innerHTML = text;
     }
@@ -74,52 +63,15 @@ function translateText()
     let classWords;
     for( let key in myDictionary )
     {
-        classWords = document.getElementsByClassName(key);
-
+        classWords = document.getElementsByClassName( key );
         for( cw in classWords )
         {
             classWords[cw].innerHTML = `${classWords[cw].innerText} <span class='avacWord'> [ ${myDictionary[key]} ] </span> `;
         }
-
     }
-    console.log( "Complete" );
+    console.log( "Complete!" );
 }
-// -------------------------------------------------------------------------
-function yandexTranslate()
-{
-
-    let xhr = new XMLHttpRequest(),
-            //textAPI = document.querySelector('#source').value,
-            textAPI = "Hello",
-            //langAPI = document.querySelector('#lang').value;
-            langAPI = "ru";
-
-    //noinspection JSUndeclaredVariable
-    data = "key=" + keyAPI + "&text=" + textAPI + "&lang=" + langAPI;
-    xhr.open( "POST", url, true );
-    xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
-    xhr.send( data );
-    xhr.onreadystatechange = function ()
-    {
-        if( this.readyState === 4 && this.status === 200 )
-        {
-            let res = this.responseText;
-            let json = JSON.parse( res );
-            if( json.code === 200 )
-            {
-                return json.text[0];
-                //document.querySelector('#output').innerHTML = json.text[0];
-            }
-            else
-            {
-
-                console.log( "Error code:" + json.code );
-                //document.querySelector('#output').innerHTML = "Error Code: " + json.code;
-            }
-        }
-    }
-}
-// -------------------------------------------------------------------------
+/** ------------------------------------------------------------------ */
 function removeElementsByClass( className )
 {
     let elements = document.getElementsByClassName( className );
@@ -128,18 +80,27 @@ function removeElementsByClass( className )
         elements[0].parentNode.removeChild( elements[0] );
     }
 }
-String.prototype.replaceAll = function ( strReplace, strWith )
-{
-    // See http://stackoverflow.com/a/3561711/556609
-    let esc = strReplace.replace( /[-\/\\^$*+?.()|[\]{}]/g, '\\$&' );
-    let reg = new RegExp( esc, 'ig' );
-    return this.replace( reg, strWith );
-};
+/** ------------------------------------------------------------------ */
 
-String.prototype.capitalize = function ()
-{
-    return this.replace( /(?:^|\s)\S/g, function ( a )
-    {
-        return a.toUpperCase();
-    } );
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
