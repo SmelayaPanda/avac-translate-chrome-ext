@@ -66,7 +66,7 @@ button#translate_btn:before {
     transform-style: preserve-3d;
 }
 
-button#translate_btn:after ,
+button#translate_btn:after,
 button#translate_btn:before {
     position: absolute;
     top: 0;
@@ -75,7 +75,6 @@ button#translate_btn:before {
     right: 0;
     border-radius: .25rem;
     backface-visibility: hidden;
-
 }
 
 button#translate_btn:before {
@@ -106,7 +105,7 @@ button#translate_btn.loading {
 */
 input#avacLevel[type=range] {
     -webkit-appearance: none;
-    margin: 18px 0;
+    margin: 12px 0 20px;
     width: 100%;
 }
 
@@ -141,4 +140,33 @@ input#avacLevel[type=range]:focus::-webkit-slider-runnable-track {
     background: #3e87ec;
 }
 
+/* ------------------------------------------------------------- */
+#underRangeContainer {
+    width: 300px;
+    display: flex;
+    margin: 8px;
+}
 
+#levelInfo {
+    width: 60%;
+    margin-right: auto;
+}
+
+#safeModeContainer {
+    width: 40%;
+    margin-left: auto;
+    background-color: #3e87ec;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------------------- */
+#safeTranslateMode {
+    width: 16px;
+    height: 16px;
+}
+
+#safeModeContainer > label {
+    position: relative;
+    top: -3px;
+}

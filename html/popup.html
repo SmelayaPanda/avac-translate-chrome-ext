@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Your air translator</title>
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <link href="../css/popup.css" rel="stylesheet" type="text/css"/>
     <script src="../js/popup.js" charset="utf-8"></script>
 </head>
@@ -38,11 +38,19 @@
     </select>
     <br>
     <hr>
+    <div id="underRangeContainer">
+        <div id="levelInfo">
+            <output id="rangeValue">BEGINNER</output>
+        </div>
 
-    <form id="rangeForm">
-        <output id="rangeValue">BEGINNER</output>
-        <input type="range" id="avacLevel" value="0" title="Language level">
-    </form>
+        <div id="safeModeContainer">
+            <input type="checkbox" id="safeTranslateMode">
+            <label for="safeTranslateMode" title="Translate using last parameters after page loading"> Onload-mode </label>
+        </div>
+    </div>
+
+    <input type="range" id="avacLevel" value="0" title="Language level">
+
 
     <div id="buttons">
         <button type="button" id="translate_btn" data-label="do it!">do it!</button>

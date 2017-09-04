@@ -8,6 +8,7 @@ window.onload = function ()
     let rangeInput = document.getElementById( 'avacLevel' );
     let displayedLevel = document.getElementById( "rangeValue" );
     let translate_btn = document.getElementById( "translate_btn" );
+    let onLoadCheckBox = document.getElementById( "safeTranslateMode" );
 
     /** ---------------------------
      * Setting Chrome storage value
@@ -23,6 +24,18 @@ window.onload = function ()
     rangeInput.onchange = function ()
     {
         chrome.storage.sync.set( {'rangeInput': rangeInput.value} );
+        chrome.storage.sync.set( {'displayedLevel': displayedLevel.innerText} );
+    };
+    onLoadCheckBox.onchange = function ()
+    {
+        if( onLoadCheckBox.checked )
+        {
+            chrome.storage.sync.set( {'onLoadCheckBox': true} );
+        }
+        else
+        {
+            chrome.storage.sync.set( {'onLoadCheckBox': false} );
+        }
     };
     /** ---------------------------
      * Getting Chrome storage value
@@ -38,6 +51,17 @@ window.onload = function ()
     chrome.storage.sync.get( 'rangeInput', function ( obj )
     {
         rangeInput.value = obj.rangeInput;
+    } );
+    chrome.storage.sync.get( 'displayedLevel', function ( obj )
+    {
+        displayedLevel.innerText = obj.displayedLevel;
+    } );
+    chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
+    {
+        if( obj.onLoadCheckBox )
+        {
+            onLoadCheckBox.checked = true;
+        }
     } );
     /** ---------------------------------------------------- */
     rangeInput.addEventListener( 'input', function ()
@@ -62,15 +86,12 @@ window.onload = function ()
         {
             fadeinText( displayedLevel, "ADVANCED" );
         }
-        else
-        {
-
-        }
     } );
-    /** ---------------------------------------------------- */
+    /** ---------------------------
+     * Sending message to content.js
+     */
     translate_btn.addEventListener( 'click', function ()
     {
-        // Sending message to content.js
         chrome.tabs.query( {
                                active: true,
                                lastFocusedWindow: true
