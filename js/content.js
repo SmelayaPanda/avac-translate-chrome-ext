@@ -49,13 +49,21 @@ function translateText()
     {
         let text = paragraphs[i].textContent;
         let words = text
-                .replace( /[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "" )
+                .replace( /[.,\/#!$%\^&\*;:{}=\-_`~()]/g, " " )
+                .replace( /\s+/g, " " )
                 .split( " " );
 
         for( let w in words )
         {
-            text = text.replace( " " + words[w] + " ",
-                                 `<span class="avac ${words[w].toLowerCase()}"> ${words[w]} </span>` );
+            text = text.replace( text.charAt(0), " " + text.charAt(0) ); // Begin of the paragraph
+            text = text
+                    .replace( /\s+/g, "  " )
+                    .replace( " " + words[w] + " ", `<span class="avac ${words[w].toLowerCase()}"> ${words[w]}  </span>` )
+                    .replace( " " + words[w] + ",", `<span class="avac ${words[w].toLowerCase()}"> ${words[w]}, </span>` )
+                    .replace( " " + words[w] + ".", `<span class="avac ${words[w].toLowerCase()}"> ${words[w]}. </span>` )
+                    .replace( " " + words[w] + "!", `<span class="avac ${words[w].toLowerCase()}"> ${words[w]}! </span>` )
+                    .replace( " " + words[w] + "?", `<span class="avac ${words[w].toLowerCase()}"> ${words[w]}? </span>` )
+            ;
         }
         paragraphs[i].innerHTML = text;
     }
