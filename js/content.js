@@ -1,40 +1,37 @@
 /** --------------
  * Listen popup.js
  */
-window.onload = function ()
-{
-    chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
-    {
-        console.log(obj);
-        if( obj.onLoadCheckBox )
-        {
-            let level;
-            let langFrom;
-            let langTo;
 
-            chrome.storage.sync.get( 'rangeInput', function ( obj )
+chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
+{
+    if( obj.onLoadCheckBox )
+    {
+        let level;
+        let langFrom;
+        let langTo;
+
+        chrome.storage.sync.get( 'rangeInput', function ( obj )
+        {
+            level = obj.rangeInput;
+            chrome.storage.sync.get( 'langFrom', function ( obj )
             {
-                level = obj.rangeInput;
-                chrome.storage.sync.get( 'langFrom', function ( obj )
+                langFrom = obj.langFrom;
+                chrome.storage.sync.get( 'langTo', function ( obj )
                 {
-                    langFrom = obj.langFrom;
-                    chrome.storage.sync.get( 'langTo', function ( obj )
-                    {
-                        langTo = obj.langTo;
-                        avacPost( level, langFrom, langTo );
-                    } );
+                    langTo = obj.langTo;
+                    avacPost( level, langFrom, langTo );
                 } );
             } );
-        }
-    } );
+        } );
+    }
+} );
 
-    chrome.runtime.onMessage.addListener(
-            msgObj =>
-            {
-                let params = JSON.parse( msgObj );
-                avacPost( params.level, params.langFrom, params.langTo );
-            } );
-};
+chrome.runtime.onMessage.addListener(
+        msgObj =>
+        {
+            let params = JSON.parse( msgObj );
+            avacPost( params.level, params.langFrom, params.langTo );
+        } );
 /** ------------------------------------------------------------------ */
 function avacPost( level, langFrom, langTo )
 {
@@ -55,43 +52,51 @@ function avacPost( level, langFrom, langTo )
         if( this.readyState === 4 && this.status === 200 )
         {
             myDictionary = JSON.parse( this.responseText );
-            console.log( myDictionary );
-            translateText.call( this );
+            console.log( " Dictionary size = " + myDictionary.size );
+            if( document.readyState === 'complete' )
+            {
+                translateText( myDictionary );
+            }
         }
     };
     req.send( params );
 }
 /** ------------------------------------------------------------------ */
-function translateText()
+function translateText( myDictionary )
 {
     console.log( "Start translating ... " );
     if( document.getElementsByClassName( "avacWord" ) )
     {
         removeElementsByClass( "avacWord" )
     }
+    let words;
+    let text;
     let paragraphs = document.getElementsByTagName( "p" );
     for( let i = 0; i < paragraphs.length; i++ )
     {
-        let text = paragraphs[i].textContent;
-        let words = text
-                .replace( /[.,\/#!$%\^&\*;:{}=\-_`~()]/g, " " )
-                .replace( /\s+/g, " " )
-                .split( " " );
+        text = paragraphs[i].textContent;
+
+        text = text
+                .replace( text.charAt( 0 ), ' ' + text.charAt( 0 ) ) // Begin of the paragraph
+                .replace( text.charAt( text.length - 1 ), text.charAt( text.length - 1 ) + ' ' )
+                .replace( /\./g, ' .' )
+                .replace( /,/g, ' ,' )
+                .replace( /:/g, ' :' )
+                .replace( /;/g, ' ;' )
+                .replace( /!/g, ' !' )
+                .replace( /\?/g, ' ?' )
+                .replace( /\(/g, ' ;' )
+                .replace( /\)/g, ' ;' )
+                .replace( /\s+/g, '  ' );
+
+        words = text
+                .replace( /[.,!;:\?()]/g, " " )
+                .replace( /\s+/g, ' ' )
+                .split( ' ' );
 
         for( let w in words )
         {
-            text = text
-                    .replace( /\./g, ' .' )
-                    .replace( /\?/g, ' ?' )
-                    .replace( /,/g, ' ,' )
-                    .replace( /!/g, ' !' )
-                    .replace( /:/g, ' :' )
-                    .replace( /;/g, ' ;' )
-                    .replace( text.charAt( 0 ), " " + text.charAt( 0 ) ) // Begin of the paragraph
-                    .replace( text.charAt( text.length - 1 ), text.charAt( text.length - 1 ) + " " ) // End of the paragraph
-                    .replace( /\s+/g, '  ' )
-                    .replace( ' ' + words[w] + ' ', `<span class="${words[w].toLowerCase()}"> ${words[w]} </span>` )
-            ;
+            text = text.replace( ' ' + words[w] + ' ', `<span class="___${words[w].toLowerCase()}"> ${words[w]} </span>` );
         }
         paragraphs[i].innerHTML = text;
     }
@@ -99,10 +104,10 @@ function translateText()
     let classWords;
     for( let key in myDictionary )
     {
-        classWords = document.getElementsByClassName( key );
+        classWords = document.getElementsByClassName( "___" + key );
         for( cw in classWords )
         {
-            classWords[cw].innerHTML = `${classWords[cw].innerText}<span class='avacWord'> [&nbsp${myDictionary[key]}&nbsp] </span>`;
+            classWords[cw].innerHTML = `${classWords[cw].innerText}<span class='avacWord'> [&nbsp${myDictionary[key]}&nbsp] </span> `;
         }
     }
     console.log( "Complete!" );
