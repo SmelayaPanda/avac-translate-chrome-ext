@@ -83,6 +83,8 @@ function avacPost( level, langFrom, langTo )
 function translateText( myDictionary )
 {
     let avacPageFrame = document.getElementById( 'avacSourcePage' ).contentWindow.document;
+    //let avacNavBar = document.getElementById( 'avacNavBar' ).contentWindow.document;
+
 
     let hrefs = avacPageFrame.getElementsByTagName( "a" );
     for( let i = 0; i < hrefs.length; i++ )
@@ -133,9 +135,33 @@ function translateText( myDictionary )
         classWords = avacPageFrame.getElementsByClassName( "___" + key );
         for( let cw in classWords )
         {
-            classWords[cw].innerHTML = `${classWords[cw].innerText}<span class='avacWord' style="color: green"> [&nbsp${myDictionary[key]}&nbsp] </span> `;
+            classWords[cw].innerHTML = `${classWords[cw].innerText} <span class='avacWord'">[&nbsp${myDictionary[key]}&nbsp]</span> `;
         }
     }
+
+    let avacWord = avacPageFrame.getElementsByClassName( 'avacWord' );
+    for( let i = 0; i < avacWord.length; i++ )
+    {
+        avacWord[i].onclick = function ()
+        {
+            //parent.hello();
+            alert( avacWord[i].textContent );
+
+        };
+    }
+
+    avacPageFrame.querySelector( 'head' ).innerHTML +=
+            `<style>
+                .avacWord{
+                    color:green;
+                    
+                }
+                .avacWord:hover{
+                   background-color: lightgray;
+                   border-radius: 2px;
+                }
+            </style>`;
+
     console.log( "Complete!" );
 }
 
@@ -152,7 +178,6 @@ function removeElementsByClass( avacSourcePage, className )
 function createMainFrame( src )
 {
     document.open( 'text/html' );
-    let navBarUrl = chrome.extension.getURL( "html/navigation.html" );
     document.write(
             `<!DOCTYPE HTML>
                 <html>
@@ -162,14 +187,11 @@ function createMainFrame( src )
                     </head>
                     <body>
                         <iframe name="avacSourcePage" id="avacSourcePage" src="${src}"></iframe>
-                        <iframe name="avacNavBar" id="avacNavBar" src="${navBarUrl}"></iframe>
+                        <iframe name="avacNavBar" id="avacNavBar" src="${chrome.extension.getURL( "html/navigation.html" )}"></iframe>
                     </body>
                 </html>` );
     document.close();
 }
-
-
-
 
 
 
