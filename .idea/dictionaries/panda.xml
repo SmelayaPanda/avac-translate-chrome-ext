@@ -2,6 +2,7 @@
   <dictionary name="panda">
     <words>
       <w>avac</w>
+      <w>nbsp</w>
       <w>onload</w>
       <w>onreadystatechange</w>
     </words>

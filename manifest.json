@@ -12,13 +12,18 @@
       ],
       "js": [
         "js/popup.js",
-        "js/content.js"
+        "js/content.js",
+        "js/navigation.js"
       ],
       "css": [
         "css/popup.css",
-        "css/content.css"
+        "css/content.css",
+        "css/navigation.css"
       ]
     }
+  ],
+  "web_accessible_resources": [
+    "html/navigation.html"
   ],
   "permissions": [
     /*"tabs",*/
