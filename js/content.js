@@ -49,6 +49,7 @@ function avacPost( level, langFrom, langTo )
 
     req.onreadystatechange = function ()
     {
+        let myDictionary;
         if( this.readyState === 4 && this.status === 200 )
         {
             myDictionary = JSON.parse( this.responseText );
@@ -124,7 +125,41 @@ function removeElementsByClass( className )
 /** ------------------------------------------------------------------ */
 
 
+window.onload = function ()
+{
+    document.body.innerHTML =
+            `<main id="avacMain">
+                 <div class="avacInnerTube">
+                    ${document.body.innerHTML}
+                </div>
+            </main>
+            <nav id="avacNavigationBar">
+                <div class="avacInnerTube">
+                    <h1 id="navBarHeader">Hello</h1>
+                    <p>This word means ...</p>
+                    <hr>
+                    <h3>Synonyms:</h3>
+                    <p> greeating </p>
+                    <p> ...... </p>
+                </div>
+            </nav>`
+    ;
 
+    let navBarHeader = document.getElementById('navBarHeader');
+    navBarHeader.innerText = "Hellooooo";
+};
+/** ------------------------------------------------------------------ */
+ // ?
+function saveScrollPositions(theForm) {
+    if(theForm) {
+        var scrolly = typeof window.pageYOffset != 'undefined' ? window.pageYOffset
+                : document.documentElement.scrollTop;
+        var scrollx = typeof window.pageXOffset != 'undefined' ? window.pageXOffset
+                : document.documentElement.scrollLeft;
+        theForm.scrollx.value = scrollx;
+        theForm.scrolly.value = scrolly;
+    }
+}
 
 
 

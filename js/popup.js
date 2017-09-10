@@ -42,19 +42,19 @@ window.onload = function ()
      */
     chrome.storage.sync.get( 'langFrom', function ( obj )
     {
-        langFromBox.value = obj.langFrom;
+        langFromBox.value = obj.langFrom ? obj.langFrom : 'eng';
     } );
     chrome.storage.sync.get( 'langTo', function ( obj )
     {
-        langToBox.value = obj.langTo;
+        langToBox.value = obj.langTo ? obj.langTo : 'eng';
     } );
     chrome.storage.sync.get( 'rangeInput', function ( obj )
     {
-        rangeInput.value = obj.rangeInput;
+        rangeInput.value = obj.rangeInput ? obj.rangeInput : 0;
     } );
     chrome.storage.sync.get( 'displayedLevel', function ( obj )
     {
-        displayedLevel.innerText = obj.displayedLevel;
+        displayedLevel.innerText = obj.displayedLevel ? obj.displayedLevel : 'WELCOME TO AVAC! ';
     } );
     chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
     {

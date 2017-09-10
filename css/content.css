@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------- */
+#avacNavigationBar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 230px; /* Width of navigation frame */
+    height: 100%;
+    overflow: hidden; /* Disables scrollbars on the navigation frame. To enable scrollbars, change "hidden" to "scroll" */
+    background: #eee;
+}
+
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 230px; /* Set this to the width of the navigation frame */
+    bottom: 0;
+    overflow: auto;
+    background: #fff;
+}
+
+.avacInnerTube {
+    margin: 15px; /* Provides padding for the content */
+}
+
+p {
+    color: #555;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+/*IE6 fix*/
+* html body {
+    padding: 0 230px 0 0; /* Set the second value to the width of the navigation frame */
+}
+
+* html main {
+    height: 100%;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------- */

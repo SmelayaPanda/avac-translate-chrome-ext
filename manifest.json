@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Avac",
-  "version": "1.0.008",
+  "version": "1.0.009",
   "icons": {
     "64": "img/64.png"
   },
@@ -11,10 +11,12 @@
         "<all_urls>"
       ],
       "js": [
+        "js/popup.js",
         "js/content.js"
       ],
       "css": [
-        "css/popup.css"
+        "css/popup.css",
+        "css/content.css"
       ]
     }
   ],
