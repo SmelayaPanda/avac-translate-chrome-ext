@@ -1,7 +1,7 @@
 /** --------------
  * Listen popup.js
  */
-// if user choice Onload-mode
+
 chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
 {
     if( obj.onLoadCheckBox )
@@ -26,8 +26,6 @@ chrome.storage.sync.get( 'onLoadCheckBox', function ( obj )
     }
 } );
 
-
-// if user click button "do it!"
 chrome.runtime.onMessage.addListener(
         msgObj =>
         {
@@ -37,26 +35,11 @@ chrome.runtime.onMessage.addListener(
 /** ------------------------------------------------------------------ */
 function avacPost( level, langFrom, langTo )
 {
-    let iFrame;
-    let goto;
-    if( document.getElementById( "avacSourcePage" ) )
-    {
-        iFrame = document.getElementById( "avacSourcePage" );
-        if( iFrame.contentWindow.location.href )
-        {
-            goto = iFrame.contentWindow.location.href;
-        }
-    }
-    else
-    {
-        goto = window.location.href;
-        createMainFrame( goto )
-    }
-
+    createAvacFooter();
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
-            "goto=" + goto + "&" +
+            "goto=" + encodeURIComponent( document.URL ) + "&" +
             "level=" + level + "&" +
             "langFrom=" + langFrom + "&" +
             "langTo=" + langTo;
@@ -71,6 +54,7 @@ function avacPost( level, langFrom, langTo )
         if( this.readyState === 4 && this.status === 200 )
         {
             myDictionary = JSON.parse( this.responseText );
+            console.log( " Dictionary size = " + myDictionary.size );
             if( document.readyState === 'complete' )
             {
                 translateText( myDictionary );
@@ -82,24 +66,14 @@ function avacPost( level, langFrom, langTo )
 /** ------------------------------------------------------------------ */
 function translateText( myDictionary )
 {
-    let avacPageFrame = document.getElementById( 'avacSourcePage' ).contentWindow.document;
-    //let avacNavBar = document.getElementById( 'avacNavBar' ).contentWindow.document;
-
-
-    let hrefs = avacPageFrame.getElementsByTagName( "a" );
-    for( let i = 0; i < hrefs.length; i++ )
-    {
-        hrefs.item( i ).setAttribute( 'target', 'avacSourcePage' );
-    }
-
     console.log( "Start translating ... " );
     if( document.getElementsByClassName( "avacWord" ) )
     {
-        removeElementsByClass( avacPageFrame, "avacWord" )
+        removeElementsByClass( "avacWord" )
     }
     let words;
     let text;
-    let paragraphs = avacPageFrame.getElementsByTagName( "p" );
+    let paragraphs = document.getElementsByTagName( "p" );
     for( let i = 0; i < paragraphs.length; i++ )
     {
         text = paragraphs[i].textContent;
@@ -124,7 +98,7 @@ function translateText( myDictionary )
 
         for( let w in words )
         {
-            text = text.replace( ' ' + words[w] + ' ', `<span class="___${words[w].toLowerCase()}"> ${words[w]} </span>` );
+            text = text.replace( ' ' + words[w] + ' ', `<span class="avacMainWord ___${words[w].toLowerCase()}"> ${words[w]} </span> ` );
         }
         paragraphs[i].innerHTML = text;
     }
@@ -132,76 +106,48 @@ function translateText( myDictionary )
     let classWords;
     for( let key in myDictionary )
     {
-        classWords = avacPageFrame.getElementsByClassName( "___" + key );
-        for( let cw in classWords )
+        classWords = document.getElementsByClassName( "___" + key );
+        for( cw in classWords )
         {
-            classWords[cw].innerHTML = `${classWords[cw].innerText} <span class='avacWord'">[&nbsp${myDictionary[key]}&nbsp]</span> `;
+            classWords[cw].innerHTML = `${classWords[cw].innerText} <span class='avacWord'>[&nbsp${myDictionary[key]}&nbsp]</span>`;
         }
     }
 
-    let avacWord = avacPageFrame.getElementsByClassName( 'avacWord' );
-    for( let i = 0; i < avacWord.length; i++ )
+    let avacWords = document.querySelectorAll( '[class*=___]' );
+    for( let av in avacWords )
     {
-        avacWord[i].onclick = function ()
+        avacWords[av].onclick = function ()
         {
-            //parent.hello();
-            alert( avacWord[i].textContent );
-
-        };
+            document.getElementById( 'translatedAvacWord' ).innerText = avacWords[av].textContent.substring( 0, avacWords[av].textContent.indexOf( '[' ) - 2 ).trim().toUpperCase();
+        }
     }
-
-    avacPageFrame.querySelector( 'head' ).innerHTML +=
-            `<style>
-                .avacWord{
-                    color:green;
-                    
-                }
-                .avacWord:hover{
-                   background-color: lightgray;
-                   border-radius: 2px;
-                }
-            </style>`;
-
     console.log( "Complete!" );
 }
-
 /** ------------------------------------------------------------------ */
-function removeElementsByClass( avacSourcePage, className )
+function removeElementsByClass( className )
 {
-    let elements = avacSourcePage.getElementsByClassName( className );
+    let elements = document.getElementsByClassName( className );
     while( elements.length > 0 )
     {
         elements[0].parentNode.removeChild( elements[0] );
     }
 }
 /** ------------------------------------------------------------------ */
-function createMainFrame( src )
+function createAvacFooter()
 {
-    document.open( 'text/html' );
-    document.write(
-            `<!DOCTYPE HTML>
-                <html>
-                    <head>
-                        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-                        <title>Avac</title>
-                    </head>
-                    <body>
-                        <iframe name="avacSourcePage" id="avacSourcePage" src="${src}"></iframe>
-                        <iframe name="avacNavBar" id="avacNavBar" src="${chrome.extension.getURL( "html/navigation.html" )}"></iframe>
-                    </body>
-                </html>` );
-    document.close();
+    let footer = document.createElement( 'footer' );
+    footer.id = 'avacFooter';
+
+    footer.innerHTML =
+            `<div id="avacFooterContent">
+                <div id="translatedAvacWord"> 
+                    Welcome!
+                </div>
+            </div>`;
+    document.body.appendChild( footer );
+    document.body.style.marginBottom = '100px';
+
 }
-
-
-
-
-
-
-
-
-
-
-
+/** ------------------------------------------------------------------ */
 
 

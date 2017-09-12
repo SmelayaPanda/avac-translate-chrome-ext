@@ -1,0 +1,16 @@
+footer#avacFooter {
+    position: fixed;
+    font-size: 14px;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    border-top: solid black 1px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+footer#avacFooterContent {
+    color: black;
+}

@@ -18,7 +18,7 @@
       "css": [
         "css/popup.css",
         "css/content.css",
-        "css/navigation.css"
+        "css/footer.css"
       ]
     }
   ],
