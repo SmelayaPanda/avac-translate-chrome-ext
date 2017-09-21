@@ -167,3 +167,9 @@ input#avacLevel[type=range]:focus::-webkit-slider-runnable-track {
     position: relative;
     top: -3px;
 }
+
+#playImg {
+    width: 14px;
+    height: 14px;
+    margin-bottom: -2px;
+}

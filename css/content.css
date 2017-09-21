@@ -8,3 +8,27 @@
     border-radius: 2px;
     cursor: pointer;
 }
+
+#translatedAvacWord,
+#avacSynonyms,
+#avacSentenceExample {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#avacFooterContent {
+    margin-left: 10%;
+
+}
+
+#translatedAvacWord {
+    width: 20%;
+}
+
+#avacSynonyms {
+    width: 30%
+}
+
+#avacSentenceExample {
+    width: 30%
+}

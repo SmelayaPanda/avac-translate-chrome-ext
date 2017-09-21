@@ -145,15 +145,50 @@ function createAvacFooter()
     footer.id = 'avacFooter';
 
     footer.innerHTML =
-        `<div id="avacFooterContent">
-                <div id="translatedAvacWord"> 
-                    Welcome!
-                </div>
-            </div>`;
+
+`
+<div id="avacFooterContent">
+    <div id="translatedAvacWord">
+        Welcome! Avac here!
+    </div>
+    <div id="avacSynonyms">
+        <ul>
+            <li>example one</li>
+            <li>example two</li>
+            <li>example three</li>
+        </ul>
+    </div>
+    <div id="avacSentenceExample">
+         Fool sentence with max priority!
+    </div>
+
+</div>
+`;
     document.body.appendChild(footer);
     document.body.style.marginBottom = '100px';
 
 }
+
+
+window.onload = function()
+{
+    function readTextFile(file, callback) {
+        let rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        };
+        rawFile.send(null);
+    }
+
+    readTextFile("../audio-data.json", function(text){
+        let data = JSON.parse(text);
+        console.log(data[5]);
+    });
+};
 
 /** ------------------------------------------------------------------ */
 
