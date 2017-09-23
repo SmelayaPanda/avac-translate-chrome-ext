@@ -17,8 +17,7 @@
 }
 
 #avacFooterContent {
-    margin-left: 10%;
-
+    margin-left: 8%;
 }
 
 #translatedAvacWord {
@@ -31,4 +30,22 @@
 
 #avacSentenceExample {
     width: 30%
+}
+
+#avacFooterContent {
+    font-size: 12px;
+    color: black;
+}
+
+#avacPlayWord {
+    width: 100px;
+    height: 72px;
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+#avacPlayWord:hover {
+    background-color: #008CBA;
+    color: white;
 }
