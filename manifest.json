@@ -13,7 +13,7 @@
       "js": [
         "js/popup.js",
         "js/content.js",
-        "js/navigation.js"
+        "js/footer.js"
       ],
       "css": [
         "css/popup.css",

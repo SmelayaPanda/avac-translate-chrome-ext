@@ -1,9 +1,9 @@
-footer#avacFooter {
+footer#footerAvac {
     position: fixed;
     font-size: 14px;
     left: 0;
     bottom: 0;
-    height: 80px;
+    height: 12%;
     width: 100%;
     background-color: white;
     border-top: solid black 1px;
@@ -11,6 +11,6 @@ footer#avacFooter {
     z-index: 1000;
 }
 
-footer#avacFooterContent {
+footer#footerContentAvac {
     color: black;
 }
