@@ -146,7 +146,8 @@ function createAvacFooter()
 
     footer.innerHTML =
 
-        `<div id="footerContentAvac">
+        `
+<div id="footerContentAvac">
     <div id="translatedWordAvac">
         <audio id="audioAvac"
         <source src="http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/0/1UXRDYLWQWCBT.mp3"
