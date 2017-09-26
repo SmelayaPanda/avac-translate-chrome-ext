@@ -14,7 +14,8 @@
       "js": [
         "js/popup.js",
         "js/content.js",
-        "js/footer.js"
+        "js/footer.js",
+        "js/avacUtils.js"
       ],
       "css": [
         "css/popup.css",
@@ -27,7 +28,9 @@
     /*"tabs",*/
     "storage",
     "activeTab",
-    "https://panda.jelastic.regruhosting.ru/*"
+    "https://panda.jelastic.regruhosting.ru/*",
+    "http://fonts.googleapis.com/",
+    "https://fonts.googleapis.com/"
   ],
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "browser_action": {

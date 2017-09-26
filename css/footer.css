@@ -1,18 +1,34 @@
-#footerAvac {
-    position: fixed ;
-    font-size: 14px;
+/*background-image: linear-gradient(120deg, #155799, #159957)*/
+
+#footerAvac, #closeFooterAvac {
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+    position: fixed;
     left: 0;
     bottom: 0;
-    height: 114px;
     width: 100%;
-    background-color: white;
-    border-top: solid gray 1px;
-    padding: 10px;
     z-index: 1000;
     color: black;
-    -webkit-font-smoothing: antialiased ;
+    -webkit-font-smoothing: antialiased;
+    background-color: white;
     line-height: 1.5;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+}
+
+#footerAvac {
+    font-size: 14px;
+    height: 114px;
+    border-top: solid gray 1px;
+    padding: 10px;
+}
+
+#closeFooterAvac {
+    height: 26px;
+    padding-top: 5px;
+    font-size: 10px;
+    text-align: center;
+    font-style: italic;
+    border-top: solid white 1px;
 }
 
 #translatedWordAvac,
@@ -21,14 +37,11 @@
     display: inline-block;
     vertical-align: top;
     line-height: 1.5;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
 
 #footerAvac {
     font-size: 12px;
     color: black;
-    line-height: 1.5;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
 
 /*block 1*/
@@ -36,6 +49,7 @@
     width: 10%;
     margin-left: 8%;
     margin-right: 8%;
+    background-color: white;
 }
 
 /*block 2*/
@@ -45,7 +59,8 @@
 
 /*block 3*/
 #sentenceExampleAvac {
-    width: 30%
+    width: 30%;
+    font-family: 'Marck Script', cursive;
 }
 
 #playWordBtnAvac {
@@ -66,25 +81,7 @@
 #playWordAvac {
     font-weight: bold;
     color: black;
-}
-
-#closeFooterAvac {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 26px;
-    width: 100%;
-    background-color: white;
-    z-index: 1000;
-    color: black;
-    margin-top: 5px;
-    padding-top: 5px;
-    font-size: 10px;
-    text-align: center;
-    font-style: italic;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Caveat Brush', cursive;
 }
 
 #closeFooterAvac:hover {
@@ -92,12 +89,9 @@
     cursor: pointer;
 }
 
-
-
 #footerAvac {
     opacity: 1;
-    transition: all 0.2s;
-    font-size: 14px;
+    transition: all 0.5s;
 }
 
 #footerAvac.hide {

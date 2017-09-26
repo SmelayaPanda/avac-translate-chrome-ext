@@ -1,22 +1,19 @@
-/** --------------
+/** -----------------------------------------------------------------------------------
  * Listen popup.js
  */
 window.onload = function () {
+    fontLoader({family: 'Caveat+Brush|Marck+Script|PT+Sans&amp;subset=cyrillic,latin-ext'});
     chrome.storage.sync.get('onLoadCheckBox', function (obj) {
         if (obj.onLoadCheckBox) {
             let level;
             let langFrom;
             let langTo;
-
             chrome.storage.sync.get('rangeInput', function (obj) {
                 obj.rangeInput ? level = obj.rangeInput : level = 0;
-
                 chrome.storage.sync.get('langFrom', function (obj) {
                     obj.langFrom ? langFrom = obj.langFrom : 'eng';
-
                     chrome.storage.sync.get('langTo', function (obj) {
                         obj.langTo ? langTo = obj.langTo : 'eng';
-
                         avacPost(level, langFrom, langTo);
                     });
                 });
@@ -31,9 +28,15 @@ window.onload = function () {
         });
 };
 
-/** ------------------------------------------------------------------ */
+/** -----------------------------------------------------------------------------------
+ * Ask AvacServlet.java translated word for current page
+ * @param level
+ * @param langFrom
+ * @param langTo
+ **/
 function avacPost(level, langFrom, langTo) {
-    createAvacFooter();
+    createFooterAvac();
+    createCloseFooterAvac();
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
@@ -41,11 +44,8 @@ function avacPost(level, langFrom, langTo) {
         "level=" + level + "&" +
         "langFrom=" + langFrom + "&" +
         "langTo=" + langTo;
-
-    console.log(params);
     req.open("POST", url, true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
     req.onreadystatechange = function () {
         let myDictionary;
         if (this.readyState === 4 && this.status === 200) {
@@ -57,8 +57,13 @@ function avacPost(level, langFrom, langTo) {
     };
     req.send(params);
 }
-
-/** ------------------------------------------------------------------ */
+/** -----------------------------------------------------------------------------------
+ * Translate text
+ * @param level
+ * @param langFrom
+ * @param langTo
+ * @param myDictionary
+ * */
 function translateText(level, langFrom, langTo, myDictionary) {
     if (document.getElementsByClassName("wordAvac")) {
         removeElementsByClass("wordAvac")
@@ -66,7 +71,6 @@ function translateText(level, langFrom, langTo, myDictionary) {
     let words;
     let text;
     let paragraphs = document.getElementsByTagName("p");
-    document.body.style.filter = 'blur(5px)';
     for (let i = 0; i < paragraphs.length; i++) {
         text = paragraphs[i].textContent;
         text = text
@@ -78,8 +82,8 @@ function translateText(level, langFrom, langTo, myDictionary) {
             .replace(/;/g, ' ;')
             .replace(/!/g, ' !')
             .replace(/\?/g, ' ?')
-            .replace(/\(/g, ' ;')
-            .replace(/\)/g, ' ;')
+            .replace(/\(/g, ' (')
+            .replace(/\)/g, ' )')
             .replace(/\s+/g, '  ');
 
         words = text
@@ -91,9 +95,21 @@ function translateText(level, langFrom, langTo, myDictionary) {
             text = text.replace(' ' + words[w] + ' ',
                 `<span class="mainWordAvac ___${words[w].toLowerCase()}"> ${words[w]} </span> `);
         }
-        paragraphs[i].innerHTML = text;
+        paragraphs[i].innerHTML = text + "\n";
     }
+    let avacWords = document.querySelectorAll('[class*=___]');
 
+    writeTranslatedWordsOnPage(myDictionary);
+    changeSoundBtnContentOnClickWord(avacWords);
+    fillUpCloseFooterContent(langFrom, langTo, level, myDictionary);
+
+}
+
+/** -----------------------------------------------------------------------------------
+ * Write translated words near of the target words
+ * @param myDictionary
+ * */
+function writeTranslatedWordsOnPage(myDictionary) {
     let classWords;
     for (let key in myDictionary) {
         classWords = document.getElementsByClassName("___" + key);
@@ -102,24 +118,16 @@ function translateText(level, langFrom, langTo, myDictionary) {
                 `${classWords[cw].innerText} <span class='wordAvac'>[&nbsp${myDictionary[key]}&nbsp]</span>`;
         }
     }
-    let avacWords = document.querySelectorAll('[class*=___]');
-
-    changePlayedWordContent(avacWords);
-    crateCloseFooter(langFrom, langTo, level, myDictionary);
-
-    document.body.style.filter = 'blur(0px)';
 }
 
-/** ------------------------------------------------------------------ */
-function removeElementsByClass(className) {
-    let elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
-
-/** ------------------------------------------------------------------ */
-function crateCloseFooter(langFrom, langTo, level, myDictionary) {
+/** -----------------------------------------------------------------------------------
+ * Fill up text content of the close footer
+ * @param langFrom
+ * @param langTo
+ * @param level
+ * @param myDictionary - json from server
+ **/
+function fillUpCloseFooterContent(langFrom, langTo, level, myDictionary) {
     let closeFooter = document.getElementById('closeFooterAvac');
     closeFooter.innerText = langFrom.toUpperCase() + " to " +
         langTo.toUpperCase() +
@@ -127,8 +135,11 @@ function crateCloseFooter(langFrom, langTo, level, myDictionary) {
         " . Translated words: " + Object.keys(myDictionary).length;
 }
 
-/** ------------------------------------------------------------------ */
-function changePlayedWordContent(avacWords) {
+/** -----------------------------------------------------------------------------------
+ * Change text in play sound button
+ * @param avacWords - all words with class avacWord
+ * */
+function changeSoundBtnContentOnClickWord(avacWords) {
     for (let av in avacWords) {
         avacWords[av].onclick = function () {
             document.getElementById('playWordAvac').innerText =
@@ -138,74 +149,3 @@ function changePlayedWordContent(avacWords) {
     }
 }
 
-/** ------------------------------------------------------------------ */
-function createAvacFooter() {
-    let footer = document.createElement('footer');
-    footer.id = 'footerAvac';
-    footer.innerHTML =
-
-        `
-<div>
-    <!-- block 1 -->
-    <div id="translatedWordAvac">
-        <audio id="audioAvac"
-        <source src="http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/0/1UXRDYLWQWCBT.mp3"
-                type='audio/mp3'>
-        Your user agent does not support the HTML5 Audio element.
-        </audio>
-        <button id="playWordBtnAvac" type="button" onclick="audioAvac.play()"><strong id="playWordAvac">Yours word is here!</strong></button>
-    </div>
-
-    <!-- block 2 -->
-    <div id="synonymsAvac"> Synonyms
-        <li id="avacSynonyms_1">example one</li>
-        <li id="avacSynonyms_2">example two</li>
-        <li id="avacSynonyms_3">example three</li>
-    </div>
-
-    <!-- block 3 -->
-    <div id="sentenceExampleAvac">
-        Fool sentence with max priority!
-    </div>
-
-</div>
-`;
-
-    document.body.appendChild(footer);
-
-
-    let closeFooter = document.createElement('footer');
-    closeFooter.id = 'closeFooterAvac';
-    closeFooter.innerHTML = "";
-    document.body.appendChild(closeFooter);
-
-
-    let footerAvac = document.getElementById("footerAvac");
-    let closeFooterAvac = document.getElementById('closeFooterAvac');
-    document.getElementById('closeFooterAvac').onclick = function () {
-
-        if (footerAvac.style.display === 'none') {
-            fadeInElement(footerAvac, closeFooterAvac);
-        }
-        else {
-            fadeOutElement(footerAvac, closeFooterAvac);
-        }
-    }
-}
-
-/** ------------------------------------------------------------------ */
-function fadeOutElement(footer, closeFooter) {
-    footer.classList.add('hide');
-    closeFooter.style.borderTop = 'solid gray 1px';
-    setTimeout(function () {
-        footer.style.display = 'none';
-    }, 300);
-}
-
-function fadeInElement(footer, closeFooter) {
-    footer.style.display = 'block';
-    closeFooter.style.borderTop = 'none';
-    setTimeout(function () {
-        footer.classList.remove('hide');
-    }, 200);
-}
