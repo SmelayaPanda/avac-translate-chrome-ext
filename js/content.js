@@ -2,7 +2,7 @@
  * Listen popup.js
  */
 window.onload = function () {
-    fontLoader({family: 'Caveat+Brush|Marck+Script|PT+Sans&amp;subset=cyrillic,latin-ext'});
+    fontLoader({family: 'Marck+Script|PT+Sans&amp;subset=cyrillic,latin-ext'});
     chrome.storage.sync.get('onLoadCheckBox', function (obj) {
         if (obj.onLoadCheckBox) {
             let level;
@@ -145,8 +145,9 @@ function changeSoundBtnContentOnClickWord(avacWords) {
             document.getElementById('playWordAvac').innerText =
                 avacWords[av].textContent
                     .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase();
-            getAvacAudio('eng', avacWords[av].textContent
-                .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase());
+
+            /*getAvacAudio('eng', avacWords[av].textContent
+                .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toLowerCase());*/
         }
     }
 }

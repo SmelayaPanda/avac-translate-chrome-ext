@@ -26,6 +26,7 @@
   ],
   "permissions": [
     /*"tabs",*/
+    "tts",
     "storage",
     "activeTab",
     "https://panda.jelastic.regruhosting.ru/*",
