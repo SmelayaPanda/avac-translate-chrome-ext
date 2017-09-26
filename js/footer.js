@@ -62,16 +62,28 @@ function fadeInElement(footer, closeFooter) {
         footer.classList.remove('hide');
     }, 200);
 }
-/** --------------------------------------------------------------------------
- * Fade in and Out for content footer
- * @param param.familyt and other
- **/
-let fontLoader = function (param) {
-    let headID = document.getElementsByTagName('head')[0];
-    let link = document.createElement('link');
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
-    headID.appendChild(link);
 
-    link.href = 'http://fonts.googleapis.com/css?family=' + param.familyt;
-};
+/** --------------------------------------------------------------------------
+ * Get Audio src from server for sound button
+ * @param langFrom
+ * @param word
+ **/
+function getAvacAudio(langFrom, word) {
+    const params = "langFrom=" + langFrom + "&" + "word=" + word;
+    const url = "https://panda.jelastic.regruhosting.ru/avac/";
+    const req = new XMLHttpRequest();
+    req.open("POST", url, true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function () {
+        let audioLink;
+        if (this.readyState === 4 && this.status === 200) {
+            audioLink = this.responseText;
+            console.log( audioLink );
+            if (document.readyState === 'complete') {
+                let srcAudio = document.getElementById('audioAvac');
+                srcAudio.src = audioLink;
+            }
+        }
+    };
+    req.send(params);
+}

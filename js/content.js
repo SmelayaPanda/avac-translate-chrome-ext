@@ -143,9 +143,10 @@ function changeSoundBtnContentOnClickWord(avacWords) {
     for (let av in avacWords) {
         avacWords[av].onclick = function () {
             document.getElementById('playWordAvac').innerText =
-                avacWords[av].textContent.substring
-                (0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase();
+                avacWords[av].textContent
+                    .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase();
+            getAvacAudio('eng', avacWords[av].textContent
+                .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase());
         }
     }
 }
-
