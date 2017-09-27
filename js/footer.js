@@ -28,21 +28,24 @@ function createFooterAvac() {
     footer.id = 'footerAvac';
     footer.innerHTML =
         `<div>
-            <div id="translatedWordAvac">
-                <button id="playWordBtnAvac" type="button" onclick="audioAvac.play()">
-                    <strong id="playWordAvac">Your word is here!</strong></button>
-            </div>
-            <div id="synonymsAvac"> Synonyms
-                <li id="avacSynonyms_1">example one</li>
-                <li id="avacSynonyms_2">example two</li>
-                <li id="avacSynonyms_3">example three</li>
-            </div>
-            <div id="sentenceExampleAvac">
-                Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it'not all,
-                for test, stop, yes
-                Oh no, more more, words casha =) and hello world example
-            </div>
-        </div>`;
+    <div id="emptyBlockAvac">
+    </div>
+    <div id="translatedWordAvac">
+        <button id="playWordBtnAvac" type="button" onclick="audioAvac.play()">
+            <strong id="playWordAvac">Your word is here!</strong></button>
+    </div>
+    <div id="synonymsAvac"> Synonyms
+        <li id="avacSynonyms_1">example one</li>
+        <li id="avacSynonyms_2">example two</li>
+        <li id="avacSynonyms_3">example three</li>
+    </div>
+    <div id="sentenceExampleAvac">
+        Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it'not all,
+        for test, stop, yes
+        Oh no, more more, words casha =) and hello world example
+    </div>
+</div>`;
+
     document.body.appendChild(footer);
 }
 /** --------------------------------------------------------------------------

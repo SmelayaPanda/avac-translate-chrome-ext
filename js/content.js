@@ -35,8 +35,11 @@ window.onload = function () {
  * @param langTo
  **/
 function avacPost(level, langFrom, langTo) {
-    createFooterAvac();
-    createCloseFooterAvac();
+    if (!document.getElementById("footerAvac") &&
+        !document.getElementById('closeFooterAvac')) {
+        createFooterAvac();
+        createCloseFooterAvac();
+    }
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
@@ -57,13 +60,14 @@ function avacPost(level, langFrom, langTo) {
     };
     req.send(params);
 }
+
 /** -----------------------------------------------------------------------------------
  * Translate text
  * @param level
  * @param langFrom
  * @param langTo
  * @param myDictionary
- * */
+ **/
 function translateText(level, langFrom, langTo, myDictionary) {
     if (document.getElementsByClassName("wordAvac")) {
         removeElementsByClass("wordAvac")
@@ -101,14 +105,13 @@ function translateText(level, langFrom, langTo, myDictionary) {
 
     writeTranslatedWordsOnPage(myDictionary);
     replaceSpeakBtnContent(avacWords);
-    fillUpCloseFooterContent(langFrom, langTo, level, myDictionary);
-
+    fillUpCloseFooterContent(langFrom, langTo, level, Object.keys(myDictionary).length);
 }
 
 /** -----------------------------------------------------------------------------------
  * Write translated words near of the target words
  * @param myDictionary
- * */
+ **/
 function writeTranslatedWordsOnPage(myDictionary) {
     let classWords;
     for (let key in myDictionary) {
@@ -125,20 +128,31 @@ function writeTranslatedWordsOnPage(myDictionary) {
  * @param langFrom
  * @param langTo
  * @param level
- * @param myDictionary - json from server
+ * @param dictLength
  **/
-function fillUpCloseFooterContent(langFrom, langTo, level, myDictionary) {
-    let closeFooter = document.getElementById('closeFooterAvac');
-    closeFooter.innerText = langFrom.toUpperCase() + " to " +
+function fillUpCloseFooterContent(langFrom, langTo, level, dictLength) {
+    let text =
+        langFrom.toUpperCase() + " to " +
         langTo.toUpperCase() +
-        " Level: " + level +
-        " . Translated words: " + Object.keys(myDictionary).length;
+        "   Level: " + level +
+        " . Translated words: " + dictLength;
+    let i = 0;
+    let speed = 40;
+    document.getElementById("closeFooterAvac").innerHTML = "";
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("closeFooterAvac").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
 }
 
 /** -----------------------------------------------------------------------------------
  * Change text in play sound button
  * @param avacWords - all words with class avacWord
- * */
+ **/
 function replaceSpeakBtnContent(avacWords) {
 
     let playWordBtn = document.getElementById('playWordBtnAvac');
@@ -158,6 +172,7 @@ function replaceSpeakBtnContent(avacWords) {
         }
     }
 }
+
 /** -----------------------------------------------------------------------------------
  * Speak word use SpeechSynthesisUtterance
  * @param word
@@ -166,11 +181,12 @@ function replaceSpeakBtnContent(avacWords) {
  * @param rate
  * @param pitch
  * @param voiceURI
- * */
+ **/
+
 function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     let msg = new SpeechSynthesisUtterance();
     msg.voiceURI = voiceURI;
-    msg.pitch = pitch;      //0 to 2
+    msg.pitch = pitch;      // 0 to 2
     msg.volume = volume;    // volume, from 0 to 1, default is 1
     msg.rate = rate;        // speaking rate, default is 1 (0.1 to 10)
     msg.lang = lang;        // language, default is 'en-US'
