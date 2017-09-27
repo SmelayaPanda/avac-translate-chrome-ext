@@ -144,7 +144,7 @@ function changeSoundBtnContentOnClickWord(avacWords) {
         avacWords[av].onclick = function () {
             document.getElementById('playWordAvac').innerText =
                 avacWords[av].textContent
-                    .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toUpperCase();
+                    .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toLowerCase();
 
             /*getAvacAudio('eng', avacWords[av].textContent
                 .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toLowerCase());*/

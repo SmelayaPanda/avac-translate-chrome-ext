@@ -1,3 +1,6 @@
+/** --------------------------------------------------------------------------
+ * Create DOM element - closeFooter and inject on page
+ **/
 function createCloseFooterAvac() {
     let closeFooter = document.createElement('footer');
     closeFooter.id = 'closeFooterAvac';
@@ -14,9 +17,12 @@ function createCloseFooterAvac() {
             fadeOutElement(footerAvac, closeFooterAvac);
         }
     };
-    document.body.style.marginBottom = '134px';
+    // #avacFooter + 0.5 #closeFooterAvac height
+    document.body.style.marginBottom = '9.5em';
 }
-/** ------------------------------------------------------------------ */
+/** --------------------------------------------------------------------------
+ * Create DOM element - footer and inject on page
+ **/
 function createFooterAvac() {
     let footer = document.createElement('footer');
     footer.id = 'footerAvac';
@@ -37,7 +43,8 @@ function createFooterAvac() {
                 <li id="avacSynonyms_3">example three</li>
             </div>
             <div id="sentenceExampleAvac">
-                Fool sentence with max priority!
+                Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it'not all, for test, stop, yes
+                Oh no, more more, words casha =) and hello world example
             </div>
         </div>`;
     document.body.appendChild(footer);
@@ -78,7 +85,7 @@ function getAvacAudio(langFrom, word) {
         let audioLink;
         if (this.readyState === 4 && this.status === 200) {
             audioLink = this.responseText;
-            console.log( audioLink );
+            console.log(audioLink);
             if (document.readyState === 'complete') {
                 let srcAudio = document.getElementById('audioAvac');
                 srcAudio.src = audioLink;
