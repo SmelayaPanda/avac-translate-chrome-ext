@@ -12,7 +12,7 @@ body, footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
     color: black;
     -webkit-font-smoothing: antialiased;
     background-color: white;
@@ -20,7 +20,7 @@ body, footer {
 }
 
 #footerAvac {
-    height: 8em;
+    height: 8.5em;
     border-top: solid gray 1px;
     padding: 0.75em;
 }
@@ -56,6 +56,10 @@ body, footer {
     font-family: 'PT Sans', sans-serif;
     margin-left: 5%;
 }
+#synonymsAvac > li {
+    line-height: 1.5;
+}
+
 
 /*block 3*/
 #sentenceExampleAvac {
@@ -83,7 +87,7 @@ body, footer {
 }
 #playWordAvac {
     font-weight: bold;
-    color: black;
+    color: #222222;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.125em;
 }

@@ -17,8 +17,8 @@ function createCloseFooterAvac() {
             fadeOutElement(footerAvac, closeFooterAvac);
         }
     };
-    // #avacFooter + 0.5 #closeFooterAvac height
-    document.body.style.marginBottom = '9.5em';
+    document.body.style.marginBottom = '10em';
+    closeFooter.style.height = '2.5em'
 }
 /** --------------------------------------------------------------------------
  * Create DOM element - footer and inject on page
@@ -29,13 +29,8 @@ function createFooterAvac() {
     footer.innerHTML =
         `<div>
             <div id="translatedWordAvac">
-                <audio id="audioAvac"
-                <source src="http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/0/1UXRDYLWQWCBT.mp3"
-                        type='audio/mp3'>
-                Your user agent does not support the HTML5 Audio element.
-                </audio>
                 <button id="playWordBtnAvac" type="button" onclick="audioAvac.play()">
-                    <strong id="playWordAvac">Yours word is here!</strong></button>
+                    <strong id="playWordAvac">Your word is here!</strong></button>
             </div>
             <div id="synonymsAvac"> Synonyms
                 <li id="avacSynonyms_1">example one</li>
@@ -43,7 +38,8 @@ function createFooterAvac() {
                 <li id="avacSynonyms_3">example three</li>
             </div>
             <div id="sentenceExampleAvac">
-                Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it'not all, for test, stop, yes
+                Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it'not all,
+                for test, stop, yes
                 Oh no, more more, words casha =) and hello world example
             </div>
         </div>`;
@@ -70,27 +66,4 @@ function fadeInElement(footer, closeFooter) {
     }, 200);
 }
 
-/** --------------------------------------------------------------------------
- * Get Audio src from server for sound button
- * @param langFrom
- * @param word
- **/
-function getAvacAudio(langFrom, word) {
-    const params = "langFrom=" + langFrom + "&" + "word=" + word;
-    const url = "https://panda.jelastic.regruhosting.ru/avac/";
-    const req = new XMLHttpRequest();
-    req.open("POST", url, true);
-    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    req.onreadystatechange = function () {
-        let audioLink;
-        if (this.readyState === 4 && this.status === 200) {
-            audioLink = this.responseText;
-            console.log(audioLink);
-            if (document.readyState === 'complete') {
-                let srcAudio = document.getElementById('audioAvac');
-                srcAudio.src = audioLink;
-            }
-        }
-    };
-    req.send(params);
-}
+

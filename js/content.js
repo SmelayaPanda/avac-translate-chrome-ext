@@ -100,7 +100,7 @@ function translateText(level, langFrom, langTo, myDictionary) {
     let avacWords = document.querySelectorAll('[class*=___]');
 
     writeTranslatedWordsOnPage(myDictionary);
-    changeSoundBtnContentOnClickWord(avacWords);
+    replaceSpeakBtnContent(avacWords);
     fillUpCloseFooterContent(langFrom, langTo, level, myDictionary);
 
 }
@@ -139,15 +139,41 @@ function fillUpCloseFooterContent(langFrom, langTo, level, myDictionary) {
  * Change text in play sound button
  * @param avacWords - all words with class avacWord
  * */
-function changeSoundBtnContentOnClickWord(avacWords) {
+function replaceSpeakBtnContent(avacWords) {
+
+    let playWordBtn = document.getElementById('playWordBtnAvac');
+    let playWordBtnContent = document.getElementById('playWordAvac');
     for (let av in avacWords) {
         avacWords[av].onclick = function () {
-            document.getElementById('playWordAvac').innerText =
+            playWordBtnContent.innerText =
                 avacWords[av].textContent
-                    .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toLowerCase();
+                    .substring(0, avacWords[av].textContent.indexOf('[') - 1).toLowerCase().trim();
 
-            /*getAvacAudio('eng', avacWords[av].textContent
-                .substring(0, avacWords[av].textContent.indexOf('[') - 1).trim().toLowerCase());*/
+            let word = playWordBtnContent.innerText;
+            speakWord(word, 'en-GB', 0.8, 0.8, 1, 'native');
+
+            playWordBtn.onclick = function () {
+                speakWord(word, 'en-GB', 0.8, 0.8, 1, 'native');
+            }
         }
     }
+}
+/** -----------------------------------------------------------------------------------
+ * Speak word use SpeechSynthesisUtterance
+ * @param word
+ * @param lang
+ * @param volume
+ * @param rate
+ * @param pitch
+ * @param voiceURI
+ * */
+function speakWord(word, lang, volume, rate, pitch, voiceURI) {
+    let msg = new SpeechSynthesisUtterance();
+    msg.voiceURI = voiceURI;
+    msg.pitch = pitch;      //0 to 2
+    msg.volume = volume;    // volume, from 0 to 1, default is 1
+    msg.rate = rate;        // speaking rate, default is 1 (0.1 to 10)
+    msg.lang = lang;        // language, default is 'en-US'
+    msg.text = word;
+    window.speechSynthesis.speak(msg);
 }

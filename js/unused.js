@@ -1,8 +1,9 @@
-/**
- * Created by panda on 03.09.2017.
- */
+/** --------------------------------------------------------------------------
+ * Translate word use Yandex Translate API
+ * @param langFrom
+ * @param word
+ **/
 
-// Not used now
 const url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
     keyAPI = "trnsl.1.1.20130922T110455Z.4a9208e68c61a760.f819c1db302ba637c2bea1befa4db9f784e9fbb8";
 
@@ -36,4 +37,27 @@ function yandexTranslate() {
     }
 }
 
-// -------------------------------------------------------------------------
+/** --------------------------------------------------------------------------
+ * Get Audio src from server for sound button
+ * @param langFrom
+ * @param word
+ **/
+function getAvacAudio(langFrom, word) {
+    const params = "langFrom=" + langFrom + "&" + "word=" + word;
+    const url = "https://panda.jelastic.regruhosting.ru/avac/";
+    const req = new XMLHttpRequest();
+    req.open("POST", url, true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function () {
+        let audioLink;
+        if (this.readyState === 4 && this.status === 200) {
+            audioLink = this.responseText;
+            console.log(audioLink);
+            if (document.readyState === 'complete') {
+                let srcAudio = document.getElementById('audioAvac');
+                srcAudio.src = audioLink;
+            }
+        }
+    };
+    req.send(params);
+}

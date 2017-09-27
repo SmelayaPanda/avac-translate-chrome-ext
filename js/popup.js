@@ -1,6 +1,4 @@
 window.onload = function () {
-    chrome.tts.speak('Hello, world.');
-
     /** ------------
      * HTML elements
      */
