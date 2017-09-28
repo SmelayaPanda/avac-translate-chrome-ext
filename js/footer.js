@@ -5,16 +5,20 @@ function createCloseFooterAvac() {
     let closeFooter = document.createElement('footer');
     closeFooter.id = 'closeFooterAvac';
     closeFooter.innerHTML = "";
+    closeFooter.style.opacity = '0';
+    fadeInElement(closeFooter, 0);
     document.body.appendChild(closeFooter);
 
     let footerAvac = document.getElementById("footerAvac");
     let closeFooterAvac = document.getElementById('closeFooterAvac');
-    document.getElementById('closeFooterAvac').onclick = function () {
-        if (footerAvac.style.display === 'none') {
-            fadeInElement(footerAvac, closeFooterAvac);
+    closeFooterAvac.onclick = function () {
+        if (footerAvac.style.opacity === '0') {
+            fadeInElement(footerAvac, 0);
+            closeFooterAvac.style.borderTop = 'solid white 1px';
         }
         else {
-            fadeOutElement(footerAvac, closeFooterAvac);
+            fadeOutElement(footerAvac, 0);
+            closeFooterAvac.style.borderTop = 'solid gray 1px';
         }
     };
     document.body.style.marginBottom = '10em';
@@ -45,28 +49,23 @@ function createFooterAvac() {
         Oh no, more more, words casha =) and hello world example
     </div>
 </div>`;
+    createSideNavAvac();
 
+    footer.style.opacity = '0';
+    fadeInElement(footer, 0);
     document.body.appendChild(footer);
 }
 /** --------------------------------------------------------------------------
- * Fade in and Out for content footer
- * @param footer
- * @param closeFooter
+ * Creation button for close/open all footers
  **/
-function fadeOutElement(footer, closeFooter) {
-    footer.classList.add('hide');
-    setTimeout(function () {
-        closeFooter.style.borderTop = 'solid gray 1px';
-        footer.style.display = 'none';
-    }, 300);
-}
-
-function fadeInElement(footer, closeFooter) {
-    footer.style.display = 'block';
-    setTimeout(function () {
-        closeFooter.style.borderTop = 'solid white 1px';
-        footer.classList.remove('hide');
-    }, 200);
+function createSideNavAvac() {
+    let sideNav = document.createElement('div');
+    let sideNavBtn = document.createElement('button');
+    sideNav.id = 'sideNavAvac';
+    sideNavBtn.id = 'sideNavBtnAvac';
+    sideNavBtn.innerText = 'Avac';
+    sideNav.appendChild(sideNavBtn);
+    document.body.appendChild(sideNav);
 }
 
 

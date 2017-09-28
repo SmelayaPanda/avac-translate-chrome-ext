@@ -1,10 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300);
 
+/*#2196F3 - Blue*/
 /*background-image: linear-gradient(120deg, #155799, #159957)*/
 * {
     margin: 0;
     padding: 0;
     outline: none;
+}
+
+.zeroOpacity {
+    opacity: 0;
+}
+
+.fullOpacity {
+    opacity: 1;
 }
 
 #footerAvac,
@@ -20,12 +29,19 @@
     -webkit-font-smoothing: antialiased;
     background-color: white;
     line-height: 1.5;
+    transition: all 0.7s;
 }
 
 #footerAvac {
     height: 8.5em;
     border-top: solid gray 1px;
     padding: 0.75em;
+    opacity: 1;
+}
+
+#footerAvac.hide {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #closeFooterAvac {
@@ -35,6 +51,12 @@
     text-align: center;
     font-style: italic;
     border-top: solid white 1px;
+}
+
+#closeFooterAvac:hover {
+    background-color: #2196F3;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #translatedWordAvac,
@@ -80,18 +102,20 @@
     height: 5em;
     border-radius: 2.5em;
     background-color: white;
-    border: 0.125em solid lightskyblue;
+    border: 0.125em solid #2196F3;
     overflow-wrap: break-word;
     outline: 0;
     color: black;
 }
 
 #playWordBtnAvac:hover {
-    background-color: lightskyblue;
+    background-color: #2196F3;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #playWordBtnAvac:hover > #playWordAvac {
     color: white;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #playWordAvac {
@@ -101,16 +125,24 @@
     font-size: 1.125em;
 }
 
-#closeFooterAvac:hover {
-    background-color: lightskyblue;
-    cursor: pointer;
+#sideNavAvac button {
+    height: 3em;
+    width: 100px;
+    position: fixed;
+    left: -80px;
+    bottom: 2.25em;
+    z-index: 1002;
+    transition: 0.3s;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #2196F3; /* Blue */
 }
 
-#footerAvac {
-    opacity: 1;
-    transition: all 0.5s;
+#sideNavAvac button:hover {
+    left: 0;
 }
 
-#footerAvac.hide {
-    opacity: 0;
-}

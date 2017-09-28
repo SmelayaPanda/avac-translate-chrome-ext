@@ -21,3 +21,19 @@ let fontLoader = function (param) {
 
     link.href = 'http://fonts.googleapis.com/css?family=' + param.familyt;
 };
+/** --------------------------------------------------------------------------
+ * Fade In/Out for content footer
+ * @param el
+ * @param time
+ **/
+function fadeOutElement(el, time) {
+    setTimeout(function () {
+        el.style.opacity = '0';
+    }, time);
+}
+
+function fadeInElement(el, time) {
+    setTimeout(function () {
+        el.style.opacity = '1';
+    }, time);
+}
