@@ -2,7 +2,6 @@
  * Listen popup.js
  */
 window.onload = function () {
-    fontLoader({family: 'Marck+Script|PT+Sans&amp;subset=cyrillic,latin-ext'});
     chrome.storage.sync.get('onLoadCheckBox', function (obj) {
         if (obj.onLoadCheckBox) {
             let level;

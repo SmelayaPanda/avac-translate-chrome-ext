@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300);
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&subset=cyrillic,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
 
 /*#2196F3 - Blue*/
 /*background-image: linear-gradient(120deg, #155799, #159957)*/
@@ -33,9 +34,9 @@
 }
 
 #footerAvac {
-    height: 8.5em;
+    height: 8.5rem;
     border-top: solid gray 1px;
-    padding: 0.75em;
+    padding: 0.75rem;
     opacity: 1;
 }
 
@@ -45,9 +46,9 @@
 }
 
 #closeFooterAvac {
-    height: 2.5em;
-    padding-top: 0.75em;
-    font-size: 0.75em;
+    height: 2rem;
+    font-size: 0.75rem;
+    vertical-align: center;
     text-align: center;
     font-style: italic;
     border-top: solid white 1px;
@@ -66,6 +67,7 @@
     display: inline-block;
     vertical-align: top;
     line-height: 1.5;
+    background-color: white;
 }
 
 #emptyBlockAvac {
@@ -81,7 +83,7 @@
 /*block 2*/
 #synonymsAvac {
     width: 15%;
-    font-size: 1em;
+    font-size: 1rem;
     font-family: 'PT Sans', sans-serif;
     margin-left: 5%;
 }
@@ -99,7 +101,7 @@
 #sentenceExampleAvac {
     width: 40%;
     font-family: 'Marck Script', cursive;
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 #sentenceExampleAvac:hover {
@@ -108,11 +110,11 @@
 }
 
 #playWordBtnAvac {
-    width: 8em;
-    height: 5em;
-    border-radius: 2.5em;
+    width: 8rem;
+    height: 5rem;
+    border-radius: 2.5rem;
     background-color: white;
-    border: 0.125em solid #2196F3;
+    border: 0.125rem solid #2196F3;
     overflow-wrap: break-word;
     outline: 0;
     color: black;
@@ -132,15 +134,15 @@
     font-weight: bold;
     color: #222222;
     font-family: 'PT Sans', sans-serif;
-    font-size: 1.125em;
+    font-size: 1.125rem;
 }
 
 #sideNavAvac button {
-    height: 3em;
+    height: 4rem;
     width: 100px;
     position: fixed;
     left: -80px;
-    bottom: 2.25em;
+    bottom: 3rem;
     z-index: 1002;
     transition: 0.3s;
     padding: 15px;

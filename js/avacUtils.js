@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------
- * Fade in and Out for content footer
+ * Remove element
  * @param className
  **/
 function removeElementsByClass(className) {
@@ -8,28 +8,7 @@ function removeElementsByClass(className) {
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
-/** --------------------------------------------------------------------------
- * Load fonts from google API
- * @param param.familyt and other
- **/
-let fontLoader = function (param) {
-    let headID = document.getElementsByTagName('head')[0];
-    let link = document.createElement('link');
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
-    headID.appendChild(link);
 
-    link.href = 'http://fonts.googleapis.com/css?family=' + param.familyt;
-};
-/** -----------------------------------------------------------------------------------
- * Speak word use SpeechSynthesisUtterance
- * @param word
- * @param lang
- * @param volume
- * @param rate
- * @param pitch
- * @param voiceURI
- **/
 /** --------------------------------------------------------------------------
  * Fade In/Out any element
  * @param el
@@ -46,6 +25,7 @@ function fadeInElement(el, time) {
         el.style.opacity = '1';
     }, time);
 }
+
 /** --------------------------------------------------------------------------
  * Fade-replace for text
  * @param element
@@ -61,6 +41,15 @@ function fadeTextReplace(element, newValue) {
     }, 500);
 }
 
+/** -----------------------------------------------------------------------------------
+ * Speak word use SpeechSynthesisUtterance
+ * @param word
+ * @param lang
+ * @param volume
+ * @param rate
+ * @param pitch
+ * @param voiceURI
+ **/
 function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     let msg = new SpeechSynthesisUtterance();
     msg.voiceURI = voiceURI;

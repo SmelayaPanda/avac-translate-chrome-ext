@@ -4,6 +4,11 @@
 
 .mainWordAvac:hover {
     background-color: aliceblue;
-    border-radius: 0.125em;
+    border-radius: 0.5em;
     cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }

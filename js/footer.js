@@ -15,17 +15,17 @@ function createCloseFooterAvac() {
         if (footerAvac.style.opacity === '0') {
             fadeInElement(footerAvac, 0);
             closeFooterAvac.style.borderTop = 'solid white 1px';
-            document.body.style.marginBottom = '10em';
-        }
-        else {
-
+            footerAvac.style.borderTop = 'solid gray 1px';
+            document.body.style.marginBottom = '10rem';
+        } else {
             fadeOutElement(footerAvac, 0);
             closeFooterAvac.style.borderTop = 'solid gray 1px';
-            document.body.style.marginBottom = '2.5em'
+            footerAvac.style.borderTop = 'none';
+            document.body.style.marginBottom = '2rem'
         }
     };
-    closeFooter.style.height = '2.5em'
 }
+
 /** --------------------------------------------------------------------------
  * Create DOM element - footer and inject on page
  **/
@@ -53,8 +53,9 @@ function createFooterAvac() {
 </div>`;
     createSideNavAvac();
     footer.style.opacity = '0';
+    footer.style.borderTop = 'solid gray 1px';
     fadeInElement(footer, 0);
-    document.body.style.marginBottom = '10em';
+    document.body.style.marginBottom = '10rem';
     document.body.appendChild(footer);
 
     document.getElementById('sentenceExampleAvac').onclick = function () {
@@ -67,29 +68,6 @@ function createFooterAvac() {
             speakWord(synonyms[s].innerText, 'en-GB', 0.8, 0.8, 1, 'native');
         }
     }
-}
-
-/** --------------------------------------------------------------------------
- * Create DOM element - closeFooter and inject on page
- **/
-function createCloseFooterAvac() {
-    let closeFooter = document.createElement('footer');
-    closeFooter.id = 'closeFooterAvac';
-    closeFooter.innerHTML = "";
-    document.body.appendChild(closeFooter);
-
-    let footerAvac = document.getElementById("footerAvac");
-    let closeFooterAvac = document.getElementById('closeFooterAvac');
-    document.getElementById('closeFooterAvac').onclick = function () {
-        if (footerAvac.style.display === 'none') {
-            fadeInElement(footerAvac, closeFooterAvac);
-        }
-        else {
-            fadeOutElement(footerAvac, closeFooterAvac);
-        }
-    };
-    document.body.style.marginBottom = '10em';
-    closeFooter.style.height = '2.5em'
 }
 
 /** --------------------------------------------------------------------------
