@@ -53,19 +53,19 @@ window.onload = function () {
     /** ---------------------------------------------------- */
     rangeInput.addEventListener('input', function () {
         if (this.value < 20 && displayedLevel.innerHTML !== "BEGINNER") {
-            fadeinElement(displayedLevel, "BEGINNER");
+            fadeTextReplace(displayedLevel, "BEGINNER");
         }
         else if (this.value >= 20 && this.value < 40 && displayedLevel.innerHTML !== "PRE INTERMEDIATE") {
-            fadeinElement(displayedLevel, "PRE INTERMEDIATE");
+            fadeTextReplace(displayedLevel, "PRE INTERMEDIATE");
         }
         else if (this.value >= 40 && this.value < 60 && displayedLevel.innerHTML !== "INTERMEDIATE") {
-            fadeinElement(displayedLevel, "INTERMEDIATE");
+            fadeTextReplace(displayedLevel, "INTERMEDIATE");
         }
         else if (this.value >= 60 && this.value < 80 && displayedLevel.innerHTML !== "UPPER INTERMEDIATE") {
-            fadeinElement(displayedLevel, "UPPER INTERMEDIATE");
+            fadeTextReplace(displayedLevel, "UPPER INTERMEDIATE");
         }
         else if (this.value >= 80 && displayedLevel.innerHTML !== "ADVANCED") {
-            fadeinElement(displayedLevel, "ADVANCED");
+            fadeTextReplace(displayedLevel, "ADVANCED");
         }
     });
     /** ---------------------------
@@ -104,15 +104,5 @@ window.onload = function () {
     }
 };
 
-/** ------------------------------------------------------- */
-function fadeinElement(element, newValue) {
-    element.classList.add('hide');
-    setTimeout(function () {
-        element.innerHTML = newValue;
-    }, 200);
-    setTimeout(function () {
-        element.classList.remove('hide');
-    }, 500);
-}
 
 /** ------------------------------------------------------- */

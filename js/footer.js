@@ -15,13 +15,15 @@ function createCloseFooterAvac() {
         if (footerAvac.style.opacity === '0') {
             fadeInElement(footerAvac, 0);
             closeFooterAvac.style.borderTop = 'solid white 1px';
+            document.body.style.marginBottom = '10em';
         }
         else {
+
             fadeOutElement(footerAvac, 0);
             closeFooterAvac.style.borderTop = 'solid gray 1px';
+            document.body.style.marginBottom = '2.5em'
         }
     };
-    document.body.style.marginBottom = '10em';
     closeFooter.style.height = '2.5em'
 }
 /** --------------------------------------------------------------------------
@@ -50,9 +52,9 @@ function createFooterAvac() {
     </div>
 </div>`;
     createSideNavAvac();
-
     footer.style.opacity = '0';
     fadeInElement(footer, 0);
+    document.body.style.marginBottom = '10em';
     document.body.appendChild(footer);
 }
 /** --------------------------------------------------------------------------

@@ -22,7 +22,7 @@ let fontLoader = function (param) {
     link.href = 'http://fonts.googleapis.com/css?family=' + param.familyt;
 };
 /** --------------------------------------------------------------------------
- * Fade In/Out for content footer
+ * Fade In/Out any element
  * @param el
  * @param time
  **/
@@ -36,4 +36,18 @@ function fadeInElement(el, time) {
     setTimeout(function () {
         el.style.opacity = '1';
     }, time);
+}
+/** --------------------------------------------------------------------------
+ * Fade-replace for text
+ * @param element
+ * @param newValue
+ **/
+function fadeTextReplace(element, newValue) {
+    element.classList.add('hide');
+    setTimeout(function () {
+        element.innerHTML = newValue;
+    }, 200);
+    setTimeout(function () {
+        element.classList.remove('hide');
+    }, 500);
 }
