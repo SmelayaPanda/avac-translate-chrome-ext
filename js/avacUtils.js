@@ -30,6 +30,36 @@ let fontLoader = function (param) {
  * @param pitch
  * @param voiceURI
  **/
+/** --------------------------------------------------------------------------
+ * Fade In/Out any element
+ * @param el
+ * @param time
+ **/
+function fadeOutElement(el, time) {
+    setTimeout(function () {
+        el.style.opacity = '0';
+    }, time);
+}
+
+function fadeInElement(el, time) {
+    setTimeout(function () {
+        el.style.opacity = '1';
+    }, time);
+}
+/** --------------------------------------------------------------------------
+ * Fade-replace for text
+ * @param element
+ * @param newValue
+ **/
+function fadeTextReplace(element, newValue) {
+    element.classList.add('hide');
+    setTimeout(function () {
+        element.innerHTML = newValue;
+    }, 200);
+    setTimeout(function () {
+        element.classList.remove('hide');
+    }, 500);
+}
 
 function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     let msg = new SpeechSynthesisUtterance();
