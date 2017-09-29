@@ -34,10 +34,13 @@ window.onload = function () {
  * @param langTo
  **/
 function avacPost(level, langFrom, langTo) {
-    if (!document.getElementById("footerAvac") &&
-        !document.getElementById('closeFooterAvac')) {
-        createFooterAvac();
-        createCloseFooterAvac();
+    if (!document.getElementById("info_div") ) {
+        createInfoDiv();
+        createCloseDiv();
+        createSideNavDiv();
+        createSpeakWordDiv();
+        createExampleWordDiv();
+        createExampleSentenceDiv();
     }
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
@@ -137,10 +140,11 @@ function fillUpCloseFooterContent(langFrom, langTo, level, dictLength) {
         " . Translated words: " + dictLength;
     let i = 0;
     let speed = 40;
-    document.getElementById("closeFooterAvac").innerHTML = "";
+    document.getElementById("close_div").innerHTML = "";
+
     function typeWriter() {
         if (i < text.length) {
-            document.getElementById("closeFooterAvac").innerHTML += text.charAt(i);
+            document.getElementById("close_div").innerHTML += text.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
         }
