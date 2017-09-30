@@ -1,3 +1,13 @@
+/**
+ * Footer's elements
+ * */
+let infoDiv;
+let closeDiv;
+let sideNavDiv;
+let speakWordDiv;
+let exampleWordDiv;
+let exampleSentenceDiv;
+
 /** -----------------------------------------------------------------------------------
  * Listen popup.js
  */
@@ -34,14 +44,12 @@ window.onload = function () {
  * @param langTo
  **/
 function avacPost(level, langFrom, langTo) {
-    if (!document.getElementById("info_div") ) {
-        createInfoDiv();
-        createCloseDiv();
-        createSideNavDiv();
-        createSpeakWordDiv();
-        createExampleWordDiv();
-        createExampleSentenceDiv();
-    }
+    infoDiv = createInfoDiv();
+    closeDiv = createCloseDiv();
+    sideNavDiv = createSideNavDiv();
+    speakWordDiv = createSpeakWordDiv();
+    exampleWordDiv = createExampleWordDiv();
+    exampleSentenceDiv = createExampleSentenceDiv();
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
@@ -149,6 +157,7 @@ function fillUpCloseFooterContent(langFrom, langTo, level, dictLength) {
             setTimeout(typeWriter, speed);
         }
     }
+
     typeWriter();
 }
 

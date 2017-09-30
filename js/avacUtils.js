@@ -12,18 +12,22 @@ function removeElementsByClass(className) {
 /** --------------------------------------------------------------------------
  * Fade In/Out any element
  * @param el
- * @param time
+ * @param transition
  **/
-function fadeOutElement(el, time) {
+function fadeOutElement(el, transition) {
+    el.style.opacity = '1';
+    el.style.transition = transition;
     setTimeout(function () {
         el.style.opacity = '0';
-    }, time);
+    }, 0);
 }
 
-function fadeInElement(el, time) {
+function fadeInElement(el, transition) {
+    el.style.opacity = '0';
+    el.style.transition = transition;
     setTimeout(function () {
         el.style.opacity = '1';
-    }, time);
+    }, 0);
 }
 
 /** --------------------------------------------------------------------------

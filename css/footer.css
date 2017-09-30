@@ -7,28 +7,28 @@
     background-color: white;
     z-index: 1001;
     position: fixed;
-    padding-top: 5px;
+    bottom: 0;
+    height: 124px;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+
 }
 
 /*----------------------------*/
 
 #info_div {
-    bottom: 0;
     left: 0;
     width: 15%;
-    height: 124px;
     justify-content: center;
     display: flex;
-    line-height: 1.5em;
 }
 
 /*----------------------------*/
 
 #speak_word_div {
-    bottom: 0;
     left: 15%;
     width: 15%;
-    height: 124px;
     justify-content: center;
     display: flex;
 }
@@ -40,7 +40,9 @@
     line-height: 1em;
     width: 6em;
     height: 4em;
-    position: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     border-radius: 2em;
     border-color: #2196F3;
     outline: 0;
@@ -57,13 +59,10 @@
 /*----------------------------*/
 
 #example_word_div {
-    bottom: 0;
     left: 30%;
     width: 15%;
-    height: 124px;
     justify-content: center;
     display: flex;
-    padding-top: 5px;
 }
 
 #example_word_ul {
@@ -72,14 +71,14 @@
     line-height: 1.5em;
 }
 
-#example_word_ul > li {
+.exampleWordLi {
     font-size: 16px;
     color: green;
     list-style-type: circle;
     line-height: 1.5em;
 }
 
-#example_word_ul > li:hover {
+.exampleWordLi:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -87,13 +86,10 @@
 /*----------------------------*/
 
 #example_sentence_div {
-    bottom: 0;
     left: 45%;
     width: 55%;
-    height: 124px;
     justify-content: center;
     display: flex;
-    padding-top: 5px;
 }
 
 #example_sentence_span {
@@ -109,6 +105,7 @@
 
 /*----------------------------*/
 #close_div {
+    transition: all 0.7s;
     bottom: 0;
     width: 100%;
     height: 24px;
@@ -137,7 +134,7 @@
 
 /*----------------------------*/
 
-#side_div button {
+#side_div_button {
     font-size: 22px;
     height: 2.5em;
     width: 4em;
@@ -154,7 +151,7 @@
     font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
 
-#side_div button:hover {
+#side_div_button:hover {
     left: 0;
 }
 
