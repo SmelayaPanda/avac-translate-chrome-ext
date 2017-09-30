@@ -52,6 +52,7 @@ function avacPost(level, langFrom, langTo) {
     textLevelDiv = createDelimiterDiv();
     exampleWordDiv = createExampleWordDiv();
     exampleSentenceDiv = createExampleSentenceDiv();
+    document.body.style.marginBottom = '144px';
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
     const params =
@@ -169,8 +170,8 @@ function fillUpCloseFooterContent(langFrom, langTo, level, dictLength) {
  **/
 function replaceSpeakBtnContent(avacWords) {
 
-    let playWordBtn = document.getElementById('playWordBtnAvac');
-    let playWordBtnContent = document.getElementById('playWordAvac');
+    let playWordBtn = document.getElementById('speak_word_button');
+    let playWordBtnContent = document.getElementById('speak_word_button');
     for (let av in avacWords) {
         avacWords[av].onclick = function () {
             playWordBtnContent.innerText =
