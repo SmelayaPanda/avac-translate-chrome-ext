@@ -5,6 +5,7 @@ let infoDiv;
 let closeDiv;
 let sideNavDiv;
 let speakWordDiv;
+let textLevelDiv;
 let exampleWordDiv;
 let exampleSentenceDiv;
 
@@ -48,6 +49,7 @@ function avacPost(level, langFrom, langTo) {
     closeDiv = createCloseDiv();
     sideNavDiv = createSideNavDiv();
     speakWordDiv = createSpeakWordDiv();
+    textLevelDiv = createDelimiterDiv();
     exampleWordDiv = createExampleWordDiv();
     exampleSentenceDiv = createExampleSentenceDiv();
     const url = "https://panda.jelastic.regruhosting.ru/avac/";

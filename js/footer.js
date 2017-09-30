@@ -12,6 +12,7 @@ function createCloseDiv() {
         let closeDiv = document.getElementById('close_div');
         closeDiv.onclick = function () {
             let infoDiv = document.getElementById('info_div');
+            let delimiterDiv = document.getElementById('delimiter_div');
             let speakWordDiv = document.getElementById('speak_word_div');
             let exampleWordDiv = document.getElementById('example_word_div');
             let exampleSentenceDiv = document.getElementById('example_sentence_div');
@@ -19,15 +20,29 @@ function createCloseDiv() {
             if (infoDiv.style.opacity === '1') {
                 infoDiv.style.opacity = '0';
                 speakWordDiv.style.opacity = '0';
+                delimiterDiv.style.opacity = '0';
                 exampleWordDiv.style.opacity = '0';
                 exampleSentenceDiv.style.opacity = '0';
             } else {
                 infoDiv.style.opacity = '1';
                 speakWordDiv.style.opacity = '1';
+                delimiterDiv.style.opacity = '1';
                 exampleWordDiv.style.opacity = '1';
                 exampleSentenceDiv.style.opacity = '1';
             }
         }
+    }
+}
+
+/** --------------------------------------------------------------------------*/
+function createDelimiterDiv() {
+    if (!document.getElementById('delimiter_div')) {
+        let div = document.createElement('div');
+        div.style.borderTop = 'solid grey 1px';
+        div.id = 'delimiter_div';
+        document.body.appendChild(div);
+        fadeInElement(div, '0.7s');
+        return div;
     }
 }
 
@@ -45,7 +60,6 @@ function createSideNavDiv() {
         return div;
     }
 }
-
 
 /** --------------------------------------------------------------------------*/
 function createInfoDiv() {
