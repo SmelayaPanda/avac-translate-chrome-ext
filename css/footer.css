@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Philosopher&subset=cyrillic,cyrillic-ext,vietnamese');
 
 /* CSS Reset */
 .footerAvac,
@@ -20,12 +20,12 @@
     vertical-align: baseline;
     list-style: none;
     line-height: 1;
+    font-family: 'Philosopher', sans-serif;
 }
 
 /*----------------------------*/
 
 .footerAvac {
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: white;
     z-index: 1001;
@@ -145,7 +145,6 @@
     position: fixed;
     font-style: italic;
     font-size: 12px;
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -188,7 +187,6 @@
     border: none;
     border-radius: 0 0.5em 0.5em 0;
     background: #2196F3 -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%);
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
 
 #side_div_button:hover {
