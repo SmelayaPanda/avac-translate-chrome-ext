@@ -1,3 +1,47 @@
+let infoDiv;
+let closeDiv;
+let sideNavDiv;
+let speakWordDiv;
+let textLevelDiv;
+let exampleWordDiv;
+let exampleSentenceDiv;
+
+/** --------------------------------------------------------------------------*/
+
+function createFullFooter() {
+
+    if (!document.getElementById('full_footer')) {
+        let div = document.createElement('div');
+        div.id = 'full_footer';
+
+        infoDiv = createInfoDiv();
+        closeDiv = createCloseDiv();
+        sideNavDiv = createSideNavDiv();
+        speakWordDiv = createSpeakWordDiv();
+        textLevelDiv = createDelimiterDiv();
+        exampleWordDiv = createExampleWordDiv();
+        exampleSentenceDiv = createExampleSentenceDiv();
+
+        div.appendChild(infoDiv);
+        div.appendChild(closeDiv);
+        div.appendChild(sideNavDiv);
+        div.appendChild(speakWordDiv);
+        div.appendChild(textLevelDiv);
+        div.appendChild(exampleWordDiv);
+        div.appendChild(exampleSentenceDiv);
+        document.body.appendChild(div);
+
+        if (document.getElementById('option_div')) {
+            infoDiv.style.marginBottom = '72px';
+            sideNavDiv.style.marginBottom = '72px';
+            speakWordDiv.style.marginBottom = '72px';
+            textLevelDiv.style.marginBottom = '72px';
+            exampleWordDiv.style.marginBottom = '72px';
+            exampleSentenceDiv.style.marginBottom = '72px';
+        }
+    }
+}
+
 /** --------------------------------------------------------------------------*/
 function createCloseDiv() {
     if (!document.getElementById('close_div')) {
@@ -32,7 +76,8 @@ function createCloseDiv() {
                 exampleSentenceDiv.style.opacity = '1';
                 document.body.style.marginBottom = '144px'
             }
-        }
+        };
+        return div;
     }
 }
 
@@ -141,8 +186,8 @@ function createExampleSentenceDiv() {
     span.id = 'example_sentence_span';
     div.classList.add('footerAvac');
     span.innerText = 'Fool sentence with max priority! And bla and np bla, just relax, sentence is to large, and and and it\'not all,\n' +
-        '            for test, stop, yes\n' +
-        '            Oh no, more more, words cache =) and hello world example';
+        '             for test, stop, yes\n' +
+        '             Oh no, more more, words cache =) and hello world example';
     div.appendChild(span);
     addSpeakerOnClick(span);
     document.body.appendChild(div);
@@ -155,6 +200,7 @@ function addSpeakerOnClick(elem) {
     elem.onclick = function () {
         speakWord(elem.innerText, 'en-GB', 0.8, 0.8, 1, 'native');
     };
+
 }
 
 /** --------------------------------------------------------------------------*/
