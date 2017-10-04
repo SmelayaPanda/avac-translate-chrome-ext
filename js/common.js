@@ -45,7 +45,7 @@ function fadeTextReplace(element, newValue) {
     }, 500);
 }
 
-/** -----------------------------------------------------------------------------------
+/** --------------------------------------------------------------------------
  * Speak word use SpeechSynthesisUtterance
  * @param word
  * @param lang
@@ -63,4 +63,14 @@ function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     msg.lang = lang;        // language, default is 'en-US'
     msg.text = word;
     window.speechSynthesis.speak(msg);
+}
+
+/** --------------------------------------------------------------------------
+ * Custom speaker for clicked element
+ * @param elem
+ * */
+function addSpeakerOnClick(elem) {
+    elem.onclick = function () {
+        speakWord(elem.innerText, 'en-GB', 0.8, 0.8, 1, 'native');
+    };
 }

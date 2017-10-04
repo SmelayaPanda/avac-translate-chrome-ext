@@ -197,24 +197,3 @@
     background: #2ECC71 -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0%, rgba(0, 0, 0, .2) 100%);
 }
 
-/*----------------------------*/
-
-#option_div {
-    transition: all 0.5s;
-    bottom: 0;
-    width: 100%;
-    height: 48px;
-    margin-bottom: 24px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    z-index: 1002;
-    background: white;
-    position: fixed;
-    font-style: italic;
-    font-size: 12px;
-    border-bottom: solid black 1px;
-    border-top: solid black 1px;
-
-}

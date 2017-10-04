@@ -175,13 +175,6 @@ function createExampleSentenceDiv() {
     return div;
 }
 
-/** --------------------------------------------------------------------------*/
-function addSpeakerOnClick(elem) {
-    elem.onclick = function () {
-        speakWord(elem.innerText, 'en-GB', 0.8, 0.8, 1, 'native');
-    };
-
-}
 
 /** --------------------------------------------------------------------------*/
 

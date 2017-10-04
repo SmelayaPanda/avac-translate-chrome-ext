@@ -1,0 +1,36 @@
+/*----------------------------*/
+
+#option_div {
+    transition: all 0.5s;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 24px;
+    align-items: center;
+    display: flex;
+    z-index: 1002;
+    background: white;
+    position: fixed;
+    font-style: italic;
+    font-size: 12px;
+    border-bottom: solid black 1px;
+    border-top: solid black 1px;
+}
+
+#option_lang_from,
+#option_lang_to {
+    position: relative;
+    width: 100px;
+    height: 25px;
+    text-decoration: none;
+    z-index: 1002;
+
+}
+
+#option_lang_from {
+    left: 50px;
+    margin-right: 120px;
+}
+
+#option_lang_to {
+}

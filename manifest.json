@@ -16,11 +16,12 @@
         "js/content.js",
         "js/option.js",
         "js/footer.js",
-        "js/avacUtils.js"
+        "js/common.js"
       ],
       "css": [
         "css/popup.css",
         "css/content.css",
+        "css/option.css",
         "css/footer.css"
       ]
     }

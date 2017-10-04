@@ -1,6 +1,7 @@
 let sideDiv;
 let fullFooter;
 let isClosedOptionDiv = false;
+
 /** --------------------------------------------------------------------------*/
 
 function optionDiv() {
@@ -10,35 +11,27 @@ function optionDiv() {
         fadeInElement(div, '0.7s');
         document.body.appendChild(div);
 
-        div.appendChild(optionLangFrom());
-        div.appendChild(optionLangTo());
+        div.appendChild(createOptionLangFrom());
+        div.appendChild(createOptionLangTo());
 
         sideDiv = createSideNavDiv();
         sideDiv.onclick = function () {
             if (div.style.opacity === '1') {
-                fullFooter = document.getElementById('full_footer');
-                if (fullFooter.style.opacity === '1') {
-                    let px1 = '24px';
-                    infoDiv.style.marginBottom = px1;
-                    speakWordDiv.style.marginBottom = px1;
-                    textLevelDiv.style.marginBottom = px1;
-                    exampleWordDiv.style.marginBottom = px1;
-                    exampleSentenceDiv.style.marginBottom = px1;
-                }
                 div.style.opacity = '0';
                 isClosedOptionDiv = true;
             }
             else {
-                if (fullFooter.style.opacity === '1') {
-                    let px2 = '72px';
-                    infoDiv.style.marginBottom = px2;
-                    speakWordDiv.style.marginBottom = px2;
-                    textLevelDiv.style.marginBottom = px2;
-                    exampleWordDiv.style.marginBottom = px2;
-                    exampleSentenceDiv.style.marginBottom = px2;
-                }
                 div.style.opacity = '1';
                 isClosedOptionDiv = false;
+            }
+            fullFooter = document.getElementById('full_footer');
+            if (fullFooter.style.opacity === '1') {
+                let px1 = isClosedOptionDiv === '0' ? '24px' : "72px";
+                infoDiv.style.marginBottom = px1;
+                speakWordDiv.style.marginBottom = px1;
+                textLevelDiv.style.marginBottom = px1;
+                exampleWordDiv.style.marginBottom = px1;
+                exampleSentenceDiv.style.marginBottom = px1;
             }
         }
     }
@@ -61,7 +54,7 @@ function createSideNavDiv() {
 
 /** --------------------------------------------------------------------------*/
 
-function optionLangFrom() {
+function createOptionLangFrom() {
     if (!document.getElementById('option_lang_from')) {
         let div = document.createElement('div');
         let select = document.createElement('select');
@@ -79,14 +72,12 @@ function optionLangFrom() {
         select.appendChild(option2);
         div.appendChild(select);
         fadeInElement(div, '0.7s');
-        document.body.appendChild(div);
         return div;
     }
 }
-
 /** --------------------------------------------------------------------------*/
 
-function optionLangTo() {
+function createOptionLangTo() {
     if (!document.getElementById('option_lang_to')) {
         let div = document.createElement('div');
         let select = document.createElement('select');
@@ -104,7 +95,6 @@ function optionLangTo() {
         select.appendChild(option2);
         div.appendChild(select);
         fadeInElement(div, '0.7s');
-        document.body.appendChild(div);
         return div;
     }
 }
