@@ -1,43 +1,41 @@
 let infoDiv;
-let closeDiv;
-let sideNavDiv;
 let speakWordDiv;
 let textLevelDiv;
 let exampleWordDiv;
 let exampleSentenceDiv;
 
+
 /** --------------------------------------------------------------------------*/
 
 function createFullFooter() {
-
+    let px0;
     if (!document.getElementById('full_footer')) {
         let div = document.createElement('div');
         div.id = 'full_footer';
+        div.style.opacity = '1';
 
         infoDiv = createInfoDiv();
-        closeDiv = createCloseDiv();
-        sideNavDiv = createSideNavDiv();
         speakWordDiv = createSpeakWordDiv();
         textLevelDiv = createDelimiterDiv();
         exampleWordDiv = createExampleWordDiv();
         exampleSentenceDiv = createExampleSentenceDiv();
 
         div.appendChild(infoDiv);
-        div.appendChild(closeDiv);
-        div.appendChild(sideNavDiv);
         div.appendChild(speakWordDiv);
         div.appendChild(textLevelDiv);
         div.appendChild(exampleWordDiv);
         div.appendChild(exampleSentenceDiv);
         document.body.appendChild(div);
 
+        fadeInElement(div, '0.7s');
+
         if (document.getElementById('option_div')) {
-            infoDiv.style.marginBottom = '72px';
-            sideNavDiv.style.marginBottom = '72px';
-            speakWordDiv.style.marginBottom = '72px';
-            textLevelDiv.style.marginBottom = '72px';
-            exampleWordDiv.style.marginBottom = '72px';
-            exampleSentenceDiv.style.marginBottom = '72px';
+            px0 = isClosedOptionDiv ? '24px' : '72px';
+            infoDiv.style.marginBottom = px0;
+            speakWordDiv.style.marginBottom = px0;
+            textLevelDiv.style.marginBottom = px0;
+            exampleWordDiv.style.marginBottom = px0;
+            exampleSentenceDiv.style.marginBottom = px0;
         }
     }
 }
@@ -45,6 +43,7 @@ function createFullFooter() {
 /** --------------------------------------------------------------------------*/
 function createCloseDiv() {
     if (!document.getElementById('close_div')) {
+        let px0;
         let div = document.createElement('div');
         let span = document.createElement('span');
         div.id = 'close_div';
@@ -55,25 +54,20 @@ function createCloseDiv() {
 
         let closeDiv = document.getElementById('close_div');
         closeDiv.onclick = function () {
-            let infoDiv = document.getElementById('info_div');
-            let delimiterDiv = document.getElementById('delimiter_div');
-            let speakWordDiv = document.getElementById('speak_word_div');
-            let exampleWordDiv = document.getElementById('example_word_div');
-            let exampleSentenceDiv = document.getElementById('example_sentence_div');
 
-            if (infoDiv.style.opacity === '1') {
-                infoDiv.style.opacity = '0';
-                speakWordDiv.style.opacity = '0';
-                delimiterDiv.style.opacity = '0';
-                exampleWordDiv.style.opacity = '0';
-                exampleSentenceDiv.style.opacity = '0';
+            px0 = isClosedOptionDiv ? '24px' : '72px';
+            infoDiv.style.marginBottom = px0;
+            speakWordDiv.style.marginBottom = px0;
+            textLevelDiv.style.marginBottom = px0;
+            exampleWordDiv.style.marginBottom = px0;
+            exampleSentenceDiv.style.marginBottom = px0;
+
+            let fullFooter = document.getElementById('full_footer');
+            if (fullFooter.style.opacity === '1') {
+                fullFooter.style.opacity = '0';
                 document.body.style.marginBottom = '24px'
             } else {
-                infoDiv.style.opacity = '1';
-                speakWordDiv.style.opacity = '1';
-                delimiterDiv.style.opacity = '1';
-                exampleWordDiv.style.opacity = '1';
-                exampleSentenceDiv.style.opacity = '1';
+                fullFooter.style.opacity = '1';
                 document.body.style.marginBottom = '144px'
             }
         };
@@ -93,20 +87,6 @@ function createDelimiterDiv() {
     }
 }
 
-/** --------------------------------------------------------------------------*/
-function createSideNavDiv() {
-    if (!document.getElementById('side_div')) {
-        let div = document.createElement('div');
-        let button = document.createElement('button');
-        div.id = 'side_div';
-        button.id = 'side_div_button';
-        button.innerText = 'Avac';
-        div.appendChild(button);
-        document.body.appendChild(div);
-        fadeInElement(div, '0.7s');
-        return div;
-    }
-}
 
 /** --------------------------------------------------------------------------*/
 function createInfoDiv() {

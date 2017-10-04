@@ -1,3 +1,6 @@
+let sideDiv;
+let fullFooter;
+let isClosedOptionDiv = false;
 /** --------------------------------------------------------------------------*/
 
 function optionDiv() {
@@ -9,6 +12,50 @@ function optionDiv() {
 
         div.appendChild(optionLangFrom());
         div.appendChild(optionLangTo());
+
+        sideDiv = createSideNavDiv();
+        sideDiv.onclick = function () {
+            if (div.style.opacity === '1') {
+                fullFooter = document.getElementById('full_footer');
+                if (fullFooter.style.opacity === '1') {
+                    let px1 = '24px';
+                    infoDiv.style.marginBottom = px1;
+                    speakWordDiv.style.marginBottom = px1;
+                    textLevelDiv.style.marginBottom = px1;
+                    exampleWordDiv.style.marginBottom = px1;
+                    exampleSentenceDiv.style.marginBottom = px1;
+                }
+                div.style.opacity = '0';
+                isClosedOptionDiv = true;
+            }
+            else {
+                if (fullFooter.style.opacity === '1') {
+                    let px2 = '72px';
+                    infoDiv.style.marginBottom = px2;
+                    speakWordDiv.style.marginBottom = px2;
+                    textLevelDiv.style.marginBottom = px2;
+                    exampleWordDiv.style.marginBottom = px2;
+                    exampleSentenceDiv.style.marginBottom = px2;
+                }
+                div.style.opacity = '1';
+                isClosedOptionDiv = false;
+            }
+        }
+    }
+}
+
+/** --------------------------------------------------------------------------*/
+function createSideNavDiv() {
+    if (!document.getElementById('side_div')) {
+        let div = document.createElement('div');
+        let button = document.createElement('button');
+        div.id = 'side_div';
+        button.id = 'side_div_button';
+        button.innerText = 'Option';
+        div.appendChild(button);
+        document.body.appendChild(div);
+        fadeInElement(div, '0.7s');
+        return div;
     }
 }
 

@@ -34,11 +34,9 @@ window.onload = function () {
  * @param langTo
  **/
 function avacPost(level, langFrom, langTo) {
-
+    createCloseDiv();
     optionDiv();
     createFullFooter();
-
-
     document.body.style.marginBottom = '144px';
     const url = "https://panda.jelastic.regruhosting.ru/avac/";
     const req = new XMLHttpRequest();
