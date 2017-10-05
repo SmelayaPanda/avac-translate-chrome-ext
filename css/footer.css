@@ -12,7 +12,7 @@
 #example_sentence_span,
 #delimiter_div,
 #close_div,
-#side_div_button
+#side_div_button,
 #full_footer {
     margin: 0;
     padding: 0;
@@ -175,12 +175,12 @@
 /*----------------------------*/
 
 #side_div_button {
-    font-size: 22px;
+    font-size: 20px;
     height: 2.5em;
     width: 5em;
     position: fixed;
     left: -4.25em;
-    bottom: 3.75em;
+    bottom: 4.25em;
     z-index: 1002;
     transition: 0.4s;
     text-decoration: none;
@@ -188,6 +188,8 @@
     color: white;
     border: none;
     border-radius: 0 0.5em 0.5em 0;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 1px rgba(255, 255, 255, .75);
     background: #2196F3 -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0%, rgba(0, 0, 0, .2) 100%);
 }
 

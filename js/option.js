@@ -11,8 +11,11 @@ function optionDiv() {
         fadeInElement(div, '0.7s');
         document.body.appendChild(div);
 
-        div.appendChild(createOptionLangFrom());
-        div.appendChild(createOptionLangTo());
+        div.appendChild(createOptionLangFromDiv());
+        div.appendChild(createOptionLangToDiv());
+        div.appendChild(createInputRangeDiv());
+        div.appendChild(createDoItButtonDiv());
+        div.appendChild(createOnloadCheckBoxDiv());
 
         sideDiv = createSideNavDiv();
         sideDiv.onclick = function () {
@@ -26,7 +29,7 @@ function optionDiv() {
             }
             fullFooter = document.getElementById('full_footer');
             if (fullFooter.style.opacity === '1') {
-                let px1 = isClosedOptionDiv === '0' ? '24px' : "72px";
+                let px1 = isClosedOptionDiv ? '24px' : "72px";
                 infoDiv.style.marginBottom = px1;
                 speakWordDiv.style.marginBottom = px1;
                 textLevelDiv.style.marginBottom = px1;
@@ -54,20 +57,19 @@ function createSideNavDiv() {
 
 /** --------------------------------------------------------------------------*/
 
-function createOptionLangFrom() {
-    if (!document.getElementById('option_lang_from')) {
+function createOptionLangFromDiv() {
+    if (!document.getElementById('lang_from_div')) {
         let div = document.createElement('div');
         let select = document.createElement('select');
         let option1 = document.createElement('option');
         let option2 = document.createElement('option');
-        select.id = 'option_lang_from';
+        div.id = 'lang_from_div';
+        select.id = 'lang_from_option';
         select.title = 'Lang from';
         option1.value = 'eng';
         option2.value = 'rus';
         option1.innerText = 'English';
         option2.innerText = 'Russian';
-        div.id = 'option_lang_from';
-
         select.appendChild(option1);
         select.appendChild(option2);
         div.appendChild(select);
@@ -75,21 +77,22 @@ function createOptionLangFrom() {
         return div;
     }
 }
+
 /** --------------------------------------------------------------------------*/
 
-function createOptionLangTo() {
-    if (!document.getElementById('option_lang_to')) {
+function createOptionLangToDiv() {
+    if (!document.getElementById('lang_to_div')) {
         let div = document.createElement('div');
         let select = document.createElement('select');
         let option1 = document.createElement('option');
         let option2 = document.createElement('option');
-        select.id = 'option_lang_to';
+        div.id = 'lang_to_div';
+        select.id = 'lang_to_option';
         select.title = 'Lang from';
         option1.value = 'eng';
         option2.value = 'rus';
         option1.innerText = 'English';
         option2.innerText = 'Russian';
-        div.id = 'option_lang_to';
 
         select.appendChild(option1);
         select.appendChild(option2);
@@ -98,3 +101,58 @@ function createOptionLangTo() {
         return div;
     }
 }
+
+/** --------------------------------------------------------------------------*/
+
+function createInputRangeDiv() {
+    if (!document.getElementById('level_div')) {
+        let div = document.createElement('div');
+        let input = document.createElement('input');
+        div.id = 'level_div';
+        input.type = 'range';
+        input.id = 'avacLevel';
+        input.value = '0';
+        input.title = 'Language level';
+
+        div.appendChild(input);
+        fadeInElement(div, '0.7s');
+        return div;
+    }
+}
+
+/** --------------------------------------------------------------------------*/
+
+function createDoItButtonDiv() {
+    if (!document.getElementById('doit_div')) {
+        let div = document.createElement('div');
+        let button = document.createElement('button');
+        div.id = 'doit_div';
+        button.id = 'doit_button';
+        button.innerText = 'do it!';
+
+        div.appendChild(button);
+        fadeInElement(div, '0.7s');
+        return div;
+    }
+}
+
+
+function createOnloadCheckBoxDiv() {
+    if (!document.getElementById('onload_div')) {
+        let div = document.createElement('div');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        div.id = 'onload_div';
+        input.type = 'checkbox';
+        input.id = 'onload_checkbox';
+        label.htmlFor = 'onload_checkbox';
+        label.title = 'Translate using last parameters after page loading';
+        label.innerText = 'Onload-mode';
+
+        div.appendChild(input);
+        div.appendChild(label);
+        fadeInElement(div, '0.7s');
+        return div;
+    }
+}
+

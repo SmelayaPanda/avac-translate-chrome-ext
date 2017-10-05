@@ -107,6 +107,7 @@
     -webkit-appearance: none;
     margin: 12px 0 20px;
     width: 100%;
+    padding-top: 8px;
 }
 
 #avacLevel[type=range]:focus {
