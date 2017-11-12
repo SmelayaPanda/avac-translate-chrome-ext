@@ -1,3 +1,5 @@
+let rWord = /(\w+)/gi;
+
 /** -----------------------------------------------------------------------------------
  * Listen popup.js
  */
@@ -48,7 +50,7 @@ function avacPost(level, langFrom, langTo) {
     req.open("POST", url, true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.onreadystatechange = function () {
-        let myDictionary;
+        let myDictionary = new Map();
         if (this.readyState === 4 && this.status === 200) {
             myDictionary = JSON.parse(this.responseText);
             if (document.readyState === 'complete') {
@@ -70,34 +72,9 @@ function translateText(level, langFrom, langTo, myDictionary) {
     if (document.getElementsByClassName("wordAvac")) {
         removeElementsByClass("wordAvac")
     }
-    let words;
-    let text;
-    let paragraphs = document.getElementsByTagName("p");
-    for (let i = 0; i < paragraphs.length; i++) {
-        text = paragraphs[i].textContent;
-        text = text
-            .replace(text.charAt(0), ' ' + text.charAt(0)) // Begin of the paragraph
-            .replace(text.charAt(text.length - 1), text.charAt(text.length - 1) + ' ')
-            .replace(/\./g, ' .')
-            .replace(/,/g, ' ,')
-            .replace(/:/g, ' :')
-            .replace(/;/g, ' ;')
-            .replace(/!/g, ' !')
-            .replace(/\?/g, ' ?')
-            .replace(/\(/g, ' (')
-            .replace(/\)/g, ' )')
-            .replace(/\s+/g, '  ');
-
-        words = text
-            .replace(/[.,!;:?()]/g, " ")
-            .replace(/\s+/g, ' ')
-            .split(' ');
-
-        for (let w in words) {
-            text = text.replace(' ' + words[w] + ' ',
-                `<span class="mainWordAvac ___${words[w].toLowerCase()}"> ${words[w]}</span> `);
-        }
-        paragraphs[i].innerHTML = text + "\n";
+    let p = document.getElementsByTagName("p");
+    for (let i = 0; i < p.length; i++) {
+        p[i].innerHTML = p[i].textContent.replace(rWord, `<span class="AVAC ___$1">$1</span>`);
     }
     let avacWords = document.querySelectorAll('[class*=___]');
 
