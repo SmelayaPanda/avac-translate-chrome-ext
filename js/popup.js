@@ -67,11 +67,12 @@ window.onload = function () {
         else if (this.value >= 80 && displayedLevel.innerHTML !== "ADVANCED") {
             fadeTextReplace(displayedLevel, "ADVANCED");
         }
+
     });
     /** ---------------------------
      * Sending message to content.js
      */
-    translate_btn.addEventListener('click', function () {
+    rangeInput.addEventListener('input', function () {
         chrome.tabs.query({
             active: true,
             lastFocusedWindow: true
@@ -84,25 +85,4 @@ window.onload = function () {
             chrome.tabs.sendMessage(tabs[0].id, JSON.stringify(obj));
         });
     });
-    /** ---------------------------
-     * "do it" button customisation
-     */
-    let loading = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.target.classList.add('loading');
-        e.target.setAttribute('disabled', 'disabled');
-        setTimeout(function () {
-            e.target.classList.remove('loading');
-            e.target.removeAttribute('disabled');
-        }, 1500);
-    };
-
-    let btns = document.querySelectorAll('button');
-    for (let i = btns.length - 1; i >= 0; i--) {
-        btns[i].addEventListener('click', loading);
-    }
 };
-
-
-/** ------------------------------------------------------- */

@@ -14,15 +14,13 @@
       "js": [
         "js/popup.js",
         "js/content.js",
-        "js/option.js",
-        "js/footer.js",
-        "js/common.js"
+        "js/common.js",
+        "js/dictionary/en_arr.js",
+        "js/dictionary/ru_arr.js"
       ],
       "css": [
         "css/popup.css",
-        "css/content.css",
-        "css/option.css",
-        "css/footer.css"
+        "css/content.css"
       ]
     }
   ],
@@ -39,7 +37,6 @@
   "browser_action": {
     "default_title": "Air Article Translator",
     "default_icon": "img/64.png",
-    "default_popup": "html/popup.html",
-    "options_page": "html/options.html"
+    "default_popup": "html/popup.html"
   }
 }
