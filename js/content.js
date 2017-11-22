@@ -27,34 +27,43 @@ window.onload = function () {
         });
 };
 
-/** -----------------------------------------------------------------------------------
- * Ask AvacServlet.java translated word for current page
- * @param level
- * @param langFrom
- * @param langTo
- **/
-function translateThis(level, langFrom, langTo) {
-    if (document.getElementsByClassName("wordAvac")) {
-        removeElementsByClass("wordAvac")
-    }
-    let p = document.getElementsByTagName("p");
-    for (let i = 0; i < p.length; i++) {
-        p[i].innerHTML = p[i].textContent.replace(/(\w+)/gi, `<span class="AVAC">$1</span>`);
-    }
-    let allWords = document.getElementsByClassName('AVAC');
 
-    let word;
-    let rank;
-    for (w of allWords) {
-        word = w.innerText.trim().toLocaleLowerCase();
-        rank = en_arr.indexOf(word);
-        if (-1 !== rank && level ** 2.3 < rank ) {
-            addSpeakerOnClick(w);
-            w.innerHTML += '<span class="wordAvac"> [' + ru_arr[en_arr.indexOf(word)] + ']</span>';
+function translateThis(level, langFrom, langTo) {
+    if (0 !== document.getElementsByClassName("wordAvac").length) {
+        applyLevel(level);
+        // removeElementsByClass("wordAvac");
+    } else {
+        let p = document.getElementsByTagName("p");
+        for (let i = 0; i < p.length; i++) {
+            p[i].innerHTML = p[i].textContent.replace(/(\w+)/gi, `<span class="AVAC">$1</span>`);
         }
+        let allWords = document.getElementsByClassName('AVAC');
+
+        let word;
+        let rank;
+        for (w of allWords) {
+            word = w.innerText.trim().toLocaleLowerCase();
+            rank = en_arr.indexOf(word);
+            if (-1 !== rank) {
+                addSpeakerOnClick(w);
+                w.innerHTML += `<span style="display: none;" class="wordAvac ___${en_arr.indexOf(word)}"> [${ru_arr[en_arr.indexOf(word)]}]</span>`;
+            }
+        }
+        applyLevel(level);
     }
 }
 
+function applyLevel(level) {
+    for (let w of document.querySelectorAll('[class*=___]')) {
+        w.style.display = 'inline';
+    }
+    let maxRank = level ** 2.3;
+    for (let i = 0; i < maxRank; i++) {
+        for (w of document.getElementsByClassName('___' + i)) {
+            w.style.display = 'none';
+        }
+    }
+}
 
 
 
