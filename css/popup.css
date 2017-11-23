@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html {
     height: 100%;
     background: radial-gradient(#fbfbfb, #8b8b8b);
+/*    background-image: url("../img/water.png");*/
 }
 
 #avacPopup {
     width: 310px;
-    height: 100px;
+    height: 300px;
     font-family: 'Open Sans', sans-serif;
 }
 
-/* -------------------------------------------------------------
-   Lang dropbox
-*/
 #langFrom, #langTo {
     -webkit-appearance: button;
     -webkit-border-radius: 2px;
@@ -21,6 +20,7 @@ html {
     -webkit-padding-start: 2px;
     -webkit-user-select: none;
     background: no-repeat 97% center;
+    box-shadow: inset 0 1px 1px #fff, 0 1px 1px #999;
     border: 1px solid #AAA;
     color: #555;
     font-size: 18px;
@@ -51,7 +51,7 @@ input[type='range'] {
     height: 4.5em;
     border-radius: .25em;
     background: linear-gradient(#868686, #868686) calc(100% - 0.1825em) calc(100% - 0.6875em),
-    linear-gradient(90deg, #868686, #868686 0.125em, rgba(0, 0, 0, 0) 0.125em, rgba(0, 0, 0, 0) 18.635em) 0.495em calc(100% - 0.375em), 
+    linear-gradient(90deg, #868686, #868686 0.125em, rgba(0, 0, 0, 0) 0.125em, rgba(0, 0, 0, 0) 18.635em) 0.495em calc(100% - 0.375em),
     radial-gradient(#919191, rgba(145, 145, 145, 0)) 2.3125em 100%,
     radial-gradient(#919191, rgba(145, 145, 145, 0)) 3.8125em 100%,
     radial-gradient(#919191, rgba(145, 145, 145, 0)) 5.3125em 100%,
@@ -123,6 +123,7 @@ input[type='range']:focus {
     background: #2196F3 -webkit-linear-gradient(top, rgba(255, 255, 255, .2) 0%, rgba(0, 0, 0, .2) 100%);
     padding: 5px;
     border-radius: 5px;
+    box-shadow: inset 0 1px 1px #fff, 0 1px 1px #999;
 }
 
 /* ------------------------------------------------------------- */
@@ -140,4 +141,42 @@ input[type='range']:focus {
     width: 14px;
     height: 14px;
     margin-bottom: -2px;
+}
+
+.power-check {
+    display: none;
+}
+
+.power-button {
+    background-image: url("../img/water.png");
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    text-align: center;
+    line-height: 64px;
+    cursor: pointer;
+    border-radius: 100%;
+    background: radial-gradient(ellipse 200% 15px at -150% 50%, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(ellipse 200% 15px at 250% 50%, #ffffff 50%, rgba(0, 0, 0, 0)), radial-gradient(ellipse 50px 200% at 50% -150%, #000000 0%, rgba(0, 0, 0, 0)), radial-gradient(ellipse 50px 200% at 50% 250%, #000000 0%, rgba(0, 0, 0, 0)), radial-gradient(ellipse 4% 14% at 97.5% 50%, #ffffff 0%, rgba(0, 0, 0, 0)), radial-gradient(ellipse 4% 14% at 2.5% 50%, #ffffff 0%, rgba(0, 0, 0, 0)), radial-gradient(closest-side, rgba(0, 0, 0, 0) 94%, #6f6f6f 95%), repeating-radial-gradient(4px, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.1)), radial-gradient(#eeeeee 30%, #888888 100%);
+    box-shadow: 0 4px 4px black;
+}
+
+.power-button__icon {
+    margin-top: 29px;
+    font-size: 42px;
+    color: #333;
+    text-shadow: 1px 1px 0 white;
+    transition: color, text-shadow;
+    transition-duration: 0.2s;
+}
+
+.power-check:checked + .power-button .power-button__icon {
+    color: white;
+    text-shadow: 0 0 1px white, 0 0 10px #9dfbff;
+}
+
+
+#water_img {
+    position: static;
 }
