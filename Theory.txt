@@ -21,3 +21,25 @@
       // Persistent, как можно догадаться, загружена постоянно,
       // а event-страница загружается только при необходимости, когда возникает связанное с ней событие.
     },
+
+
+
+    let level = 0;
+    let langFrom = 'eng';
+    let langTo = 'eng';
+    let power = false;
+
+    chrome.storage.sync.get('rangeInput', obj => level = obj.rangeInput);
+    chrome.storage.sync.get('langFrom', obj => langFrom = obj.langFrom);
+    chrome.storage.sync.get('langTo', obj => langTo = obj.langTo);
+
+
+    chrome.runtime.onMessage.addListener(
+        msgObj => {
+            let params = JSON.parse(msgObj);
+            if (params.power) {
+                window.onload = function () {
+                    translateThis(level, langFrom, langTo);
+                }
+            }
+        });
