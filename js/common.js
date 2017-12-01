@@ -14,6 +14,7 @@ function removeElementsByClass(className) {
  * @param el
  * @param transition
  **/
+ hello
 function fadeOutElement(el, transition) {
     el.style.opacity = '1';
     el.style.transition = transition;
