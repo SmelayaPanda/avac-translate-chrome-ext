@@ -15,10 +15,18 @@
         "js/popup.js",
         "js/content.js",
         "js/common.js",
-        "js/dictionaries/eng_rus/eng_rus_1.js",
-        "js/dictionaries/eng_rus/eng_rus_2.js",
-        "js/dictionaries/rus_eng/rus_eng_1.js",
-        "js/dictionaries/rus_eng/rus_eng_2.js"
+
+        "js/dictionaries/eng/eng.js",
+        "js/dictionaries/eng/eng_from_rus.js",
+        "js/dictionaries/eng/eng_from_deu.js",
+
+        "js/dictionaries/rus/rus.js",
+        "js/dictionaries/rus/rus_from_eng.js",
+        "js/dictionaries/rus/rus_from_deu.js",
+
+        "js/dictionaries/deu/deu.js",
+        "js/dictionaries/deu/deu_from_eng.js",
+        "js/dictionaries/deu/deu_from_rus.js"
       ],
       "css": [
         "css/popup.css",

@@ -1,51 +1,53 @@
-/** -----------------------------------------------------------------------------------
- * Listen popup.js
- */
+const ENGLISH = "eng";
+const RUSSIAN = "rus";
+const DEUTSCH = "deu";
+
+let level;
+let langFrom;
+let langTo;
+
+let dicFrom;
+let dicTo;
+
+/* Listen popup.js */
 window.onload = function () {
     chrome.storage.sync.get('onLoadCheckBox', function (obj) {
         if (obj.onLoadCheckBox) {
-            let level;
-            let langFrom;
-            let langTo;
-            chrome.storage.sync.get('rangeInput', function (obj) {
-                obj.rangeInput ? level = obj.rangeInput : level = 0;
-                chrome.storage.sync.get('langFrom', function (obj) {
-                    obj.langFrom ? langFrom = obj.langFrom : 'eng';
-                    chrome.storage.sync.get('langTo', function (obj) {
-                        obj.langTo ? langTo = obj.langTo : 'eng';
-                        translateThis(level, langFrom, langTo);
-                    });
-                });
-            });
+            chrome.storage.sync.get('rangeInput', obj => obj.rangeInput ? level = obj.rangeInput : level = 0);
+            chrome.storage.sync.get('langFrom', obj => obj.langFrom ? langFrom = obj.langFrom : 'eng');
+            chrome.storage.sync.get('langTo', obj => obj.langTo ? langTo = obj.langTo : 'eng');
+            translateThis();
         }
     });
 
     chrome.runtime.onMessage.addListener(
         msgObj => {
             let params = JSON.parse(msgObj);
-            translateThis(params.level, params.langFrom, params.langTo);
+            level = params.level;
+            langTo = params.langTo;
+            langFrom = params.langFrom;
+            translateThis();
         });
 };
 
-function translateThis(level, langFrom, langTo) {
+function translateThis() {
+    setDictionary();
     if (0 !== document.getElementsByClassName("wordAvac").length) {
         applyLevel(level);
-        // removeElementsByClass("wordAvac");
     } else {
         let p = document.getElementsByTagName("p");
         for (let i = 0; i < p.length; i++) {
-            p[i].innerHTML = p[i].textContent.replace(/(\w+)/gi, `<span class="AVAC">$1</span>`);
+            p[i].innerHTML = p[i].textContent.replace(/([a-zA-Z'-]+)/gi, `<span class="AVAC">$1</span>`);
         }
         let allWords = document.getElementsByClassName('AVAC');
-
         let word;
         let rank;
         for (w of allWords) {
             word = w.innerText.trim().toLocaleLowerCase();
-            rank = eng_rus_1.indexOf(word);
+            rank = dicFrom.indexOf(word);
             if (-1 !== rank) {
                 addSpeakerOnClick(w);
-                w.innerHTML += `<span style="display: none;" class="wordAvac ___${eng_rus_1.indexOf(word)}"> [${eng_rus_2[eng_rus_1.indexOf(word)]}]</span>`;
+                w.innerHTML += `<span hidden class="wordAvac ___${dicFrom.indexOf(word)}"> [${dicTo[dicFrom.indexOf(word)]}]</span>`;
             }
         }
         applyLevel(level);
@@ -64,5 +66,26 @@ function applyLevel(level) {
     }
 }
 
+function setDictionary() {
+    switch (langFrom) {
+        case ENGLISH: {
+            dicFrom = eng;
+            if (RUSSIAN === langTo) dicTo = rus_from_eng;
+            if (DEUTSCH === langTo) dicTo = deu_from_eng;
+        }
+        case RUSSIAN: {
+            dicFrom = rus;
+            if (ENGLISH === langTo) dicTo = eng_from_rus;
+            if (DEUTSCH === langTo) dicTo = deu_from_rus;
+        }
+        case DEUTSCH :
+            dicFrom = deu;
+            if (RUSSIAN === langTo) dicTo = rus_from_deu;
+            if (ENGLISH === langTo) dicTo = eng_from_deu;
+        default:
+            dicFrom = eng;
+            dicTo = rus_from_eng;
+    }
+}
 
 
