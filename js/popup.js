@@ -52,20 +52,20 @@ window.onload = function () {
     });
     /** ---------------------------------------------------- */
     rangeInput.addEventListener('input', function () {
-        if (this.value < 20 && displayedLevel.innerHTML !== "BEGINNER") {
-            fadeTextReplace(displayedLevel, "BEGINNER");
+        if (this.value < 20 && displayedLevel.innerHTML !== "Beginner") {
+            fadeTextReplace(displayedLevel, "Beginner");
         }
-        else if (this.value >= 20 && this.value < 40 && displayedLevel.innerHTML !== "PRE INTERMEDIATE") {
-            fadeTextReplace(displayedLevel, "PRE INTERMEDIATE");
+        else if (this.value >= 20 && this.value < 40 && displayedLevel.innerHTML !== "Pre intermediate") {
+            fadeTextReplace(displayedLevel, "Pre intermediate");
         }
-        else if (this.value >= 40 && this.value < 60 && displayedLevel.innerHTML !== "INTERMEDIATE") {
-            fadeTextReplace(displayedLevel, "INTERMEDIATE");
+        else if (this.value >= 40 && this.value < 60 && displayedLevel.innerHTML !== "Intermediate") {
+            fadeTextReplace(displayedLevel, "Intermediate");
         }
-        else if (this.value >= 60 && this.value < 80 && displayedLevel.innerHTML !== "UPPER INTERMEDIATE") {
-            fadeTextReplace(displayedLevel, "UPPER INTERMEDIATE");
+        else if (this.value >= 60 && this.value < 80 && displayedLevel.innerHTML !== "Upper intermediate") {
+            fadeTextReplace(displayedLevel, "Upper intermediate");
         }
-        else if (this.value >= 80 && displayedLevel.innerHTML !== "ADVANCED") {
-            fadeTextReplace(displayedLevel, "ADVANCED");
+        else if (this.value >= 80 && displayedLevel.innerHTML !== "Advanced") {
+            fadeTextReplace(displayedLevel, "Advanced");
         }
 
     });

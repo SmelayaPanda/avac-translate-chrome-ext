@@ -15,9 +15,10 @@
         "js/popup.js",
         "js/content.js",
         "js/common.js",
-
-        "js/dictionary/en_arr.js",
-        "js/dictionary/ru_arr.js"
+        "js/dictionaries/eng_rus/eng_rus_1.js",
+        "js/dictionaries/eng_rus/eng_rus_2.js",
+        "js/dictionaries/rus_eng/rus_eng_1.js",
+        "js/dictionaries/rus_eng/rus_eng_2.js"
       ],
       "css": [
         "css/popup.css",
@@ -26,14 +27,10 @@
     }
   ],
   "permissions": [
-    /*"tabs",*/
-
     "tts",
+    //text-to-speech
     "storage",
-    "activeTab",
-    "https://panda.jelastic.regruhosting.ru/*",
-    "http://fonts.googleapis.com/",
-    "https://fonts.googleapis.com/"
+    "activeTab"
   ],
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "browser_action": {

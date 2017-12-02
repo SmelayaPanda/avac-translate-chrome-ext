@@ -27,7 +27,6 @@ window.onload = function () {
         });
 };
 
-
 function translateThis(level, langFrom, langTo) {
     if (0 !== document.getElementsByClassName("wordAvac").length) {
         applyLevel(level);
@@ -43,10 +42,10 @@ function translateThis(level, langFrom, langTo) {
         let rank;
         for (w of allWords) {
             word = w.innerText.trim().toLocaleLowerCase();
-            rank = en_arr.indexOf(word);
+            rank = eng_rus_1.indexOf(word);
             if (-1 !== rank) {
                 addSpeakerOnClick(w);
-                w.innerHTML += `<span style="display: none;" class="wordAvac ___${en_arr.indexOf(word)}"> [${ru_arr[en_arr.indexOf(word)]}]</span>`;
+                w.innerHTML += `<span style="display: none;" class="wordAvac ___${eng_rus_1.indexOf(word)}"> [${eng_rus_2[eng_rus_1.indexOf(word)]}]</span>`;
             }
         }
         applyLevel(level);

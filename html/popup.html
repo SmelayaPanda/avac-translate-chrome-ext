@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Your air translator</title>
-    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/popup.css" rel="stylesheet" type="text/css"/>
     <script src="../js/popup.js" charset="utf-8"></script>
     <script src="../js/common.js" charset="utf-8"></script>
 </head>
-<body id="bodyAVAC">
-
+<body>
 
 <div id="avacPopup">
     <select id="langFrom" title="Lang from">
@@ -25,7 +22,6 @@
         <option value="swd"> Swedish</option>
         <option value="gre"> Greek</option>
     </select>
-    <img id="playImg" src="../img/play.png">
     <select id="langTo" title="Lang to">
         <option value="eng"> English</option>
         <option value="rus"> Russian</option>
@@ -38,28 +34,13 @@
         <option value="swd"> Swedish</option>
         <option value="gre"> Greek</option>
     </select>
-    <br>
     <hr>
-    <div id="underRangeContainer">
-        <div id="levelInfo">
-            <output id="rangeValue">BEGINNER</output>
-        </div>
-
-        <div id="safeModeContainer">
-            <input type="checkbox" id="safeTranslateMode">
-            <label for="safeTranslateMode" title="Translate using last parameters after page loading">
-                Onload-mode </label>
-        </div>
-    </div>
-
+    <output id="rangeValue">Beginner</output>
+    <br>
     <input type="range" id="avacLevel" value="0" title="Language level">
     <hr>
-    <input class="power-check" id="power" type="checkbox"/>
-    <label class="power-button" for="power">
-        <i class="material-icons power-button__icon">power_settings_new</i>
-    </label>
-    <!--<img src="../img/green_lady.png" height="50" width="50">-->
-    <!--<img src="../img/water.png" height="150" width="150" style="padding-bottom: 10px">-->
+    <input type="checkbox" id="safeTranslateMode">
+    <label for="safeTranslateMode" title="Translate using last parameters after page loading">Onload-mode</label>
 </div>
 
 </body>
