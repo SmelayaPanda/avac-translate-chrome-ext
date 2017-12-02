@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Avac",
-  "version": "1.0.009",
+  "version": "1.0.012",
   "icons": {
     "64": "img/64.png"
   },
@@ -15,18 +15,9 @@
         "js/popup.js",
         "js/content.js",
         "js/common.js",
-
-        "js/dictionaries/eng/eng.js",
-        "js/dictionaries/eng/eng_from_rus.js",
-        "js/dictionaries/eng/eng_from_deu.js",
-
-        "js/dictionaries/rus/rus.js",
-        "js/dictionaries/rus/rus_from_eng.js",
-        "js/dictionaries/rus/rus_from_deu.js",
-
-        "js/dictionaries/deu/deu.js",
-        "js/dictionaries/deu/deu_from_eng.js",
-        "js/dictionaries/deu/deu_from_rus.js"
+        //100k words
+        "js/dictionaries/eng_rus/eng.js",
+        "js/dictionaries/eng_rus/rus.js"
       ],
       "css": [
         "css/popup.css",
@@ -40,7 +31,6 @@
     "storage",
     "activeTab"
   ],
-  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "browser_action": {
     "default_title": "Air Article Translator",
     "default_icon": "img/64.png",

@@ -1,11 +1,13 @@
+// Available languages
 const ENGLISH = "eng";
 const RUSSIAN = "rus";
 const DEUTSCH = "deu";
-
+// Avac parameters
 let level;
 let langFrom;
 let langTo;
-
+// Process variables
+let regExp;
 let dicFrom;
 let dicTo;
 
@@ -13,9 +15,9 @@ let dicTo;
 window.onload = function () {
     chrome.storage.sync.get('onLoadCheckBox', function (obj) {
         if (obj.onLoadCheckBox) {
-            chrome.storage.sync.get('rangeInput', obj => obj.rangeInput ? level = obj.rangeInput : level = 0);
-            chrome.storage.sync.get('langFrom', obj => obj.langFrom ? langFrom = obj.langFrom : 'eng');
-            chrome.storage.sync.get('langTo', obj => obj.langTo ? langTo = obj.langTo : 'eng');
+            chrome.storage.sync.get('rangeInput', obj => level = obj.rangeInput);
+            chrome.storage.sync.get('langFrom', obj => langFrom = obj.langFrom);
+            chrome.storage.sync.get('langTo', obj => langTo = obj.langTo);
             translateThis();
         }
     });
@@ -32,22 +34,21 @@ window.onload = function () {
 
 function translateThis() {
     setDictionary();
+    setRegExp();
     if (0 !== document.getElementsByClassName("wordAvac").length) {
         applyLevel(level);
     } else {
-        let p = document.getElementsByTagName("p");
-        for (let i = 0; i < p.length; i++) {
-            p[i].innerHTML = p[i].textContent.replace(/([a-zA-Z'-]+)/gi, `<span class="AVAC">$1</span>`);
+        for (p of document.getElementsByTagName("p")) {
+            p.innerHTML = p.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
         }
-        let allWords = document.getElementsByClassName('AVAC');
         let word;
         let rank;
-        for (w of allWords) {
+        for (w of document.getElementsByClassName('AVAC')) {
             word = w.innerText.trim().toLocaleLowerCase();
             rank = dicFrom.indexOf(word);
             if (-1 !== rank) {
                 addSpeakerOnClick(w);
-                w.innerHTML += `<span hidden class="wordAvac ___${dicFrom.indexOf(word)}"> [${dicTo[dicFrom.indexOf(word)]}]</span>`;
+                w.innerHTML += `<span hidden class="wordAvac ___${rank}"> [${dicTo[rank]}]</span>`;
             }
         }
         applyLevel(level);
@@ -66,25 +67,24 @@ function applyLevel(level) {
     }
 }
 
-function setDictionary() {
+function setRegExp() {
     switch (langFrom) {
-        case ENGLISH: {
-            dicFrom = eng;
-            if (RUSSIAN === langTo) dicTo = rus_from_eng;
-            if (DEUTSCH === langTo) dicTo = deu_from_eng;
-        }
-        case RUSSIAN: {
-            dicFrom = rus;
-            if (ENGLISH === langTo) dicTo = eng_from_rus;
-            if (DEUTSCH === langTo) dicTo = deu_from_rus;
-        }
-        case DEUTSCH :
-            dicFrom = deu;
-            if (RUSSIAN === langTo) dicTo = rus_from_deu;
-            if (ENGLISH === langTo) dicTo = eng_from_deu;
-        default:
-            dicFrom = eng;
-            dicTo = rus_from_eng;
+        case ENGLISH:
+            regExp = new RegExp(/([a-zA-Z'-]+)/gi);
+            break;
+        case DEUTSCH:
+            regExp = new RegExp(/([a-zA-ZäöüÄÖÜß'-]+)/gi);
+            break;
+        case RUSSIAN:
+            regExp = new RegExp(/([а-яА-ЯЁё'-]+)/gi);
+            break;
+    }
+}
+
+function setDictionary() {
+    if (ENGLISH === langFrom && RUSSIAN === langTo) {
+        dicFrom = eng_rus_From;
+        dicTo = eng_rus_To;
     }
 }
 

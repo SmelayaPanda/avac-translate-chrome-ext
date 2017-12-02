@@ -1,1 +1,0 @@
-var eng_from_rus = [];

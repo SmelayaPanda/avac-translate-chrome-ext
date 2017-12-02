@@ -1,7 +1,5 @@
 window.onload = function () {
-    /** ------------
-     * HTML elements
-     */
+    /* HTML elements */
     let langFromBox = document.getElementById('langFrom');
     let langToBox = document.getElementById('langTo');
     let rangeInput = document.getElementById('avacLevel');
@@ -9,9 +7,7 @@ window.onload = function () {
     let translate_btn = document.getElementById("translate_btn");
     let onLoadCheckBox = document.getElementById("safeTranslateMode");
 
-    /** ---------------------------
-     * Setting Chrome storage value
-     */
+    /* Setting Chrome storage value */
     langFromBox.onchange = function () {
         chrome.storage.sync.set({'langFrom': langFromBox.value});
     };
@@ -30,9 +26,7 @@ window.onload = function () {
             chrome.storage.sync.set({'onLoadCheckBox': false});
         }
     };
-    /** ---------------------------
-     * Getting Chrome storage value
-     */
+    /* Getting Chrome storage value */
     chrome.storage.sync.get('langFrom', function (obj) {
         langFromBox.value = obj.langFrom ? obj.langFrom : 'eng';
     });
@@ -69,9 +63,8 @@ window.onload = function () {
         }
 
     });
-    /** ---------------------------
-     * Sending message to content.js
-     */
+
+    /* Sending message to content.js */
     rangeInput.addEventListener('input', function () {
         chrome.tabs.query({
             active: true,
