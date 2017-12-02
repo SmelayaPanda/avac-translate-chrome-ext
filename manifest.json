@@ -15,6 +15,7 @@
         "js/popup.js",
         "js/content.js",
         "js/common.js",
+
         "js/dictionary/en_arr.js",
         "js/dictionary/ru_arr.js"
       ],
@@ -26,6 +27,7 @@
   ],
   "permissions": [
     /*"tabs",*/
+
     "tts",
     "storage",
     "activeTab",
