@@ -3,7 +3,7 @@
   "name": "Avac",
   "version": "1.0.012",
   "icons": {
-    "64": "img/64.png"
+    "256": "img/256x256.png"
   },
   "content_scripts": [
     {
@@ -39,7 +39,7 @@
   ],
   "browser_action": {
     "default_title": "Air Article Translator",
-    "default_icon": "img/64.png",
+    "default_icon": "img/256x256.png",
     "default_popup": "html/popup.html"
   }
 }
