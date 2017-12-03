@@ -24,22 +24,24 @@ window.onload = function () {
     strLvl = document.getElementById("rangeValue");
     powerAvac = document.getElementById("powerAvac");
 
+    /* Getting Chrome storage value */
+    strg.get('langFrom', obj => langFromBox.value = obj.langFrom);
+    strg.get('langTo', obj => langToBox.value = obj.langTo);
+    strg.get('rangeInput', obj => rangeInput.value = obj.rangeInput);
+    strg.get('strLvl', obj => strLvl.innerText = obj.strLvl ? obj.strLvl : WELCOME_MSG);
+    strg.get('powerAvac', obj => {
+        powerAvac.checked = obj.powerAvac;
+        settings.style.display = powerAvac.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+    });
     /* Setting Chrome storage value */
     langFromBox.onchange = () => strg.set({'langFrom': langFromBox.value});
     langToBox.onchange = () => strg.set({'langTo': langToBox.value});
     rangeInput.onchange = () => strg.set({'rangeInput': rangeInput.value});
     strLvl.onchange = () => strg.set({'strLvl': strLvl.innerText});
     powerAvac.onchange = () => {
-        strg.set({'powerAvac': powerAvac.checked});
         settings.style.display = powerAvac.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+        strg.set({'powerAvac': powerAvac.checked}, () => sendMsg());
     };
-
-    /* Getting Chrome storage value */
-    strg.get('langFrom', obj => langFromBox.value = obj.langFrom ? obj.langFrom : 'eng');
-    strg.get('langTo', obj => langToBox.value = obj.langTo ? obj.langTo : 'eng');
-    strg.get('rangeInput', obj => rangeInput.value = obj.rangeInput ? obj.rangeInput : 0);
-    strg.get('strLvl', obj => strLvl.innerText = obj.strLvl ? obj.strLvl : WELCOME_MSG);
-    strg.get('powerAvac', obj => powerAvac.checked = obj.powerAvac ? obj.powerAvac : powerAvac.checked);
     /** ---------------------------------------------------- */
     rangeInput.addEventListener('input', function () {
         if (this.value < 20 && strLvl.innerText !== L1) fadeTextReplace(strLvl, L1);
@@ -50,12 +52,9 @@ window.onload = function () {
     });
 
     /* Sending message to content.js */
-    if (powerAvac.checked) {
+    rangeInput.addEventListener('input', function () {
         sendMsg();
-        rangeInput.addEventListener('input', function () {
-            sendMsg();
-        })
-    }
+    })
 };
 
 function sendMsg() {

@@ -12,15 +12,38 @@ let dicFrom;
 let dicTo;
 let fromSpeak;
 let toSpeak;
+
 /* Listen popup.js */
 window.onload = function () {
+    // don't assign a variable because script running faster than storage works.
+    chrome.storage.sync.get('powerAvac', obj => {
+        if (obj.powerAvac) {
+            chrome.storage.sync.get('rangeInput', obj => {
+                obj.rangeInput ? level = obj.rangeInput : level = 0;
+                chrome.storage.sync.get('langFrom', obj => {
+                    obj.langFrom ? langFrom = obj.langFrom : 'eng';
+                    chrome.storage.sync.get('langTo', obj => {
+                        obj.langTo ? langTo = obj.langTo : 'eng';
+                        translateThis();
+                    });
+                });
+            });
+        }
+    });
+
     chrome.runtime.onMessage.addListener(
         msgObj => {
-            let params = JSON.parse(msgObj);
-            level = params.level;
-            langTo = params.langTo;
-            langFrom = params.langFrom;
-            translateThis();
+            chrome.storage.sync.get('powerAvac', obj => {
+                if (obj.powerAvac) {
+                    let params = JSON.parse(msgObj);
+                    level = params.level;
+                    langTo = params.langTo;
+                    langFrom = params.langFrom;
+                    translateThis();
+                } else {
+                    document.location.reload(true);
+                }
+            })
         });
 };
 
