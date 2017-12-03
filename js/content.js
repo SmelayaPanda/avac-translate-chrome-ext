@@ -10,7 +10,8 @@ let langTo;
 let regExp;
 let dicFrom;
 let dicTo;
-
+let fromSpeak;
+let toSpeak;
 /* Listen popup.js */
 window.onload = function () {
     chrome.runtime.onMessage.addListener(
@@ -96,23 +97,14 @@ function setDictionary() {
 }
 
 function addSpeakerOnClick(elem) {
-    let fromSpeak;
-    let toSpeak;
+    if (langFrom === ENGLISH) fromSpeak = 'en-GB';
+    else if (langFrom === RUSSIAN) fromSpeak = 'ru-RU';
+    else if (langFrom === DEUTSCH) fromSpeak = 'de-DE';
 
-    switch (langFrom) {
-        case ENGLISH:
-            fromSpeak = 'en-GB';
-            break;
-        case RUSSIAN :
-            fromSpeak = 'ru';
-    }
-    switch (langTo) {
-        case ENGLISH:
-            toSpeak = 'en-GB';
-            break;
-        case RUSSIAN :
-            toSpeak = 'ru';
-    }
+    if (langTo === ENGLISH) toSpeak = 'en-GB';
+    else if (langTo === RUSSIAN) toSpeak = 'ru-RU';
+    else if (langTo === DEUTSCH) toSpeak = 'de-DE';
+
     elem.onclick = function () {
         let str = elem.innerText.split('[');
         speakWord(str[0], fromSpeak, 0.8, 0.8, 1, 'native');

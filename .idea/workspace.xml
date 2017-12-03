@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
+    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="rus dictionary">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
       <change beforePath="$PROJECT_DIR$/js/content.js" afterPath="$PROJECT_DIR$/js/content.js" />
-      <change beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" />
-      <change beforePath="$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="113" column="27" lean-forward="true" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+            <state relative-caret-position="302">
+              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -51,7 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mainWordAvac</find>
       <find>wordAvac</find>
       <find>speak_word_button</find>
       <find>myDictionary</find>
@@ -81,6 +77,7 @@
       <find>chrome.storage.sync</find>
       <find>set</find>
       <find>\n</find>
+      <find>gb</find>
     </findStrings>
     <replaceStrings>
       <replace>translatedWordAvac</replace>
@@ -471,7 +468,7 @@
       <workItem from="1512215029921" duration="14045000" />
       <workItem from="1512269588925" duration="887000" />
       <workItem from="1512271228226" duration="19038000" />
-      <workItem from="1512304601912" duration="968000" />
+      <workItem from="1512304601912" duration="1759000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -662,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512292759131</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="rus dictionary">
+      <created>1512305806212</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1512305806212</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172698000" />
+    <option name="totallyTimeSpent" value="173489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,7 +771,8 @@
     <MESSAGE value="clear" />
     <MESSAGE value="dictionaries" />
     <MESSAGE value="new icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="new icon" />
+    <MESSAGE value="rus dictionary" />
+    <option name="LAST_COMMIT_MESSAGE" value="rus dictionary" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -780,7 +785,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/green_lady.png" />
     <entry file="file://$PROJECT_DIR$/img/water.png" />
     <entry file="file://$PROJECT_DIR$/img/download.gif" />
     <entry file="file://$PROJECT_DIR$/img/128.png" />
@@ -951,10 +955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="9700">
+          <caret line="9891" column="22" lean-forward="false" selection-start-line="9891" selection-start-column="21" selection-end-line="9891" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -967,10 +971,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="113" column="27" lean-forward="true" selection-start-line="113" selection-start-column="27" selection-end-line="113" selection-end-column="27" />
+        <state relative-caret-position="302">
+          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
           <folding />
         </state>
       </provider>
