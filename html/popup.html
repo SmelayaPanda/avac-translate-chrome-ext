@@ -7,16 +7,18 @@
     <script src="../js/popup.js" charset="utf-8"></script>
     <script src="../js/common.js" charset="utf-8"></script>
 </head>
-<body>
-
-<div id="avacPopup">
+<body id="bodyAvac">
+<input checked type="checkbox" id="powerAvac">
+<label for="powerAvac" title="Translate using last parameters after page loading">power</label>
+<div id="settingsAvac">
+    <br>
     <select id="langFrom" title="Lang from">
-        <option value="eng"> English</option>
+        <option value="eng" selected> English</option>
         <option value="rus"> Russian</option>
         <option value="deu"> German</option>
     </select>
     <select id="langTo" title="Lang to">
-        <option value="eng"> English</option>
+        <option value="eng" selected> English</option>
         <option value="rus"> Russian</option>
         <option value="deu"> German</option>
     </select>
@@ -25,9 +27,6 @@
     <br>
     <input type="range" id="avacLevel" value="0" title="Language level">
     <hr>
-    <input type="checkbox" id="safeTranslateMode">
-    <label for="safeTranslateMode" title="Translate using last parameters after page loading">Onload-mode</label>
 </div>
-
 </body>
 </html>

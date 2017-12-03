@@ -13,15 +13,6 @@ let dicTo;
 
 /* Listen popup.js */
 window.onload = function () {
-    chrome.storage.sync.get('onLoadCheckBox', function (obj) {
-        if (obj.onLoadCheckBox) {
-            chrome.storage.sync.get('rangeInput', obj => level = obj.rangeInput);
-            chrome.storage.sync.get('langFrom', obj => langFrom = obj.langFrom);
-            chrome.storage.sync.get('langTo', obj => langTo = obj.langTo);
-            translateThis();
-        }
-    });
-
     chrome.runtime.onMessage.addListener(
         msgObj => {
             let params = JSON.parse(msgObj);
