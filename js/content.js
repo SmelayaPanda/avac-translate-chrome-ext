@@ -59,7 +59,7 @@ function applyLevel(level) {
     for (let w of document.querySelectorAll('[class*=___]')) {
         w.style.display = 'inline';
     }
-    let maxRank = level ** 2.3;
+    let maxRank = level ** 2.5;
     for (let i = 0; i < maxRank; i++) {
         for (w of document.getElementsByClassName('___' + i)) {
             w.style.display = 'none';
@@ -73,18 +73,34 @@ function setRegExp() {
             regExp = new RegExp(/([a-zA-Z'-]+)/gi);
             break;
         case DEUTSCH:
-            regExp = new RegExp(/([a-zA-ZäöüÄÖÜß'-]+)/gi);
+            regExp = new RegExp(/([a-zA-ZäöüÄÖÜß-]+)/gi);
             break;
         case RUSSIAN:
-            regExp = new RegExp(/([а-яА-ЯЁё'-]+)/gi);
+            regExp = new RegExp(/([а-яА-ЯЁё-]+)/gi);
             break;
     }
 }
 
 function setDictionary() {
-    if (ENGLISH === langFrom && RUSSIAN === langTo) {
-        dicFrom = eng_rus_From;
-        dicTo = eng_rus_To;
+    switch (langFrom) {
+        case ENGLISH: {
+            dicFrom = eng;
+            if (langTo === RUSSIAN) dicTo = eng_rus;
+            if (langTo === DEUTSCH) dicTo = eng_deu;
+        }
+            break;
+        case RUSSIAN: {
+            dicFrom = rus;
+            if (langTo === ENGLISH) dicTo = rus_eng;
+            if (langTo === DEUTSCH) dicTo = rus_deu;
+        }
+            break;
+        case DEUTSCH: {
+            dicFrom = deu;
+            if (langTo === ENGLISH) dicTo = deu_eng;
+            if (langTo === RUSSIAN) dicTo = deu_rus;
+        }
+            break;
     }
 }
 

@@ -15,9 +15,15 @@
         "js/popup.js",
         "js/content.js",
         "js/common.js",
-        //100k words
-        "js/dictionaries/eng_rus/eng.js",
-        "js/dictionaries/eng_rus/rus.js"
+        "js/dictionaries/langFrom/eng.js",
+        "js/dictionaries/langFrom/rus.js",
+        "js/dictionaries/langFrom/deu.js",
+        "js/dictionaries/langTo/eng_rus.js",
+        "js/dictionaries/langTo/eng_deu.js",
+        "js/dictionaries/langTo/rus_eng.js",
+        "js/dictionaries/langTo/rus_deu.js",
+        "js/dictionaries/langTo/deu_rus.js",
+        "js/dictionaries/langTo/deu_eng.js"
       ],
       "css": [
         "css/popup.css",
