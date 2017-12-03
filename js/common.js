@@ -20,12 +20,3 @@ function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     msg.text = word;
     window.speechSynthesis.speak(msg);
 }
-
-/* Custom speaker for clicked element */
-function addSpeakerOnClick(elem) {
-    elem.onclick = function () {
-        let str = elem.innerText.split('[');
-        speakWord(str[0], 'en-GB', 0.8, 0.8, 1, 'native');
-        speakWord(str[1], 'ru', 0.8, 0.8, 1, 'native');
-    };
-}

@@ -95,4 +95,29 @@ function setDictionary() {
     }
 }
 
+function addSpeakerOnClick(elem) {
+    let fromSpeak;
+    let toSpeak;
+
+    switch (langFrom) {
+        case ENGLISH:
+            fromSpeak = 'en-GB';
+            break;
+        case RUSSIAN :
+            fromSpeak = 'ru';
+    }
+    switch (langTo) {
+        case ENGLISH:
+            toSpeak = 'en-GB';
+            break;
+        case RUSSIAN :
+            toSpeak = 'ru';
+    }
+    elem.onclick = function () {
+        let str = elem.innerText.split('[');
+        speakWord(str[0], fromSpeak, 0.8, 0.8, 1, 'native');
+        speakWord(str[1], toSpeak, 0.8, 0.8, 1, 'native');
+    };
+}
+
 
