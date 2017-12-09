@@ -74,7 +74,7 @@ function applyLevel(level) {
     for (let w of document.querySelectorAll('[class*=___]')) {
         w.style.display = 'inline';
     }
-    let maxRank = level ** 2.5;
+    let maxRank = level ** Math.exp(1); // max = 64^exp = 81228
     for (let i = 0; i < maxRank; i++) {
         for (w of document.getElementsByClassName('___' + i)) {
             w.style.display = 'none';
@@ -88,7 +88,7 @@ function setRegExp() {
             regExp = new RegExp(/([a-zA-Z'-]+)/gi);
             break;
         case DEUTSCH:
-            regExp = new RegExp(/([a-zA-ZäöüÄÖÜß-]+)/gi);
+            regExp = new RegExp(/([a-zA-ZäöüÄÖÜß']+)/gi);
             break;
         case RUSSIAN:
             regExp = new RegExp(/([а-яА-ЯЁё-]+)/gi);
