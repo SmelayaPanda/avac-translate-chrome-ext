@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="exponent">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js" />
+    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" />
-      <change beforePath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
+      <change beforePath="$PROJECT_DIR$/Theory.txt" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="deu_rus.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js">
+      <file leaf-file-name="popup.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="0" column="1529" lean-forward="false" selection-start-line="0" selection-start-column="1529" selection-end-line="0" selection-end-column="1529" />
+            <state relative-caret-position="529">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -260,20 +256,6 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="dictionaries" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Avac-Ext" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Avac-Ext" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dictionaries" type="462c0819:PsiDirectoryNode" />
-              <item name="langFrom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Avac-Ext" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Avac-Ext" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dictionaries" type="462c0819:PsiDirectoryNode" />
-              <item name="langTo" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -491,7 +473,7 @@
       <workItem from="1512840847907" duration="189000" />
       <workItem from="1512916891489" duration="24000" />
       <workItem from="1512916939155" duration="11000" />
-      <workItem from="1512924610424" duration="348000" />
+      <workItem from="1512924610424" duration="580000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -710,11 +692,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512841015981</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="+deu +spa">
+      <created>1512926445827</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1512926445827</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183635000" />
+    <option name="totallyTimeSpent" value="183867000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,7 +784,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formatting" />
     <MESSAGE value="ˆ" />
     <MESSAGE value="renames" />
     <MESSAGE value="hide footer idea" />
@@ -820,7 +808,8 @@
     <MESSAGE value="speaker" />
     <MESSAGE value="messages" />
     <MESSAGE value="exponent" />
-    <option name="LAST_COMMIT_MESSAGE" value="exponent" />
+    <MESSAGE value="+deu +spa" />
+    <option name="LAST_COMMIT_MESSAGE" value="+deu +spa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -851,21 +840,7 @@
     <entry file="file://$PROJECT_DIR$/js/dictionaries/eng/eng_from_deu.js" />
     <entry file="file://$PROJECT_DIR$/js/dictionaries/rus/rus_from_deu.js" />
     <entry file="file://$PROJECT_DIR$/js/dictionaries/eng/eng_from_rus.js" />
-    <entry file="file://$PROJECT_DIR$/Theory.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/deu" />
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/24.png" />
     <entry file="file://$PROJECT_DIR$/img/32.png" />
     <entry file="file://$PROJECT_DIR$/img/128x128y.png" />
@@ -933,20 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9700">
@@ -968,25 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="76" column="58" lean-forward="false" selection-start-line="76" selection-start-column="58" selection-end-line="76" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1009,26 +955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="0" column="1106" lean-forward="false" selection-start-line="0" selection-start-column="1106" selection-end-line="0" selection-end-column="1106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/deu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="0" column="961991" lean-forward="false" selection-start-line="0" selection-start-column="961991" selection-end-line="0" selection-end-column="961991" />
           <folding />
         </state>
       </provider>
@@ -1041,10 +971,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="0" column="1529" lean-forward="false" selection-start-line="0" selection-start-column="1529" selection-end-line="0" selection-end-column="1529" />
+        <state relative-caret-position="506">
+          <caret line="0" column="2589" lean-forward="true" selection-start-line="0" selection-start-column="2589" selection-end-line="0" selection-end-column="2589" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="0" column="1106" lean-forward="false" selection-start-line="0" selection-start-column="1106" selection-end-line="0" selection-end-column="1106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="0" column="961991" lean-forward="false" selection-start-line="0" selection-start-column="961991" selection-end-line="0" selection-end-column="961991" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Theory.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="29" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
         </state>
       </provider>
