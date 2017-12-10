@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
+    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="exponent">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/html/popup.html" afterPath="$PROJECT_DIR$/html/popup.html" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" afterPath="$PROJECT_DIR$/js/content.js" />
+      <change beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" />
+      <change beforePath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/content.js">
+      <file leaf-file-name="deu_rus.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="299">
+              <caret line="0" column="1529" lean-forward="false" selection-start-line="0" selection-start-column="1529" selection-end-line="0" selection-end-column="1529" />
               <folding />
             </state>
           </provider>
@@ -49,12 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>speak_word_button</find>
-      <find>myDictionary</find>
-      <find>translate_btnF</find>
-      <find>op</find>
-      <find>level ** 2.3</find>
-      <find>justify-content:</find>
       <find>power_settings_new</find>
       <find>im</find>
       <find>hello</find>
@@ -76,9 +73,15 @@
       <find>displayedLevel</find>
       <find>chrome.storage.sync</find>
       <find>set</find>
-      <find>\n</find>
       <find>gb</find>
       <find>powerAvac</find>
+      <find>81228</find>
+      <find>:.*</find>
+      <find>(.*)</find>
+      <find>(\b.*\n)</find>
+      <find>(\b.*\b)</find>
+      <find>\n</find>
+      <find>\s+</find>
     </findStrings>
     <replaceStrings>
       <replace>translatedWordAvac</replace>
@@ -105,6 +108,10 @@
       <replace>rank</replace>
       <replace>&quot;</replace>
       <replace>&quot;,</replace>
+      <replace>&quot;$1&quot;,</replace>
+      <replace>&quot;\n</replace>
+      <replace>\n&quot;</replace>
+      <replace>&quot;,\n</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -118,14 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="/HTML Fragment (content.js:4528).html" />
-        <option value="/HTML Fragment (content.js:4748).html" />
-        <option value="$PROJECT_DIR$/js/unused.js" />
-        <option value="$PROJECT_DIR$/html/hh.html" />
-        <option value="/HTML Fragment (footer.js:1118).html" />
-        <option value="$PROJECT_DIR$/js/avacUtils.js" />
-        <option value="$PROJECT_DIR$/js/option.js" />
-        <option value="$PROJECT_DIR$/css/option.css" />
         <option value="$PROJECT_DIR$/js/someText" />
         <option value="$PROJECT_DIR$/css/content.css" />
         <option value="$PROJECT_DIR$/css/footer.css" />
@@ -156,10 +155,8 @@
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js" />
-        <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js" />
-        <option value="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" />
         <option value="$PROJECT_DIR$/css/popup.css" />
         <option value="$PROJECT_DIR$/js/constant.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
@@ -169,6 +166,16 @@
         <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/html/popup.html" />
         <option value="$PROJECT_DIR$/js/content.js" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" />
+        <option value="$PROJECT_DIR$/js/dictionaries/translatedDeuWikiToRus.txt" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.txt" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa" />
+        <option value="$PROJECT_DIR$/js/dictionaries/translatedSpaWikiToRus.txt" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langFrom/deu.txt" />
+        <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
       </list>
     </option>
   </component>
@@ -222,10 +229,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,10 +267,18 @@
               <item name="dictionaries" type="462c0819:PsiDirectoryNode" />
               <item name="langFrom" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Avac-Ext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Avac-Ext" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="dictionaries" type="462c0819:PsiDirectoryNode" />
+              <item name="langTo" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,26 +287,28 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Custom" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last.edited.regexp" value="&gt; hello &lt;" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/dictionaries" />
+      <recent name="$PROJECT_DIR$/img" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js/dictionaries/langTo" />
       <recent name="$PROJECT_DIR$/js/dictionaries/langFrom" />
       <recent name="$PROJECT_DIR$/js/dictionaries/rus" />
       <recent name="$PROJECT_DIR$/js/dictionaries/eng" />
       <recent name="$PROJECT_DIR$/js/dictionaries/dicFrom" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-      <recent name="$PROJECT_DIR$/js/dictionaries" />
-      <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -472,7 +488,10 @@
       <workItem from="1512304601912" duration="1809000" />
       <workItem from="1512309195348" duration="4188000" />
       <workItem from="1512317642682" duration="3696000" />
-      <workItem from="1512840847907" duration="147000" />
+      <workItem from="1512840847907" duration="189000" />
+      <workItem from="1512916891489" duration="24000" />
+      <workItem from="1512916939155" duration="11000" />
+      <workItem from="1512924610424" duration="348000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -684,11 +703,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512320620228</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="exponent">
+      <created>1512841015981</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1512841015981</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181570000" />
+    <option name="totallyTimeSpent" value="183635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -700,7 +726,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -711,27 +737,29 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Jelastic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14937286" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18240343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18454936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -767,7 +795,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix if first extension load" />
     <MESSAGE value="formatting" />
     <MESSAGE value="ˆ" />
     <MESSAGE value="renames" />
@@ -792,7 +819,8 @@
     <MESSAGE value="rus dictionary" />
     <MESSAGE value="speaker" />
     <MESSAGE value="messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="messages" />
+    <MESSAGE value="exponent" />
+    <option name="LAST_COMMIT_MESSAGE" value="exponent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -805,11 +833,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/water.png" />
-    <entry file="file://$PROJECT_DIR$/img/download.gif" />
-    <entry file="file://$PROJECT_DIR$/img/128.png" />
-    <entry file="file://$PROJECT_DIR$/img/64.png" />
-    <entry file="file://$PROJECT_DIR$/img/play.png" />
     <entry file="file://$PROJECT_DIR$/css/content.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -840,34 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/deu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -913,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,21 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/eng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <marker date="1512294569488" expanded="true" signature="10:11" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,14 +972,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="415">
+          <caret line="76" column="58" lean-forward="false" selection-start-line="76" selection-start-column="58" selection-end-line="76" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/translatedDeuWikiToRus.txt" />
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/translatedSpaWikiToRus.txt" />
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/deu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1623865">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/eng.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="0" column="1626" lean-forward="false" selection-start-line="0" selection-start-column="1626" selection-end-line="0" selection-end-column="1626" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="0" column="1106" lean-forward="false" selection-start-line="0" selection-start-column="1106" selection-end-line="0" selection-end-column="1106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/deu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="0" column="961991" lean-forward="false" selection-start-line="0" selection-start-column="961991" selection-end-line="0" selection-end-column="961991" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/spa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="0" column="1513" lean-forward="false" selection-start-line="0" selection-start-column="1513" selection-end-line="0" selection-end-column="1513" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="0" column="1529" lean-forward="false" selection-start-line="0" selection-start-column="1529" selection-end-line="0" selection-end-column="1529" />
           <folding />
         </state>
       </provider>
