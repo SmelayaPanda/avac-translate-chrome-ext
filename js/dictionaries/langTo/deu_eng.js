@@ -1,1 +1,0 @@
-var deu_eng = [];
