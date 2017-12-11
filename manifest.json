@@ -18,7 +18,10 @@
         "js/dictionaries/langFrom/eng.js",
         "js/dictionaries/langFrom/rus.js",
         "js/dictionaries/langFrom/deu.js",
+        "js/dictionaries/langFrom/spa.js",
         "js/dictionaries/langTo/eng_rus.js",
+        "js/dictionaries/langTo/eng_spa.js",
+        "js/dictionaries/langTo/eng_deu.js",
         "js/dictionaries/langTo/rus_eng.js",
         "js/dictionaries/langTo/deu_rus.js",
         "js/dictionaries/langTo/spa_rus.js"

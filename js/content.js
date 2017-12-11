@@ -95,7 +95,7 @@ function setRegExp() {
             regExp = new RegExp(/([а-яА-ЯЁё-]+)/gi);
             break;
         case SPANISH:
-            regExp = new RegExp(/([a-zA-ZáéíñóúüÁÉÍÑÓÚÜ]+)/gi);
+            regExp = new RegExp(/([a-zA-ZáéíñóúüÁÉÍÑÓÚÜ¿]+)/gi);
             break;
     }
 }
