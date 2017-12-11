@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/content.js" afterPath="$PROJECT_DIR$/js/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/popup.js" afterPath="$PROJECT_DIR$/js/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/popup.html" afterPath="$PROJECT_DIR$/html/popup.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/content.js">
+      <file leaf-file-name="popup.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2420">
-              <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
+            <state relative-caret-position="299">
+              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -50,8 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dictionary</find>
-      <find>dicFrom</find>
       <find>dicTo</find>
       <find>dicFrom.indexOf(word)</find>
       <find>церковь</find>
@@ -80,6 +76,8 @@
       <find>welcome</find>
       <find>strLvl</find>
       <find>rangeValue</find>
+      <find>engLangTo</find>
+      <find>langFromBox</find>
     </findStrings>
     <replaceStrings>
       <replace>translatedWordAvac</replace>
@@ -173,9 +171,9 @@
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
-        <option value="$PROJECT_DIR$/html/popup.html" />
-        <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/js/content.js" />
+        <option value="$PROJECT_DIR$/js/popup.js" />
+        <option value="$PROJECT_DIR$/html/popup.html" />
       </list>
     </option>
   </component>
@@ -256,28 +254,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Avac-Ext" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Avac-Ext" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dictionaries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="langTo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -875,7 +851,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512967769127</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="cleaning">
+      <created>1512979501427</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1512979501428</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -900,6 +883,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Jelastic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14937286" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -910,6 +894,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -917,13 +902,11 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1118,13 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -1139,24 +1115,6 @@
           <caret line="81200" column="12" lean-forward="false" selection-start-line="81200" selection-start-column="12" selection-end-line="81200" selection-end-column="12" />
           <folding>
             <marker date="1512967101354" expanded="true" signature="14:1043217" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding>
-            <marker date="1512977222476" expanded="true" signature="0:953" ph="{&quot;name&quot;: &quot;Avac&quot;...}" />
-            <marker date="1512977222476" expanded="true" signature="80:114" ph="{&quot;256&quot;: &quot;img/256x256.png&quot;...}" />
-            <marker date="1512977222476" expanded="true" signature="137:712" ph="[...]" />
-            <marker date="1512977222476" expanded="true" signature="143:708" ph="{&quot;run_at&quot;: &quot;document_end&quot;...}" />
-            <marker date="1512977222476" expanded="true" signature="194:224" ph="[...]" />
-            <marker date="1512977222476" expanded="true" signature="238:627" ph="[...]" />
-            <marker date="1512977222476" expanded="true" signature="642:702" ph="[...]" />
-            <marker date="1512977222476" expanded="true" signature="731:799" ph="[...]" />
-            <marker date="1512977222476" expanded="true" signature="821:951" ph="{&quot;default_title&quot;: &quot;Air Article Translator&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -1186,47 +1144,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/popup.html">
+    <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="759">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <marker date="1512977669975" expanded="true" signature="21:1079" ph="..." />
-            <marker date="1512977669975" expanded="true" signature="28:290" ph="..." />
-            <marker date="1512977669975" expanded="true" signature="311:1071" ph="..." />
-            <marker date="1512977669975" expanded="true" signature="478:1063" ph="..." />
-            <marker date="1512977669975" expanded="true" signature="532:692" ph="..." />
-            <marker date="1512977669975" expanded="true" signature="733:893" ph="..." />
+            <marker date="1512977222476" expanded="true" signature="0:953" ph="{&quot;name&quot;: &quot;Avac&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="80:114" ph="{&quot;256&quot;: &quot;img/256x256.png&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="137:712" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="143:708" ph="{&quot;run_at&quot;: &quot;document_end&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="194:224" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="238:627" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="642:702" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="731:799" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="821:951" ph="{&quot;default_title&quot;: &quot;Air Article Translator&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding>
+            <marker date="1512967102518" expanded="true" signature="14:948836" ph="[...]" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/popup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        <state relative-caret-position="-294">
+          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
           <folding>
-            <marker date="1512977957262" expanded="true" signature="329:2569" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="335:361" ph="/*...*/" />
-            <marker date="1512977957262" expanded="true" signature="691:725" ph="/*...*/" />
-            <marker date="1512977957262" expanded="true" signature="1046:1217" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="1224:1258" ph="/*...*/" />
-            <marker date="1512977957262" expanded="true" signature="1614:1811" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="1817:1876" ph="/** ---------------------------------------------------- ...*/" />
-            <marker date="1512977957262" expanded="true" signature="1930:2443" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="2451:2486" ph="/*...*/" />
-            <marker date="1512977957262" expanded="true" signature="2540:2566" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="2591:2968" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="2615:2676" ph="{...}" />
-            <marker date="1512977957262" expanded="true" signature="2694:2964" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="329:2569" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="335:361" ph="/*...*/" />
+            <marker date="1512982040001" expanded="true" signature="691:725" ph="/*...*/" />
+            <marker date="1512982040001" expanded="true" signature="1046:1217" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="1224:1258" ph="/*...*/" />
+            <marker date="1512982040001" expanded="true" signature="1614:1811" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="1817:1876" ph="/** ---------------------------------------------------- ...*/" />
+            <marker date="1512982040001" expanded="true" signature="1930:2443" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="2451:2486" ph="/*...*/" />
+            <marker date="1512982040001" expanded="true" signature="2540:2566" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="2591:2968" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="2615:2676" ph="{...}" />
+            <marker date="1512982040001" expanded="true" signature="2694:2964" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2420">
-          <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
+        <state relative-caret-position="258">
+          <caret line="106" column="48" lean-forward="true" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+          <folding>
+            <marker date="1512979179171" expanded="true" signature="257:278" ph="/*...*/" />
+            <marker date="1512979179171" expanded="true" signature="307:1479" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="438:971" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="467:965" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="526:953" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="656:937" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="787:917" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1035:1475" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1093:1464" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1130:1373" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1379:1450" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1507:2235" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1613:1647" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1653:2233" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1709:1809" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="1905:2200" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2037:2190" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2264:2594" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2327:2370" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2473:2592" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2537:2586" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2617:3041" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2641:3039" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="2664:2735" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="2757:2834" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="2856:2928" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="2950:3033" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="3068:4057" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="3092:4055" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="3115:3332" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="3354:3571" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="3593:3810" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="3832:4049" ph="..." />
+            <marker date="1512979179171" expanded="true" signature="4092:4724" ph="{...}" />
+            <marker date="1512979179171" expanded="true" signature="4549:4721" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
