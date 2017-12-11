@@ -34,8 +34,8 @@ window.onload = function () {
         settings.style.display = powerAvac.checked ? settings.style.display = 'block' : settings.style.display = 'none';
     });
     /* Setting Chrome storage value */
-    langFromBox.onchange = () => strg.set({'langFrom': langFromBox.value});
-    langToBox.onchange = () => strg.set({'langTo': langToBox.value});
+    langFromBox.onchange = () => strg.set({'langFrom': langFromBox.value}, () => sendMsg());
+    langToBox.onchange = () => strg.set({'langTo': langToBox.value}, () => sendMsg());
     rangeInput.onchange = () => strg.set({'rangeInput': rangeInput.value});
     strLvl.onchange = () => strg.set({'strLvl': strLvl.innerText});
     powerAvac.onchange = () => {

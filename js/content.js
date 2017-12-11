@@ -2,6 +2,7 @@
 const ENGLISH = "eng";
 const RUSSIAN = "rus";
 const DEUTSCH = "deu";
+const SPANISH = "spa";
 // Avac parameters
 let level;
 let langFrom;
@@ -93,6 +94,9 @@ function setRegExp() {
         case RUSSIAN:
             regExp = new RegExp(/([а-яА-ЯЁё-]+)/gi);
             break;
+        case SPANISH:
+            regExp = new RegExp(/([a-zA-ZáéíñóúüÁÉÍÑÓÚÜ]+)/gi);
+            break;
     }
 }
 
@@ -102,18 +106,28 @@ function setDictionary() {
             dicFrom = eng;
             if (langTo === RUSSIAN) dicTo = eng_rus;
             if (langTo === DEUTSCH) dicTo = eng_deu;
+            if (langTo === SPANISH) dicTo = eng_spa;
         }
             break;
         case RUSSIAN: {
             dicFrom = rus;
             if (langTo === ENGLISH) dicTo = rus_eng;
             if (langTo === DEUTSCH) dicTo = rus_deu;
+            if (langTo === SPANISH) dicTo = rus_spa;
         }
             break;
         case DEUTSCH: {
             dicFrom = deu;
             if (langTo === ENGLISH) dicTo = deu_eng;
             if (langTo === RUSSIAN) dicTo = deu_rus;
+            if (langTo === SPANISH) dicTo = deu_spa;
+        }
+            break;
+        case SPANISH: {
+            dicFrom = spa;
+            if (langTo === ENGLISH) dicTo = spa_eng;
+            if (langTo === RUSSIAN) dicTo = spa_rus;
+            if (langTo === DEUTSCH) dicTo = spa_deu;
         }
             break;
     }
@@ -123,10 +137,12 @@ function addSpeakerOnClick(elem) {
     if (langFrom === ENGLISH) fromSpeak = 'en-GB';
     else if (langFrom === RUSSIAN) fromSpeak = 'ru-RU';
     else if (langFrom === DEUTSCH) fromSpeak = 'de-DE';
+    else if (langFrom === SPANISH) fromSpeak = 'es-ES';
 
     if (langTo === ENGLISH) toSpeak = 'en-GB';
     else if (langTo === RUSSIAN) toSpeak = 'ru-RU';
     else if (langTo === DEUTSCH) toSpeak = 'de-DE';
+    else if (langTo === SPANISH) toSpeak = 'es-ES';
 
     elem.onclick = function () {
         let str = elem.innerText.split('[');

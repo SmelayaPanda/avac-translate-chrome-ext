@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/deu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/eng.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/eng.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" afterPath="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/rus_eng.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js" afterPath="$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/content.js" afterPath="$PROJECT_DIR$/js/content.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/popup.js" afterPath="$PROJECT_DIR$/js/popup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="spa_rus.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js">
+      <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="81213" column="20" lean-forward="true" selection-start-line="81213" selection-start-column="20" selection-end-line="81213" selection-end-column="20" />
+            <state relative-caret-position="2420">
+              <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -58,11 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bodyAVAC</find>
-      <find>safeTranslateMode</find>
-      <find>safeModeContainer</find>
-      <find>underRangeContainer</find>
-      <find>levelInfo</find>
       <find>dictionary</find>
       <find>dicFrom</find>
       <find>dicTo</find>
@@ -88,6 +75,11 @@
       <find>,</find>
       <find>&quot;,</find>
       <find>&quot;,&quot;</find>
+      <find>\b.*&quot;\b</find>
+      <find>w</find>
+      <find>welcome</find>
+      <find>strLvl</find>
+      <find>rangeValue</find>
     </findStrings>
     <replaceStrings>
       <replace>translatedWordAvac</replace>
@@ -161,12 +153,8 @@
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js" />
         <option value="$PROJECT_DIR$/css/popup.css" />
         <option value="$PROJECT_DIR$/js/constant.js" />
-        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/rus.txt" />
         <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/js/popup.js" />
-        <option value="$PROJECT_DIR$/html/popup.html" />
-        <option value="$PROJECT_DIR$/js/content.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/translatedDeuWikiToRus.txt" />
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.txt" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa" />
@@ -184,6 +172,10 @@
         <option value="$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/rus.js" />
+        <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/html/popup.html" />
+        <option value="$PROJECT_DIR$/js/popup.js" />
+        <option value="$PROJECT_DIR$/js/content.js" />
       </list>
     </option>
   </component>
@@ -239,8 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,14 +298,24 @@
               <option name="myItemId" value="dictionaries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="langFrom" />
+              <option name="myItemId" value="Avac-Ext" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Avac-Ext" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -346,124 +348,6 @@
       <recent name="$PROJECT_DIR$/js/dictionaries/eng" />
       <recent name="$PROJECT_DIR$/js/dictionaries/dicFrom" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/html/popup.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/content.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/dictionaries/langFrom/deu.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/dictionaries/langTo/deu_rus.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/watcherTasks.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/dictionaries/langFrom/spa.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Theory.txt</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -651,6 +535,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -978,7 +868,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512926445827</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="cleaning">
+      <created>1512967769127</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1512967769127</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1002,48 +899,36 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Jelastic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14937286" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18869936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Jelastic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14937286" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18454936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1075,7 +960,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ˆ" />
     <MESSAGE value="renames" />
     <MESSAGE value="hide footer idea" />
     <MESSAGE value="hide footer" />
@@ -1100,7 +984,8 @@
     <MESSAGE value="messages" />
     <MESSAGE value="exponent" />
     <MESSAGE value="+deu +spa" />
-    <option name="LAST_COMMIT_MESSAGE" value="+deu +spa" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1185,73 +1070,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9700">
           <caret line="9891" column="22" lean-forward="false" selection-start-line="9891" selection-start-column="21" selection-end-line="9891" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <marker date="1512965786549" expanded="true" signature="234:255" ph="/*...*/" />
-            <marker date="1512965786549" expanded="true" signature="284:1456" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="415:948" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="444:942" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="503:930" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="633:914" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="764:894" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1012:1452" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1070:1441" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1107:1350" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1356:1427" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1484:2212" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1590:1624" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1630:2210" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1686:1786" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="1882:2177" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2014:2167" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2241:2571" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2304:2347" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2450:2569" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2514:2563" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2594:2913" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2618:2911" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2641:2712" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="2734:2811" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="2833:2905" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="2940:3531" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2964:3529" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="2987:3151" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="3173:3337" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="3359:3523" ph="..." />
-            <marker date="1512965786549" expanded="true" signature="3566:4090" ph="{...}" />
-            <marker date="1512965786549" expanded="true" signature="3915:4087" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,60 +1083,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1623865">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Theory.txt" />
-    <entry file="file://$PROJECT_DIR$/html/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/spa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369242">
-          <caret line="16054" column="13" lean-forward="false" selection-start-line="16054" selection-start-column="1" selection-end-line="16054" selection-end-column="13" />
-          <folding>
-            <marker date="1512967102038" expanded="true" signature="10:993088" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/deu_eng.js" />
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_deu.js" />
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/rus_deu.js" />
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/rus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1868221">
           <caret line="81227" column="10" lean-forward="false" selection-start-line="81227" selection-start-column="10" selection-end-line="81227" selection-end-column="10" />
-          <folding>
-            <marker date="1512967327263" expanded="true" signature="10:1017215" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1322,9 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1868221">
           <caret line="81227" column="6" lean-forward="false" selection-start-line="81227" selection-start-column="6" selection-end-line="81227" selection-end-column="6" />
-          <folding>
-            <marker date="1512966680139" expanded="true" signature="10:916903" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1332,9 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1868221">
           <caret line="81227" column="0" lean-forward="false" selection-start-line="81227" selection-start-column="0" selection-end-line="81227" selection-end-column="0" />
-          <folding>
-            <marker date="1512966679591" expanded="true" signature="10:1092559" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1342,19 +1115,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="81227" column="27" lean-forward="false" selection-start-line="81227" selection-start-column="27" selection-end-line="81227" selection-end-column="27" />
-          <folding>
-            <marker date="1512967099804" expanded="true" signature="14:1111992" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/eng_rus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="81207" column="12" lean-forward="true" selection-start-line="81207" selection-start-column="12" selection-end-line="81207" selection-end-column="12" />
-          <folding>
-            <marker date="1512967102518" expanded="true" signature="14:948836" ph="[...]" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1362,16 +1129,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="81227" column="7" lean-forward="false" selection-start-line="81227" selection-start-column="0" selection-end-line="81227" selection-end-column="12" />
-          <folding>
-            <marker date="1512966997461" expanded="true" signature="14:920819" ph="[...]" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dictionaries/langTo/spa_rus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="81213" column="20" lean-forward="true" selection-start-line="81213" selection-start-column="20" selection-end-line="81213" selection-end-column="20" />
+        <state relative-caret-position="190">
+          <caret line="81200" column="12" lean-forward="false" selection-start-line="81200" selection-start-column="12" selection-end-line="81200" selection-end-column="12" />
+          <folding>
+            <marker date="1512967101354" expanded="true" signature="14:1043217" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <marker date="1512977222476" expanded="true" signature="0:953" ph="{&quot;name&quot;: &quot;Avac&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="80:114" ph="{&quot;256&quot;: &quot;img/256x256.png&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="137:712" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="143:708" ph="{&quot;run_at&quot;: &quot;document_end&quot;...}" />
+            <marker date="1512977222476" expanded="true" signature="194:224" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="238:627" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="642:702" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="731:799" ph="[...]" />
+            <marker date="1512977222476" expanded="true" signature="821:951" ph="{&quot;default_title&quot;: &quot;Air Article Translator&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dictionaries/langFrom/spa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="13575" column="10" lean-forward="true" selection-start-line="13575" selection-start-column="10" selection-end-line="13575" selection-end-column="10" />
+          <folding>
+            <marker date="1512967102038" expanded="true" signature="10:993088" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="42" />
+          <folding>
+            <marker date="1512387873554" expanded="false" signature="0:27" ph="/*...*/" />
+            <marker date="1512387873554" expanded="true" signature="72:274" ph="{...}" />
+            <marker date="1512387873554" expanded="true" signature="136:181" ph="{...}" />
+            <marker date="1512387873554" expanded="true" signature="216:265" ph="{...}" />
+            <marker date="1512387873554" expanded="true" signature="276:321" ph="/*...*/" />
+            <marker date="1512387873554" expanded="true" signature="384:756" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <marker date="1512977669975" expanded="true" signature="21:1079" ph="..." />
+            <marker date="1512977669975" expanded="true" signature="28:290" ph="..." />
+            <marker date="1512977669975" expanded="true" signature="311:1071" ph="..." />
+            <marker date="1512977669975" expanded="true" signature="478:1063" ph="..." />
+            <marker date="1512977669975" expanded="true" signature="532:692" ph="..." />
+            <marker date="1512977669975" expanded="true" signature="733:893" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <marker date="1512977957262" expanded="true" signature="329:2569" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="335:361" ph="/*...*/" />
+            <marker date="1512977957262" expanded="true" signature="691:725" ph="/*...*/" />
+            <marker date="1512977957262" expanded="true" signature="1046:1217" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="1224:1258" ph="/*...*/" />
+            <marker date="1512977957262" expanded="true" signature="1614:1811" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="1817:1876" ph="/** ---------------------------------------------------- ...*/" />
+            <marker date="1512977957262" expanded="true" signature="1930:2443" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="2451:2486" ph="/*...*/" />
+            <marker date="1512977957262" expanded="true" signature="2540:2566" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="2591:2968" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="2615:2676" ph="{...}" />
+            <marker date="1512977957262" expanded="true" signature="2694:2964" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2420">
+          <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
           <folding />
         </state>
       </provider>

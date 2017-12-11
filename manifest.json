@@ -19,11 +19,9 @@
         "js/dictionaries/langFrom/rus.js",
         "js/dictionaries/langFrom/deu.js",
         "js/dictionaries/langTo/eng_rus.js",
-        "js/dictionaries/langTo/eng_deu.js",
         "js/dictionaries/langTo/rus_eng.js",
-        "js/dictionaries/langTo/rus_deu.js",
         "js/dictionaries/langTo/deu_rus.js",
-        "js/dictionaries/langTo/deu_eng.js"
+        "js/dictionaries/langTo/spa_rus.js"
       ],
       "css": [
         "css/popup.css",
