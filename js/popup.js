@@ -42,7 +42,7 @@ window.onload = function () {
     /* Getting Chrome storage value */
     storage.get('langFrom', obj => lf.value = obj.langFrom);
     storage.get('langTo', obj => lt.value = obj.langTo);
-    storage.get('level', (obj) => {
+    storage.get('level', obj => {
         range.value = obj.level;
         setStageMessage(range, stage);
     });
@@ -54,27 +54,25 @@ window.onload = function () {
 
 
     /* Setting Chrome storage value */
-    lf.addEventListener('input', function () {
+    lf.oninput = () => {
+        storage.set({'langFrom': lf.value});
         generateLangToOption(lf, lt, languages);
-        storage.set({'langFrom': lf.value}, () => sendMsg());
-    });
-    lt.onchange = () => {
-        storage.set({'langTo': lt.value}, () => sendMsg());
-    };
-    range.onchange = () => storage.set({'level': range.value});
-    power.onchange = () => {
-        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
-        storage.set({'power': power.checked}, () => sendMsg());
-    };
-    /** ---------------------------------------------------- */
-    range.addEventListener('input', function () {
-        setStageMessage(range, stage);
-    });
-
-    /* Sending message to content.js */
-    range.addEventListener('input', function () {
         sendMsg();
-    })
+    };
+    lt.onchange = () => {
+        storage.set({'langTo': lt.value});
+        sendMsg();
+    };
+    power.onchange = () => {
+        storage.set({'power': power.checked});
+        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+        sendMsg();
+    };
+    range.oninput = () => {
+        storage.set({'level': range.value});
+        setStageMessage(range, stage);
+        sendMsg();
+    };
 };
 
 function sendMsg() {

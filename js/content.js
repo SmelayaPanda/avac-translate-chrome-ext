@@ -20,7 +20,6 @@ window.onload = function () {
                 storage.get('langFrom', obj => {
                     obj.langFrom ? langFrom = obj.langFrom : 'eng';
                     storage.get('langTo', obj => {
-                        isNewLangTo = langTo === obj.langTo;
                         obj.langTo ? langTo = obj.langTo : 'eng';
                         invoke();
                     });
