@@ -4,7 +4,6 @@
     <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" afterPath="$PROJECT_DIR$/js/content.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -709,7 +708,7 @@
       <workItem from="1512916891489" duration="24000" />
       <workItem from="1512916939155" duration="11000" />
       <workItem from="1512924610424" duration="599000" />
-      <workItem from="1513952848610" duration="3852000" />
+      <workItem from="1513952848610" duration="3913000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -949,11 +948,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513956363596</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="md image">
+      <created>1513956840445</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1513956840445</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187738000" />
+    <option name="totallyTimeSpent" value="187799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1034,7 +1040,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hide footer idea" />
     <MESSAGE value="hide footer" />
     <MESSAGE value="tts exists in the world =)" />
     <MESSAGE value="some fixes" />
@@ -1059,7 +1064,8 @@
     <MESSAGE value="+deu +spa" />
     <MESSAGE value="-" />
     <MESSAGE value="improvement functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="improvement functionality" />
+    <MESSAGE value="md image" />
+    <option name="LAST_COMMIT_MESSAGE" value="md image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
