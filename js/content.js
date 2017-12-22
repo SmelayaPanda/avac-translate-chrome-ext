@@ -30,18 +30,16 @@ window.onload = function () {
 
     chrome.runtime.onMessage.addListener(
         msgObj => {
-            storage.get('power', obj => {
-                if (obj.power) {
-                    let params = JSON.parse(msgObj);
-                    isNewLang = (langFrom !== params.langFrom || langTo !== params.langTo);
-                    level = params.level;
-                    langTo = params.langTo;
-                    langFrom = params.langFrom;
-                    invoke();
-                } else {
-                    document.location.reload(true);
-                }
-            })
+            if (msgObj.power) {
+                let params = JSON.parse(msgObj);
+                isNewLang = (langFrom !== params.langFrom || langTo !== params.langTo);
+                level = params.level;
+                langTo = params.langTo;
+                langFrom = params.langFrom;
+                invoke();
+            } else {
+                document.location.reload(true);
+            }
         });
 };
 

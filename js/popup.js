@@ -82,6 +82,7 @@ function sendMsg() {
     }, function (tabs) {
         // and use that tab to fill in out title and url
         let obj = {};
+        obj.power = power.checked;
         obj.level = range.value;
         obj.langFrom = lf.value;
         obj.langTo = lt.value;
