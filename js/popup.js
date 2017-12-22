@@ -45,10 +45,14 @@ window.onload = function () {
     });
     /* Setting Chrome storage value */
     lf.onchange = () => {
-        storage.set({'langFrom': lf.value});
         generateLangToOption(lf, lt, languages);
+        storage.set({'langFrom': lf.value});
+        //sendMsg();
     };
-    lt.onchange = () => storage.set({'langTo': lt.value});
+    lt.onchange = () => {
+        storage.set({'langTo': lt.value});
+        //sendMsg();
+    };
     range.onchange = () => storage.set({'level': range.value});
     stage.onchange = () => storage.set({'stage': stage.innerText});
     power.onchange = () => {
