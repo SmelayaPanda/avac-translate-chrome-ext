@@ -1,4 +1,5 @@
-/* Fade-replace for text */
+
+
 function fadeTextReplace(element, newValue) {
     element.classList.add('hide');
     setTimeout(function () {

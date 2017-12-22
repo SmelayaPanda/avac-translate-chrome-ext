@@ -8,26 +8,16 @@
     <script src="../js/common.js" charset="utf-8"></script>
 </head>
 <body id="bodyAvac">
-<input checked type="checkbox" id="powerAvac">
-<label for="powerAvac" title="Translate using last parameters after page loading">power</label>
-<div id="settingsAvac">
+<input checked type="checkbox" id="power">
+<label for="power" title="Translate using last parameters after page loading">power</label>
+<div id="settings">
     <br>
-    <select id="langFrom" title="Lang from">
-        <option value="eng" selected> English</option>
-        <option value="rus"> Russian</option>
-        <option value="deu"> German</option>
-        <option value="spa"> Spanish</option>
-    </select>
-    <select id="langTo" title="Lang to">
-        <option value="eng" selected> English</option>
-        <option value="rus"> Russian</option>
-        <option value="deu"> German</option>
-        <option value="spa"> Spanish</option>
-    </select>
+    <select id="langFrom" title="Lang from"></select>
+    <select id="langTo" title="Lang to"></select>
     <hr>
-    <output id="rangeValue">Beginner</output>
+    <output id="stage">Beginner</output>
     <br>
-    <input type="range" id="avacLevel" value="0" min="0" max="64" title="Language level">
+    <input type="range" id="level" value="0" min="0" max="64" title="Language level">
     <hr>
 </div>
 </body>

@@ -6,12 +6,12 @@
 #langFrom, #langTo {
 }
 
-#rangeValue {
+#stage {
     opacity: 1;
     transition: all 0.2s;
     font-size: 14px;
 }
 
-#rangeValue.hide {
+#stage.hide {
     opacity: 0;
 }

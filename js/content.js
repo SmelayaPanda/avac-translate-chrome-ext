@@ -17,13 +17,13 @@ let toSpeak;
 /* Listen popup.js */
 window.onload = function () {
     // don't assign a variable because script running faster than storage works.
-    chrome.storage.sync.get('powerAvac', obj => {
-        if (obj.powerAvac) {
-            chrome.storage.sync.get('rangeInput', obj => {
-                obj.rangeInput ? level = obj.rangeInput : level = 0;
-                chrome.storage.sync.get('langFrom', obj => {
+    storage.get('power', obj => {
+        if (obj.power) {
+            storage.get('level', obj => {
+                obj.level ? level = obj.level : level = 0;
+                storage.get('langFrom', obj => {
                     obj.langFrom ? langFrom = obj.langFrom : 'eng';
-                    chrome.storage.sync.get('langTo', obj => {
+                    storage.get('langTo', obj => {
                         obj.langTo ? langTo = obj.langTo : 'eng';
                         translateThis();
                     });
@@ -34,8 +34,8 @@ window.onload = function () {
 
     chrome.runtime.onMessage.addListener(
         msgObj => {
-            chrome.storage.sync.get('powerAvac', obj => {
-                if (obj.powerAvac) {
+            storage.get('power', obj => {
+                if (obj.power) {
                     let params = JSON.parse(msgObj);
                     level = params.level;
                     langTo = params.langTo;
