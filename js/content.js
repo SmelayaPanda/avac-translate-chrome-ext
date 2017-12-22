@@ -146,8 +146,8 @@ function addSpeakerOnClick(elem) {
 
     elem.onclick = function () {
         let str = elem.innerText.split('[');
-        speakWord(str[0], fromSpeak, 0.8, 0.8, 1, 'native');
-        speakWord(str[1], toSpeak, 0.8, 0.8, 1, 'native');
+        speakWord(str[0], fromSpeak, 0.9, 0.9, 1, 'native');
+        speakWord(str[1], toSpeak, 0.9, 0.9, 1, 'native');
     };
 }
 
