@@ -16,7 +16,7 @@ var languages = {
 
 let lf;
 let lt;
-let rg;
+let range;
 let stage;
 let power;
 let settings;
@@ -30,14 +30,14 @@ window.onload = function () {
     generateLangToOption(lf, lt, languages);
 
     settings = document.getElementById('settings');
-    rg = document.getElementById('level');
+    range = document.getElementById('level');
     stage = document.getElementById("stage");
     power = document.getElementById("power");
 
     /* Getting Chrome storage value */
     storage.get('langFrom', obj => lf.value = obj.langFrom);
     storage.get('langTo', obj => lt.value = obj.langTo);
-    storage.get('stage', obj => rg.value = obj.stage);
+    storage.get('level', obj => range.value = obj.stage);
     storage.get('stage', obj => stage.innerText = obj.stage ? obj.stage : WELCOME_MSG);
     storage.get('power', obj => {
         power.checked = obj.power;
@@ -49,14 +49,14 @@ window.onload = function () {
         generateLangToOption(lf, lt, languages);
     };
     lt.onchange = () => storage.set({'langTo': lt.value});
-    rg.onchange = () => storage.set({'level': rg.value});
+    range.onchange = () => storage.set({'level': range.value});
     stage.onchange = () => storage.set({'stage': stage.innerText});
     power.onchange = () => {
         settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
         storage.set({'power': power.checked}, () => sendMsg());
     };
     /** ---------------------------------------------------- */
-    rg.addEventListener('input', function () {
+    range.addEventListener('input', function () {
         if (this.value < 20 && stage.innerText !== L1) fadeTextReplace(stage, L1);
         else if (this.value >= 20 && this.value < 40 && stage.innerText !== L2) fadeTextReplace(stage, L2);
         else if (this.value >= 40 && this.value < 60 && stage.innerText !== L3) fadeTextReplace(stage, L3);
@@ -65,7 +65,7 @@ window.onload = function () {
     });
 
     /* Sending message to content.js */
-    rg.addEventListener('input', function () {
+    range.addEventListener('input', function () {
         sendMsg();
     })
 };
@@ -77,7 +77,7 @@ function sendMsg() {
     }, function (tabs) {
         // and use that tab to fill in out title and url
         let obj = {};
-        obj.level = rg.value;
+        obj.level = range.value;
         obj.langFrom = lf.value;
         obj.langTo = lt.value;
         chrome.tabs.sendMessage(tabs[0].id, JSON.stringify(obj));
