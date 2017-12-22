@@ -1,11 +1,11 @@
-# Avac 
+# `Avac` 
 > Chrome Extension 
 ## Your Air Article Translator
 Translate only words of a certain complexity using the frequency dictionary
 
 ![avac](https://raw.githubusercontent.com/SmelayaPanda/Avac-Ext/master/img/256x256.png)
 
-## `About Avac`
+## About Avac
 <div>
     <ul>
         <li>Offline work</li>
