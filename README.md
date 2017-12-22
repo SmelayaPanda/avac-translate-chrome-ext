@@ -5,7 +5,7 @@ Translate only words of a certain complexity using the frequency dictionary
 
 ![avac](https://raw.githubusercontent.com/SmelayaPanda/Avac-Ext/master/img/256x256.png)
 
-## `About AVAC`
+## `About Avac`
 <div>
     <ul>
         <li>Offline work</li>
