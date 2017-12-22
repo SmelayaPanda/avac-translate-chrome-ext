@@ -80,7 +80,6 @@ function sendMsg() {
         active: true,
         lastFocusedWindow: true
     }, function (tabs) {
-        // and use that tab to fill in out title and url
         let obj = {};
         obj.power = power.checked;
         obj.level = range.value;
@@ -105,12 +104,15 @@ function generateLangToOption(lf, lt, languages) {
     let lCopy = Object.assign({}, languages); // deep copy
     lt.innerHTML = '';
     delete lCopy[lf.options[lf.selectedIndex].value];
+    let op;
     for (let lang in lCopy) {
-        let op = document.createElement('option');
+        op = document.createElement('option');
         op.setAttribute('value', lang);
         op.innerHTML = lCopy[lang];
         lt.appendChild(op);
     }
+    console.log(op);
+    op.selected = true;
 }
 
 function setStageMessage(range, stage) {

@@ -30,8 +30,8 @@ window.onload = function () {
 
     chrome.runtime.onMessage.addListener(
         msgObj => {
-            if (msgObj.power) {
-                let params = JSON.parse(msgObj);
+            let params = JSON.parse(msgObj);
+            if (params.power) {
                 isNewLang = (langFrom !== params.langFrom || langTo !== params.langTo);
                 level = params.level;
                 langTo = params.langTo;
@@ -50,8 +50,8 @@ function invoke() {
     if (isNewLang) {
         if (0 !== document.getElementsByClassName("wordAvac").length) {
             removeElementsByClass('wordAvac');
-            translateText();
         }
+        translateText();
     } else if (0 !== document.getElementsByClassName("wordAvac").length) {
         applyLevel(level);
     } else {
