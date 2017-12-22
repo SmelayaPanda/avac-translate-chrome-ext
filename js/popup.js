@@ -54,17 +54,14 @@ window.onload = function () {
 
 
     /* Setting Chrome storage value */
-    lf.onchange = () => {
+    lf.addEventListener('input', function () {
         generateLangToOption(lf, lt, languages);
-        storage.set({'langFrom': lf.value});
-        //sendMsg();
-    };
+        storage.set({'langFrom': lf.value}, () => sendMsg());
+    });
     lt.onchange = () => {
-        storage.set({'langTo': lt.value});
-        //sendMsg();
+        storage.set({'langTo': lt.value}, () => sendMsg());
     };
     range.onchange = () => storage.set({'level': range.value});
-    //stage.onchange = () => storage.set({'stage': stage.innerText});
     power.onchange = () => {
         settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
         storage.set({'power': power.checked}, () => sendMsg());

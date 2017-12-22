@@ -1,9 +1,9 @@
-
 // Avac parameters
 let level;
 let langFrom;
 let langTo;
 // Process variables
+let isNewLang = false;
 let regExp;
 let dicFrom;
 let dicTo;
@@ -20,8 +20,9 @@ window.onload = function () {
                 storage.get('langFrom', obj => {
                     obj.langFrom ? langFrom = obj.langFrom : 'eng';
                     storage.get('langTo', obj => {
+                        isNewLangTo = langTo === obj.langTo;
                         obj.langTo ? langTo = obj.langTo : 'eng';
-                        translateThis();
+                        invoke();
                     });
                 });
             });
@@ -33,10 +34,11 @@ window.onload = function () {
             storage.get('power', obj => {
                 if (obj.power) {
                     let params = JSON.parse(msgObj);
+                    isNewLang = (langFrom !== params.langFrom || langTo !== params.langTo);
                     level = params.level;
                     langTo = params.langTo;
                     langFrom = params.langFrom;
-                    translateThis();
+                    invoke();
                 } else {
                     document.location.reload(true);
                 }
@@ -44,27 +46,37 @@ window.onload = function () {
         });
 };
 
-function translateThis() {
+
+function invoke() {
     setDictionary();
     setRegExp();
-    if (0 !== document.getElementsByClassName("wordAvac").length) {
+    if (isNewLang) {
+        if (0 !== document.getElementsByClassName("wordAvac").length) {
+            removeElementsByClass('wordAvac');
+            translateText();
+        }
+    } else if (0 !== document.getElementsByClassName("wordAvac").length) {
         applyLevel(level);
     } else {
-        for (p of document.getElementsByTagName("p")) {
-            p.innerHTML = p.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
-        }
-        let word;
-        let rank;
-        for (w of document.getElementsByClassName('AVAC')) {
-            word = w.innerText.trim().toLocaleLowerCase();
-            rank = dicFrom.indexOf(word);
-            if (-1 !== rank) {
-                addSpeakerOnClick(w);
-                w.innerHTML += `<span hidden class="wordAvac ___${rank}"> [${dicTo[rank]}]</span>`;
-            }
-        }
-        applyLevel(level);
+        translateText();
     }
+}
+
+function translateText() {
+    for (p of document.getElementsByTagName("p")) {
+        p.innerHTML = p.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
+    }
+    let word;
+    let rank;
+    for (w of document.getElementsByClassName('AVAC')) {
+        word = w.innerText.trim().toLocaleLowerCase();
+        rank = dicFrom.indexOf(word);
+        if (-1 !== rank) {
+            addSpeakerOnClick(w);
+            w.innerHTML += `<span hidden class="wordAvac ___${rank}"> [${dicTo[rank]}]</span>`;
+        }
+    }
+    applyLevel(level);
 }
 
 function applyLevel(level) {
