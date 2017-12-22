@@ -6,13 +6,18 @@ Translate only words of a certain complexity using the frequency dictionary
 ![avac](https://raw.githubusercontent.com/SmelayaPanda/Avac-Ext/master/img/256x256.png)
 
 ## About AVAC
-```
-* Offline work
-* Frequency dictionary
-* 4 languages: 
-   * English 
-   * Deutsch 
-   * Spanish
-   * Russian
-* Pronunciation of words by click
-   ```
+<div style="backgroundcolor: lightgrey">
+    <ul>
+        <li>Offline work</li>
+        <li>Frequency dictionary</li>
+        <li>4 languages:
+            <ul>
+                <li>English</li>
+                <li>Deutsch</li>
+                <li>Spanish</li>
+                <li>Russian</li>
+            </ul>
+        </li>
+        <li>Pronunciation of words by click</li>
+    </ul>
+</div>

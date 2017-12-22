@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="">
+    <list default="true" id="bdde8b98-d4a3-47b4-a84d-3326629452ea" name="Default" comment="ˆ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="popup.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="popup.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="528">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,12 +96,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="396">
-                <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <first_editor relative-caret-position="462">
+                <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="22" selection-end-column="6" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -166,8 +166,8 @@
       <find>level</find>
       <find>rangeInput</find>
       <find>langFrom</find>
-      <find>stage</find>
       <find>strLvl</find>
+      <find>stage</find>
     </findStrings>
     <replaceStrings>
       <replace>synonymsAvac</replace>
@@ -198,8 +198,8 @@
       <replace>rangeInput</replace>
       <replace>settings</replace>
       <replace>level</replace>
-      <replace>storage</replace>
       <replace>stage</replace>
+      <replace>storage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -260,10 +260,10 @@
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/deu.txt" />
         <option value="$PROJECT_DIR$/js/dictionaries/langFrom/spa.js" />
         <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/html/popup.html" />
         <option value="$PROJECT_DIR$/js/popup.js" />
         <option value="$PROJECT_DIR$/js/content.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/html/popup.html" />
       </list>
     </option>
   </component>
@@ -703,7 +703,7 @@
       <workItem from="1512916891489" duration="24000" />
       <workItem from="1512916939155" duration="11000" />
       <workItem from="1512924610424" duration="599000" />
-      <workItem from="1513952848610" duration="4527000" />
+      <workItem from="1513952848610" duration="4878000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -992,11 +992,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513957371779</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="ˆ">
+      <created>1513957524686</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1513957524686</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188413000" />
+    <option name="totallyTimeSpent" value="188764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1286,22 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="148" column="46" lean-forward="false" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/popup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1331,14 +1322,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="148" column="46" lean-forward="false" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="396">
-            <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <first_editor relative-caret-position="462">
+            <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="22" selection-end-column="6" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
