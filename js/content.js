@@ -1,8 +1,4 @@
-// Available languages
-const ENGLISH = "eng";
-const RUSSIAN = "rus";
-const DEUTSCH = "deu";
-const SPANISH = "spa";
+
 // Avac parameters
 let level;
 let langFrom;

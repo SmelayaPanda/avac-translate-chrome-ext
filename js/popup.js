@@ -1,13 +1,17 @@
 let storage = chrome.storage.sync;
-
+// Stages
 const L1 = "Beginner";
 const L2 = "Pre intermediate";
 const L3 = "Intermediate";
 const L5 = "Advanced";
 const L4 = "Upper intermediate";
-const WELCOME_MSG = 'Welcome to AVAC!';
+// Available languages
+const ENGLISH = "eng";
+const RUSSIAN = "rus";
+const DEUTSCH = "deu";
+const SPANISH = "spa";
 
-var languages = {
+const languages = {
     eng: 'English',
     rus: 'Russian',
     deu: 'Deutsch',
@@ -20,6 +24,7 @@ let range;
 let stage;
 let power;
 let settings;
+
 
 window.onload = function () {
     /* assign HTML elements */
@@ -37,12 +42,17 @@ window.onload = function () {
     /* Getting Chrome storage value */
     storage.get('langFrom', obj => lf.value = obj.langFrom);
     storage.get('langTo', obj => lt.value = obj.langTo);
-    storage.get('level', obj => range.value = obj.stage);
-    storage.get('stage', obj => stage.innerText = obj.stage ? obj.stage : WELCOME_MSG);
+    storage.get('level', (obj) => {
+        range.value = obj.level;
+        setStageMessage(range, stage);
+    });
+
     storage.get('power', obj => {
         power.checked = obj.power;
         settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
     });
+
+
     /* Setting Chrome storage value */
     lf.onchange = () => {
         generateLangToOption(lf, lt, languages);
@@ -54,18 +64,14 @@ window.onload = function () {
         //sendMsg();
     };
     range.onchange = () => storage.set({'level': range.value});
-    stage.onchange = () => storage.set({'stage': stage.innerText});
+    //stage.onchange = () => storage.set({'stage': stage.innerText});
     power.onchange = () => {
         settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
         storage.set({'power': power.checked}, () => sendMsg());
     };
     /** ---------------------------------------------------- */
     range.addEventListener('input', function () {
-        if (this.value < 20 && stage.innerText !== L1) fadeTextReplace(stage, L1);
-        else if (this.value >= 20 && this.value < 40 && stage.innerText !== L2) fadeTextReplace(stage, L2);
-        else if (this.value >= 40 && this.value < 60 && stage.innerText !== L3) fadeTextReplace(stage, L3);
-        else if (this.value >= 60 && this.value < 80 && stage.innerText !== L4) fadeTextReplace(stage, L4);
-        else if (this.value >= 80 && stage.innerText !== L5) fadeTextReplace(stage, L5);
+        setStageMessage(range, stage);
     });
 
     /* Sending message to content.js */
@@ -109,4 +115,12 @@ function generateLangToOption(lf, lt, languages) {
         op.innerHTML = lCopy[lang];
         lt.appendChild(op);
     }
+}
+
+function setStageMessage(range, stage) {
+    if (range.value < 20 && stage.innerText !== L1) fadeTextReplace(stage, L1);
+    else if (range.value >= 20 && range.value < 40 && stage.innerText !== L2) fadeTextReplace(stage, L2);
+    else if (range.value >= 40 && range.value < 60 && stage.innerText !== L3) fadeTextReplace(stage, L3);
+    else if (range.value >= 60 && range.value < 80 && stage.innerText !== L4) fadeTextReplace(stage, L4);
+    else if (range.value >= 80 && stage.innerText !== L5) fadeTextReplace(stage, L5);
 }
