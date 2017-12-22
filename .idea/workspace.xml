@@ -100,8 +100,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="286">
-                <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <first_editor relative-caret-position="242">
+                <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -166,8 +166,8 @@
       <find>level</find>
       <find>rangeInput</find>
       <find>langFrom</find>
-      <find>strLvl</find>
       <find>stage</find>
+      <find>strLvl</find>
     </findStrings>
     <replaceStrings>
       <replace>synonymsAvac</replace>
@@ -198,8 +198,8 @@
       <replace>rangeInput</replace>
       <replace>settings</replace>
       <replace>level</replace>
-      <replace>stage</replace>
       <replace>storage</replace>
+      <replace>stage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -708,7 +708,7 @@
       <workItem from="1512916891489" duration="24000" />
       <workItem from="1512916939155" duration="11000" />
       <workItem from="1512924610424" duration="599000" />
-      <workItem from="1513952848610" duration="3913000" />
+      <workItem from="1513952848610" duration="4060000" />
     </task>
     <task id="LOCAL-00001" summary="fix if first extension load">
       <created>1505640100325</created>
@@ -955,11 +955,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513956840445</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ˆ">
+      <created>1513956892769</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1513956892769</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187799000" />
+    <option name="totallyTimeSpent" value="187946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,7 +1047,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hide footer" />
     <MESSAGE value="tts exists in the world =)" />
     <MESSAGE value="some fixes" />
     <MESSAGE value="speak examples" />
@@ -1065,7 +1071,8 @@
     <MESSAGE value="-" />
     <MESSAGE value="improvement functionality" />
     <MESSAGE value="md image" />
-    <option name="LAST_COMMIT_MESSAGE" value="md image" />
+    <MESSAGE value="ˆ" />
+    <option name="LAST_COMMIT_MESSAGE" value="ˆ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1249,14 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -1281,6 +1280,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/256x256.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1289,16 +1301,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/256x256.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="286">
-            <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <first_editor relative-caret-position="242">
+            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
