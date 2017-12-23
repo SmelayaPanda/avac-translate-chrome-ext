@@ -40,10 +40,10 @@ window.onload = function () {
     power = document.getElementById("power");
 
     /* Getting Chrome storage value */
-    storage.get('langFrom', obj => lf.value = obj.langFrom);
-    storage.get('langTo', obj => lt.value = obj.langTo);
+    storage.get('langFrom', obj => lf.value = (obj.langFrom ? obj.langFrom : ENGLISH));
+    storage.get('langTo', obj => lt.value = (obj.langTo ? obj.langTo : RUSSIAN));
     storage.get('level', obj => {
-        range.value = obj.level;
+        range.value = (obj.level ? obj.level : 0);
         setStageMessage(range, stage);
     });
 
