@@ -41,18 +41,9 @@ window.onload = function () {
     storage.get('langFrom', obj => {
         generateLangFromOption();
         lf.value = (obj.langFrom ? obj.langFrom : ENGLISH);
-    });
-    storage.get('langTo', obj => {
         generateLangToOption();
-        for (let i = 0; lt.options.length - 1; i++) {
-            if (obj.langTo === undefined) {
-                lt.value = RUSSIAN;
-            }
-            else if (lt.options[i].value === obj.langTo) {
-                lt.value = obj.langTo;
-            }
-        }
     });
+
     storage.get('level', obj => {
         range.value = (obj.level ? obj.level : 0);
         setStageMessage();
@@ -68,17 +59,7 @@ window.onload = function () {
     lf.oninput = () => {
         storage.set({'langFrom': lf.value});
         storage.set({'langTo': lt.value});
-        storage.get('langTo', obj => {
-            generateLangToOption();
-            for (let i = 0; lt.options.length - 1; i++) {
-                if (obj.langTo === undefined) {
-                    lt.value = RUSSIAN;
-                }
-                else if (lt.options[i].value === obj.langTo) {
-                    lt.value = obj.langTo;
-                }
-            }
-        });
+        generateLangToOption();
         sendMsg();
     };
     lt.onchange = () => {
@@ -121,8 +102,19 @@ function generateLangFromOption() {
     }
 }
 
-
 function generateLangToOption() {
+    storage.get('langTo', obj => {
+        generateLangToOptionWithoutStorage();
+        for (let i = 0; i < lt.options.length; i++) {
+            console.log(lt.options[i]);
+            if (lt.options[i].value === obj.langTo) {
+                lt.value = obj.langTo;
+            }
+        }
+    });
+}
+
+function generateLangToOptionWithoutStorage() {
     let lCopy = Object.assign({}, languages); // deep copy
     lt.innerHTML = '';
     delete lCopy[lf.options[lf.selectedIndex].value];
