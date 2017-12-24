@@ -60,7 +60,13 @@ function invoke() {
 }
 
 function translateText() {
-    wrapElementWordsIntoSpan("p");
+    wrapElementWordsIntoSpan('p');
+    wrapElementWordsIntoSpan("h1");
+    wrapElementWordsIntoSpan("h2");
+    wrapElementWordsIntoSpan("h3");
+    wrapElementWordsIntoSpan("h4");
+    wrapElementWordsIntoSpan("h5");
+    wrapElementWordsIntoSpan("h6");
     wrapElementWordsIntoSpan("dd");
     wrapElementWordsIntoSpan("td");
     wrapElementWordsIntoSpan("li");
@@ -79,17 +85,17 @@ function translateText() {
     applyLevel(level);
 }
 
-function wrapElementWordsIntoSpan(el) {
-    for (p of document.getElementsByTagName(el)) {
+function wrapElementWordsIntoSpan(tag) {
+    for (el of document.getElementsByTagName(tag)) {
         let ap = '';
-        for (let ch = p.firstChild; ch !== null; ch = ch.nextSibling) {
+        for (let ch = el.firstChild; ch !== null; ch = ch.nextSibling) {
             if (ch.nodeType === Node.TEXT_NODE) {
                 ap += ch.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
-            } else {
+            } else if (ch.outerHTML !== undefined) {
                 ap += ch.outerHTML;
             }
         }
-        p.innerHTML = ap;
+        el.innerHTML = ap;
     }
 }
 
