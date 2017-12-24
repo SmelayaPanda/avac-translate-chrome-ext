@@ -60,18 +60,10 @@ function invoke() {
 }
 
 function translateText() {
-    wrapElementWordsIntoSpan('p');
-    wrapElementWordsIntoSpan("h1");
-    wrapElementWordsIntoSpan("h2");
-    wrapElementWordsIntoSpan("h3");
-    wrapElementWordsIntoSpan("h4");
-    wrapElementWordsIntoSpan("h5");
-    wrapElementWordsIntoSpan("h6");
-    wrapElementWordsIntoSpan("dd");
-    wrapElementWordsIntoSpan("td");
-    wrapElementWordsIntoSpan("li");
-    wrapElementWordsIntoSpan("div");
-    wrapElementWordsIntoSpan("font");
+    ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'div', 'li', 'font', 'td', 'dd', 'font'
+    ].forEach(arg => wrapElementWordsIntoSpan(arg));
+
     let word;
     let rank;
     for (w of document.getElementsByClassName('AVAC')) {
