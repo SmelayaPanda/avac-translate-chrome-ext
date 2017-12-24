@@ -14,7 +14,6 @@
       "js": [
         "js/popup.js",
         "js/content.js",
-        "js/common.js",
         "js/dictionaries/langFrom/eng.js",
         "js/dictionaries/langFrom/rus.js",
         "js/dictionaries/langFrom/deu.js",

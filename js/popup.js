@@ -164,3 +164,13 @@ function updateColorScheme() {
         };
     }
 }
+
+function fadeTextReplace(element, newValue) {
+    element.classList.add('hide');
+    setTimeout(function () {
+        element.innerHTML = newValue;
+    }, 200);
+    setTimeout(function () {
+        element.classList.remove('hide');
+    }, 500);
+}
