@@ -36,10 +36,10 @@ window.onload = function () {
     power = document.getElementById("power");
     colors = document.getElementsByName('hat-color');
 
+    updateColorScheme();
     updatePowerOption();
     updateSelectedLanguages();
     updateLevel();
-    updateColorScheme();
 };
 
 function sendMsg() {
