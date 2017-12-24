@@ -60,9 +60,12 @@ function invoke() {
 }
 
 function translateText() {
-    for (p of document.getElementsByTagName("p")) {
-        p.innerHTML = p.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
-    }
+    wrapElementWordsIntoSpan("p");
+    wrapElementWordsIntoSpan("dd");
+    wrapElementWordsIntoSpan("td");
+    wrapElementWordsIntoSpan("li");
+    wrapElementWordsIntoSpan("div");
+    wrapElementWordsIntoSpan("font");
     let word;
     let rank;
     for (w of document.getElementsByClassName('AVAC')) {
@@ -74,6 +77,20 @@ function translateText() {
         }
     }
     applyLevel(level);
+}
+
+function wrapElementWordsIntoSpan(el) {
+    for (p of document.getElementsByTagName(el)) {
+        let ap = '';
+        for (let ch = p.firstChild; ch !== null; ch = ch.nextSibling) {
+            if (ch.nodeType === Node.TEXT_NODE) {
+                ap += ch.textContent.replace(regExp, `<span class="AVAC">$1</span>`);
+            } else {
+                ap += ch.outerHTML;
+            }
+        }
+        p.innerHTML = ap;
+    }
 }
 
 function applyLevel(level) {
