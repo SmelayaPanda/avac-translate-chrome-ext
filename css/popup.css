@@ -1,9 +1,23 @@
 #bodyAvac {
-    width: 240px;
-    height: 170px;
+    width: 260px;
+    height: 200px;
 }
 
 #langFrom, #langTo {
+    height: 24px;
+    width: 118px;
+    font-size: 13px;
+}
+
+#languages {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#level {
+    width: 100%;
 }
 
 #stage {
