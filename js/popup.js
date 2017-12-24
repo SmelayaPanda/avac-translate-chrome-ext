@@ -60,12 +60,16 @@ function sendMsg() {
 function updatePowerOption() {
     storage.get('power', obj => {
         power.checked = obj.power;
-        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+        settings.style.display = power.checked
+            ? settings.style.display = 'block'
+            : settings.style.display = 'none';
 
     });
     power.onchange = () => {
         storage.set({'power': power.checked});
-        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+        settings.style.display = power.checked
+            ? settings.style.display = 'block'
+            : settings.style.display = 'none';
         sendMsg();
     };
 }

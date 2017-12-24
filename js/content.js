@@ -13,7 +13,6 @@ let toSpeak;
 
 /* Listen popup.js */
 window.onload = function () {
-    // don't assign a variable because script running faster than storage works.
     storage.get('power', obj => {
         if (obj.power) {
             storage.get('level', obj => {
