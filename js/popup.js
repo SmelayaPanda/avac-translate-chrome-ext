@@ -23,59 +23,23 @@ let lt;
 let range;
 let stage;
 let power;
+let color = 'green';
+let colors;
 let settings;
 
-
 window.onload = function () {
-    /* assign HTML elements */
     lf = document.getElementById('langFrom');
     lt = document.getElementById('langTo');
-
-
     settings = document.getElementById('settings');
     range = document.getElementById('level');
     stage = document.getElementById("stage");
     power = document.getElementById("power");
+    colors = document.getElementsByName('hat-color');
 
-    /* Getting Chrome storage value */
-    storage.get('langFrom', obj => {
-        generateLangFromOption();
-        lf.value = (obj.langFrom ? obj.langFrom : ENGLISH);
-        generateLangToOption();
-    });
-
-    storage.get('level', obj => {
-        range.value = (obj.level ? obj.level : 0);
-        setStageMessage();
-    });
-
-    storage.get('power', obj => {
-        power.checked = obj.power;
-        powerOnOff();
-    });
-
-
-    /* Setting Chrome storage value */
-    lf.oninput = () => {
-        storage.set({'langFrom': lf.value});
-        storage.set({'langTo': lt.value});
-        generateLangToOption();
-        sendMsg();
-    };
-    lt.onchange = () => {
-        storage.set({'langTo': lt.value});
-        sendMsg();
-    };
-    power.onchange = () => {
-        storage.set({'power': power.checked});
-        powerOnOff();
-        sendMsg();
-    };
-    range.oninput = () => {
-        storage.set({'level': range.value});
-        setStageMessage(range, stage);
-        sendMsg();
-    };
+    updatePowerOption();
+    updateSelectedLanguages();
+    updateLevel();
+    updateColorScheme();
 };
 
 function sendMsg() {
@@ -88,10 +52,43 @@ function sendMsg() {
         obj.level = range.value;
         obj.langFrom = lf.value;
         obj.langTo = lt.value;
+        obj.color = color;
         chrome.tabs.sendMessage(tabs[0].id, JSON.stringify(obj));
     });
 }
 
+function updatePowerOption() {
+    storage.get('power', obj => {
+        power.checked = obj.power;
+        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+
+    });
+    power.onchange = () => {
+        storage.set({'power': power.checked});
+        settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+        sendMsg();
+    };
+}
+
+function updateSelectedLanguages() {
+    storage.get('langFrom', obj => {
+        generateLangFromOption();
+        lf.value = (obj.langFrom ? obj.langFrom : ENGLISH);
+        generateLangToOption();
+    });
+
+    lf.oninput = () => {
+        storage.set({'langFrom': lf.value});
+        storage.set({'langTo': lt.value});
+        generateLangToOption();
+        sendMsg();
+    };
+
+    lt.onchange = () => {
+        storage.set({'langTo': lt.value});
+        sendMsg();
+    };
+}
 
 function generateLangFromOption() {
     for (let lang in languages) {
@@ -104,7 +101,17 @@ function generateLangFromOption() {
 
 function generateLangToOption() {
     storage.get('langTo', obj => {
-        generateLangToOptionWithoutStorage(lt);
+        let lCopy = Object.assign({}, languages); // deep copy
+        delete lCopy[lf.options[lf.selectedIndex].value];
+        lt.innerHTML = '';
+        let op;
+        for (let lang in lCopy) {
+            op = document.createElement('option');
+            op.setAttribute('value', lang);
+            op.innerHTML = lCopy[lang];
+            lt.appendChild(op);
+        }
+        op.selected = true;
         for (let i = 0; i < lt.options.length; i++) {
             if (obj.langTo !== undefined && lt.options[i].value === obj.langTo) {
                 lt.value = obj.langTo;
@@ -113,18 +120,16 @@ function generateLangToOption() {
     });
 }
 
-function generateLangToOptionWithoutStorage(lt) {
-    let lCopy = Object.assign({}, languages); // deep copy
-    delete lCopy[lf.options[lf.selectedIndex].value];
-    lt.innerHTML = '';
-    let op;
-    for (let lang in lCopy) {
-        op = document.createElement('option');
-        op.setAttribute('value', lang);
-        op.innerHTML = lCopy[lang];
-        lt.appendChild(op);
-    }
-    op.selected = true;
+function updateLevel() {
+    storage.get('level', obj => {
+        range.value = (obj.level ? obj.level : 0);
+        setStageMessage();
+    });
+    range.oninput = () => {
+        storage.set({'level': range.value});
+        setStageMessage(range, stage);
+        sendMsg();
+    };
 }
 
 function setStageMessage() {
@@ -135,6 +140,23 @@ function setStageMessage() {
     else if (range.value >= 80 && stage.innerText !== L5) fadeTextReplace(stage, L5);
 }
 
-function powerOnOff() {
-    settings.style.display = power.checked ? settings.style.display = 'block' : settings.style.display = 'none';
+function updateColorScheme() {
+    storage.get('color', obj => {
+        if (obj.color) {
+            for (let i = 0; i < colors.length; i++) {
+                if (colors[i].value === obj.color) {
+                    colors[i].checked = true;
+                }
+            }
+            color = obj.color;
+        }
+    });
+
+    for (let i = 0; i < colors.length; i++) {
+        colors[i].onclick = function () {
+            storage.set({'color': this.value});
+            color = this.value;
+            sendMsg();
+        };
+    }
 }

@@ -2,6 +2,7 @@
 let level;
 let langFrom;
 let langTo;
+let rainbow;
 // Process variables
 let isNewLang = false;
 let regExp;
@@ -21,7 +22,10 @@ window.onload = function () {
                     obj.langFrom ? langFrom = obj.langFrom : 'eng';
                     storage.get('langTo', obj => {
                         obj.langTo ? langTo = obj.langTo : 'eng';
-                        invoke();
+                        storage.get('color', obj => {
+                            obj.color ? rainbow = obj.color : 'green';
+                            invoke();
+                        });
                     });
                 });
             });
@@ -36,6 +40,7 @@ window.onload = function () {
                 level = params.level;
                 langTo = params.langTo;
                 langFrom = params.langFrom;
+                rainbow = params.color;
                 invoke();
             } else {
                 document.location.reload(true);
@@ -46,6 +51,7 @@ window.onload = function () {
 
 function invoke() {
     setDictionary();
+    setWordStyle();
     setRegExp();
     if (isNewLang) {
         if (0 !== document.getElementsByClassName("wordAvac").length) {
@@ -101,6 +107,13 @@ function applyLevel(level) {
             w.style.display = 'none';
         }
     }
+}
+
+function setWordStyle() {
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = `.wordAvac { color: ${rainbow} }`;
+    document.getElementsByTagName('head')[0].appendChild(style);
 }
 
 function setRegExp() {
