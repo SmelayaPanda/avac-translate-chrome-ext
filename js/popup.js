@@ -104,20 +104,19 @@ function generateLangFromOption() {
 
 function generateLangToOption() {
     storage.get('langTo', obj => {
-        generateLangToOptionWithoutStorage();
+        generateLangToOptionWithoutStorage(lt);
         for (let i = 0; i < lt.options.length; i++) {
-            console.log(lt.options[i]);
-            if (lt.options[i].value === obj.langTo) {
+            if (obj.langTo !== undefined && lt.options[i].value === obj.langTo) {
                 lt.value = obj.langTo;
             }
         }
     });
 }
 
-function generateLangToOptionWithoutStorage() {
+function generateLangToOptionWithoutStorage(lt) {
     let lCopy = Object.assign({}, languages); // deep copy
-    lt.innerHTML = '';
     delete lCopy[lf.options[lf.selectedIndex].value];
+    lt.innerHTML = '';
     let op;
     for (let lang in lCopy) {
         op = document.createElement('option');

@@ -110,29 +110,29 @@ function setDictionary() {
         case ENGLISH: {
             dicFrom = eng;
             if (langTo === RUSSIAN) dicTo = eng_rus;
-            if (langTo === DEUTSCH) dicTo = eng_deu;
-            if (langTo === SPANISH) dicTo = eng_spa;
+            else if (langTo === DEUTSCH) dicTo = eng_deu;
+            else if (langTo === SPANISH) dicTo = eng_spa;
         }
             break;
         case RUSSIAN: {
             dicFrom = rus;
             if (langTo === ENGLISH) dicTo = rus_eng;
-            if (langTo === DEUTSCH) dicTo = rus_deu;
-            if (langTo === SPANISH) dicTo = rus_spa;
+            else if (langTo === DEUTSCH) dicTo = rus_deu;
+            else if (langTo === SPANISH) dicTo = rus_spa;
         }
             break;
         case DEUTSCH: {
             dicFrom = deu;
             if (langTo === ENGLISH) dicTo = deu_eng;
-            if (langTo === RUSSIAN) dicTo = deu_rus;
-            if (langTo === SPANISH) dicTo = deu_spa;
+            else if (langTo === RUSSIAN) dicTo = deu_rus;
+            else if (langTo === SPANISH) dicTo = deu_spa;
         }
             break;
         case SPANISH: {
             dicFrom = spa;
             if (langTo === ENGLISH) dicTo = spa_eng;
-            if (langTo === RUSSIAN) dicTo = spa_rus;
-            if (langTo === DEUTSCH) dicTo = spa_deu;
+            else if (langTo === RUSSIAN) dicTo = spa_rus;
+            else if (langTo === DEUTSCH) dicTo = spa_deu;
         }
             break;
     }
