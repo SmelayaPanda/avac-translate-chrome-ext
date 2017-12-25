@@ -83,7 +83,7 @@ function translateText() {
 }
 
 function wrapElementWordsIntoSpan(tag) {
-    for (el of document.getElementsByTagName(tag)) {
+    for (let el of document.getElementsByTagName(tag)) {
         let ap = '';
         for (let ch = el.firstChild; ch !== null; ch = ch.nextSibling) {
             if (ch.nodeType === Node.TEXT_NODE) {
@@ -97,12 +97,12 @@ function wrapElementWordsIntoSpan(tag) {
 }
 
 function applyLevel(level) {
-    for (let w of document.querySelectorAll('[class*=___]')) {
+    for (let w of document.getElementsByClassName('wordAvac')) {
         w.style.display = 'inline';
     }
     let maxRank = level ** Math.exp(1); // max = 64^exp = 81228
-    for (let i = 0; i < maxRank; i++) {
-        for (w of document.getElementsByClassName('___' + i)) {
+    for (let w of document.getElementsByClassName('wordAvac')) {
+        if (Number(w.classList[1].substring(3, 8)) < maxRank) {
             w.style.display = 'none';
         }
     }
@@ -195,11 +195,9 @@ function speakWord(word, lang, volume, rate, pitch, voiceURI) {
     window.speechSynthesis.speak(msg);
 }
 
-function removeElementsByClass( className )
-{
-    let el = document.getElementsByClassName( className );
-    while( el.length > 0 )
-    {
-        el[0].parentNode.removeChild( el[0] );
+function removeElementsByClass(className) {
+    let el = document.getElementsByClassName(className);
+    while (el.length > 0) {
+        el[0].parentNode.removeChild(el[0]);
     }
 }
