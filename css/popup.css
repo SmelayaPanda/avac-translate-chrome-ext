@@ -30,6 +30,16 @@
     opacity: 0;
 }
 
+#donate{
+    opacity: 0;
+    transition: all 0.7s ease-out;
+}
+
+#donate:hover {
+    transition: all 2.75s ease-in;
+    opacity: 1;
+}
+
 /* Color picker */
 #colorPicker {
     margin-top: 1em;
@@ -175,3 +185,5 @@
     z-index: 1;
     background: #FFFFFD;
 }
+
+
