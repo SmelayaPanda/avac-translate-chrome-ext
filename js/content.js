@@ -65,8 +65,10 @@ function invoke() {
 }
 
 function translateText() {
-    ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'div', 'li', 'font', 'td', 'dd'
+    [
+        'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'div', 'li', 'font', 'td', 'dd', 'q', 'textarea',
+        'i', 'b', 'em', 'strong', 'article'
     ].forEach(arg => wrapElementWordsIntoSpan(arg));
 
     let word;
@@ -179,7 +181,7 @@ function addSpeakerOnClick(elem) {
     elem.onclick = function () {
         let str = elem.innerText.split('[');
         speakWord(str[0], fromSpeak, 1, 1, 1, 'native');
-        if(str[1] !== undefined) {
+        if (str[1] !== undefined) {
             speakWord(str[1], toSpeak, 1, 1, 1, 'native');
         }
     };
