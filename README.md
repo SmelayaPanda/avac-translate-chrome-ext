@@ -21,3 +21,8 @@ Translate only words of a certain complexity using the frequency dictionary
         <li>Pronunciation of words by click</li>
     </ul>
 </div>
+<br>
+Unlike Google Translate, which translates the entire text, <i>Avac</i> allows you to write word translations individually for each word.<br>
+In addition, <i>Avac</i> allows you to translate words only of a certain complexity, using a frequency dictionary!<br>
+And all this in offline mode (without wasting Internet traffic) ...<br>
+In addition to all, translated words have pronunciation by click, and color settings will allow you to choose the best color for the eyes.
