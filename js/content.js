@@ -67,13 +67,12 @@ function invoke() {
 function translateText() {
     [
         'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'div', 'li', 'font', 'td', 'dd', 'q', 'textarea',
-        'i', 'b', 'em', 'strong', 'article'
+        'div', 'li', 'font', 'td', 'dd', 'textarea', 'article'
     ].forEach(arg => wrapElementWordsIntoSpan(arg));
 
     let word;
     let rank;
-    for (w of document.getElementsByClassName('AVAC')) {
+    for (let w of document.getElementsByClassName('AVAC')) {
         word = w.innerText.trim().toLocaleLowerCase();
         rank = dicFrom.indexOf(word);
         if (-1 !== rank) {
