@@ -66,7 +66,7 @@ function invoke() {
 
 function translateText() {
     ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'div', 'li', 'font', 'td', 'dd', 'font'
+        'div', 'li', 'font', 'td', 'dd'
     ].forEach(arg => wrapElementWordsIntoSpan(arg));
 
     let word;
