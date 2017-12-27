@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Avac",
-  "version": "0.0.0.1",
+  "name": "Avac Translate",
+  "short_name" : "Air Article Translator",
+  "version": "0.0.0.3",
   "icons": {
     "256": "img/256x256.png"
   },
