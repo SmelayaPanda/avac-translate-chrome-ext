@@ -1,8 +1,10 @@
 let storage = chrome.storage.sync;
 // Stages
-const L1 = "Common";
-const L2 = "Mid";
-const L3 = "Rare";
+const L1 = "Beginner";
+const L2 = "Pre intermediate";
+const L3 = "Intermediate";
+const L5 = "Advanced";
+const L4 = "Upper intermediate";
 // Available languages
 const ENGLISH = "eng";
 const RUSSIAN = "rus";
@@ -135,15 +137,11 @@ function updateLevel() {
 }
 
 function setStageMessage() {
-    if (range.value < 12 && stage.innerText !== L1) {
-        fadeTextReplace(stage, L1);
-    }
-    else if (range.value >= 12 && range.value < 24 && stage.innerText !== L2) {
-        fadeTextReplace(stage, L2);
-    }
-    else if (range.value >= 24 && stage.innerText !== L3) {
-        fadeTextReplace(stage, L3);
-    }
+    if (range.value < 12 && stage.innerText !== L1) fadeTextReplace(stage, L1);
+    else if (range.value >= 12 && range.value < 24 && stage.innerText !== L2) fadeTextReplace(stage, L2);
+    else if (range.value >= 24 && range.value < 36 && stage.innerText !== L3) fadeTextReplace(stage, L3);
+    else if (range.value >= 36 && range.value < 48 && stage.innerText !== L4) fadeTextReplace(stage, L4);
+    else if (range.value >= 48 && stage.innerText !== L5) fadeTextReplace(stage, L5);
 }
 
 function updateColorScheme() {
