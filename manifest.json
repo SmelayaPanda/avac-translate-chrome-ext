@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Avac Translate",
+  "name": "Avac Translate (beta)",
   "version": "0.1.1.1",
   "description": "Translate only words of a certain complexity using the frequency dictionary.",
   "icons": {
