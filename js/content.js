@@ -65,12 +65,12 @@ function invoke() {
 }
 
 function translateText() {
-    let tags = [
-        'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'div', 'li', 'font', 'td', 'dd', 'textarea', 'article'
-    ];
+    let tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'div', 'li', 'font', 'td', 'dd', 'textarea', 'article'];
 
-    ['youtube', 'facebook', 'vk.com', 'ok.ru', 'instagram'].forEach(s => {
+    ['youtube', 'facebook', 'vk.com', 'ok.ru', 'instagram',
+        'jsfiddle', 'codepen'
+    ].forEach(s => {
         if (location.href.match(s)) tags.remove('div');
     });
 
