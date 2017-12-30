@@ -65,10 +65,16 @@ function invoke() {
 }
 
 function translateText() {
-    [
+    let tags = [
         'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
         'div', 'li', 'font', 'td', 'dd', 'textarea', 'article'
-    ].forEach(arg => wrapElementWordsIntoSpan(arg));
+    ];
+
+    ['youtube', 'facebook', 'vk.com', 'ok.ru', 'instagram'].forEach(s => {
+        if (location.href.match(s)) tags.remove('div');
+    });
+
+    tags.forEach(arg => wrapElementWordsIntoSpan(arg));
 
     let word;
     let rank;
@@ -204,3 +210,11 @@ function removeElementsByClass(className) {
         el[0].parentNode.removeChild(el[0]);
     }
 }
+
+Array.prototype.remove = function (value) {
+    let idx = this.indexOf(value);
+    if (idx !== -1) {
+        return this.splice(idx, 1);
+    }
+    return false;
+};
