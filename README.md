@@ -1,5 +1,5 @@
 # `.    Avac` 
-> Chrome Extension 
+> ![Chrome Extension](https://chrome.google.com/webstore/detail/avac-translate-beta/gioolbhdebananfbonbhloghohfjigpf?utm_source=plus)
 ## Your Air Article Translator
 Translate only words of a certain complexity using the frequency dictionary
 
