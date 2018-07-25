@@ -1,4 +1,4 @@
-# `.    Avac` 
+# Avac
 > [Chrome Extension](https://chrome.google.com/webstore/detail/avac-translate-beta/gioolbhdebananfbonbhloghohfjigpf?utm_source=plus)
 
 [Demo](https://www.youtube.com/watch?v=x_pDE-_83ww)
