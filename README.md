@@ -1,7 +1,7 @@
 # Avac
 > [Chrome Extension](https://chrome.google.com/webstore/detail/avac-translate-beta/gioolbhdebananfbonbhloghohfjigpf?utm_source=plus)
 
-[Demo](https://www.youtube.com/watch?v=x_pDE-_83ww)
+[Demo video](https://www.youtube.com/watch?v=x_pDE-_83ww)
 ## Avac - translate words above the specified complexity.
 
 ![avac](https://raw.githubusercontent.com/SmelayaPanda/Avac-Ext/master/img/256x256.png)
