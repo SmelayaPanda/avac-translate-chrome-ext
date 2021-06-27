@@ -1,5 +1,5 @@
 # Avac
-> [Chrome Extension](https://chrome.google.com/webstore/detail/avac-translate-beta/gioolbhdebananfbonbhloghohfjigpf?utm_source=plus)
+[Chrome Extension](https://chrome.google.com/webstore/detail/avac-translate-beta/gioolbhdebananfbonbhloghohfjigpf?utm_source=plus)
 
 [Demo video](https://www.youtube.com/watch?v=x_pDE-_83ww)
 ## Avac - translate words above the specified complexity.
