@@ -24,8 +24,8 @@
 <br>
 
 
-* The complexity of words in this case is equal to the frequency of their use in the language
+<i> * The complexity of words in this case is equal to the frequency of their use in the language <i/>
 That is, the less often a word is used, the more difficult it is.
 (frequency dictionary compiled throughout Wikipedia for 2017)
 
-** This is an open source project, you can see the source code here: https://github.com/SmelayaPanda/Avac-Translate-Chrome-Ext
+<i> ** This is an open source project, you can see the source code here: https://github.com/SmelayaPanda/Avac-Translate-Chrome-Ext<i/>
