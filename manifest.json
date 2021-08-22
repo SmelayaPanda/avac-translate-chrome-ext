@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
-  "name": "Avac Translate (beta)",
-  "version": "0.1.2.9",
+  "manifest_version": 3,
+  "name": "Avac Translate",
+  "version": "1.0.0",
   "description": "Translate only words of a certain complexity using the frequency dictionary.",
   "icons": {
     "256": "img/256x256.png"
@@ -45,8 +45,8 @@
   "permissions": [
     "storage"
   ],
-  "browser_action": {
-    "default_title": "Air Article Translator",
+  "action": {
+    "default_title": "Article Translator",
     "default_icon": "img/256x256.png",
     "default_popup": "html/popup.html"
   }
